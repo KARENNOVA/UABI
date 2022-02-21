@@ -41,7 +41,6 @@ export const EditRoles = () => {
                                     type="edit"
                                     innerRef={form}
                                     onSubmit={(values) => {
-                                        console.log(values)
                                         return editRol(values);
                                     }}
                                 />

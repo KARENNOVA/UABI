@@ -41,6 +41,7 @@ const EditUser: FC<IProps> = () => {
     };
 
     useEffect(() => {
+        dispatch(actionsUser.clear_user())
         dispatch(actionsUser.get_user_by_id(parseInt(id)));
         dispatch(actions.getDependencies())
     }, []);

@@ -24,6 +24,7 @@ const DetailProject = () => {
     const [is_visibleArea, set_is_visible_area] = useState<boolean>(false);
     const [action, setAction] = useState();
     useEffect(() => {
+        dispatch(actions.clearProject())
         dispatch(actions.getProject(id));
         dispatch(actions.getRealEstatesByProject(id, {}));
     }, []);

@@ -281,7 +281,6 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
             <button
                 className="btn btn-primary"
                 onClick={(e) => {
-                    //console.log(data)
                     const dataSelect = data.filter((a) => selectRowKeys.includes(a.key));
                     let areaSelect = dataSelect.every((b) => b.use_area > 0);
                     //console.log(selectRealEsates)

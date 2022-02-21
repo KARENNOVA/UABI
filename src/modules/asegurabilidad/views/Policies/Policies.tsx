@@ -83,6 +83,7 @@ const Policies = () => {
             title: 'Compañias Aseguradoras',
             dataIndex: 'insurance_companies',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (date) => date.map((d) => d.nit).join(' - '),
         },
         {
@@ -93,6 +94,7 @@ const Policies = () => {
         {
             title: 'Bienes Inmuebles',
             dataIndex: 'real_estates',
+            responsive: ['md'],
             align: 'center' as 'center',
         },
         {
@@ -104,6 +106,7 @@ const Policies = () => {
             title: 'Fecha de Inicio',
             dataIndex: 'vigency_start',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (dates) => {
                 const tmpDate = new Date(parseInt(dates));
                 // noinspection UnnecessaryLocalVariableJS
@@ -114,6 +117,7 @@ const Policies = () => {
             title: 'Fecha finalización',
             dataIndex: 'vigency_end',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (dates) => {
                 const tmpDate = new Date(parseInt(dates));
                 return moment(tmpDate).format('MM/DD/YYYY');
@@ -123,6 +127,7 @@ const Policies = () => {
             title: 'Creada por',
             dataIndex: 'audit_trail',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (data) => data.created_by,
         },
     ];
@@ -152,8 +157,8 @@ const Policies = () => {
                         }
                     >
                         <div className="row justify-content-between">
-                            <div className="col-5 d-flex">
-                                <div className="col-6 ">
+                            <div className="col-12 col-lg-5 d-flex">
+                                <div className="col-12 col-md-6 col-lg-6">
                                     <FilterForm
                                         filters={[
                                             { key: 'policy_number', name: 'Número póliza' },

@@ -108,6 +108,7 @@ const userReducer = (aux_state: any, action: any) => {
         }
         case types.update_user.success:
         case types.create_user.success:
+        case types.clear_user.success:
         case types.get_user.success: {
             return {
                 ...state,
@@ -123,7 +124,6 @@ const userReducer = (aux_state: any, action: any) => {
         case types.update_user.fail:
         case types.delete_user.fail:
         case types.delete_user.success:
-        case types.clear_user:
         case types.get_user.fail: {
             return {
                 ...state,

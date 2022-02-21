@@ -153,12 +153,14 @@ const InsuranceBrokers = () => {
         {
             title: 'Teléfono',
             dataIndex: 'phone',
+            responsive: ['md'],
             align: 'left' as 'left',
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (audit_trail) => audit_trail?.created_by,
         },
 
@@ -196,8 +198,8 @@ const InsuranceBrokers = () => {
                         }
                     >
                         <div className="row justify-content-between">
-                            <div className="col-5 d-flex">
-                                <div className="col-6 ">
+                            <div className="col-12 col-lg-5 d-flex">
+                                <div className="col-12 col-md-6 col-lg-6">
                                     <FilterForm filters={[{ key: 'name', name: 'Nombre' }]} onSubmit={filter} />
                                 </div>
                             </div>

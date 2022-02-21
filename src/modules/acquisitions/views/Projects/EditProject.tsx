@@ -30,6 +30,7 @@ const DetailProject: FC<IProps> = () => {
     const project: IProjectAttributes = useSelector((states: any) => states.acquisitions.project.value);
 
     useEffect(() => {
+        dispatch(actions.clearDependencies())
         dispatch(actions.getDependencies())
     }, [])
 
@@ -41,6 +42,7 @@ const DetailProject: FC<IProps> = () => {
     };
 
     useEffect(() => {
+        dispatch(actions.clearProject())
         dispatch(actions.getProject(id));
     }, []);
 

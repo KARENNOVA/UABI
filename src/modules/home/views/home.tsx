@@ -1,5 +1,4 @@
 import Card from '../components/Card';
-import Importer from "../../../utils/ui/importer";
 
 
 const Home = () => {
@@ -20,7 +19,15 @@ const Home = () => {
                 <section id="cards">
                     <div className="container">
                         <div className="row justify-content-center">
-                           <Card name="Administrativo" links={[{ name: 'Asignación de Roles y Permisos' }]} />
+                           <Card
+                                name="Administrativo"
+                                links={[
+                                    // { name: 'Asignación de Roles y Permisos',  to: '/acquisitions/projects/' },
+                                    { name: 'Roles',  to: '/roles/' },
+                                    { name: 'Usuarios',  to: '/users/' },
+                                ]}
+
+                            />
                            <Card
                                name="Adquisición"
                                 links={[

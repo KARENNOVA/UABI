@@ -16,7 +16,6 @@ const PercentageModal: FC<PercentageModalProps> = ({
     const form_ref = useRef<any>();
     const context = useContext(TemplateContext);
     const submit = (values, actions) => {
-        console.log(values)
         toggle();
 
 

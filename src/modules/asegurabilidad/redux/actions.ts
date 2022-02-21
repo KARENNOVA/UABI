@@ -20,6 +20,9 @@ const getPolicies = (filters: {
 const clearPolicies = () =>
     request_dispatch(types.policies, Promise.resolve([]));
 
+const clearPolicy = () =>
+    request_dispatch(types.policy, Promise.resolve(null));
+
 const updatePolicy = (data: any, id) =>
     request_dispatch(types.policy, service.updatePolicy(data, id));
 
@@ -38,6 +41,8 @@ const get_all_companies = (filters?) =>
     );
 const clear_all_companies = (filters?) =>
     request_dispatch(types.get_all_companies, Promise.resolve([]));
+
+
 const create_company = (data: Company) =>
     request_dispatch(types.create_company, service.create_company(data));
 const delete_company = (id) =>
@@ -47,7 +52,7 @@ const get_company_by_id = (id) =>
 const update_company = (id, data: Company) =>
     request_dispatch(types.update_company, service.update_company(id, data));
 const clear_company = () =>
-    request_dispatch(types.clear_company, Promise.resolve());
+    request_dispatch(types.clear_company, Promise.resolve(null));
 
 /*----------------Brokers---------------------*/
 
@@ -77,6 +82,7 @@ const actions = {
     realEstatesPolicy,
     getRealEstatesWithoutPolicy,
     clearPolicies,
+    clearPolicy,
     get_list_companies,
     get_all_companies,
     create_company,

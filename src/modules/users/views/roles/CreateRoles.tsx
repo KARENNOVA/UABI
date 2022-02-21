@@ -11,7 +11,6 @@ export const CreateRoles = () => {
     const dispatch = useDispatch();
     const form = useRef<FormikProps<FormikValues>>();
     const createUser = async (values) => {
-        console.log(values);
         await dispatch(actions.createRole(values));
     };
     return (

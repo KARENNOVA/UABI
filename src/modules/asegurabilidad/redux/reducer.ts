@@ -242,6 +242,7 @@ const policyReducer = (aux_state: State, action: any) => {
 const companyReducer = (aux_state: State, action: any) => {
     const { company, companies } = aux_state;
     const state = { company, companies };
+
     switch (action.type) {
         case types.create_company.default:
         case types.update_company.default:
@@ -258,6 +259,7 @@ const companyReducer = (aux_state: State, action: any) => {
         }
         case types.update_company.success:
         case types.create_company.success:
+        case types.clear_company:
         case types.get_company.success: {
             return {
                 ...state,
@@ -273,7 +275,6 @@ const companyReducer = (aux_state: State, action: any) => {
         case types.update_company.fail:
         case types.delete_company.fail:
         case types.delete_company.success:
-        case types.clear_company:
         case types.get_company.fail: {
             return {
                 ...state,

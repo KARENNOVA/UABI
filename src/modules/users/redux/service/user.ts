@@ -102,7 +102,6 @@ export const get_list_users = async () => {
 
 export const create_user = async (_data) => {
     const body = await finalData(_data)
-    console.log(body)
     try {
         const URI = '/users/';
         const res: AxiosResponse<UserResponse> = await auth_http.post(
@@ -201,7 +200,6 @@ const finalData = async (_data) => {
             ...(pass ? { password: pass } : { password: '' }),
         },
     };
-    console.log(body)
     return body;
 }
 

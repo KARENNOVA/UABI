@@ -33,7 +33,7 @@ const clearProjects = () =>
     request_dispatch(types.projects, Promise.resolve([]));
 
 const clearProject = () =>
-    request_dispatch(types.projects, Promise.resolve(null));
+    request_dispatch(types.project, Promise.resolve(null));
 
 const createProject = (values) =>
     request_dispatch(types.project, service.createProject(values));
@@ -46,6 +46,9 @@ const deleteProject = (id) =>
 
 const getDependencies = () =>
     request_dispatch(types.dependencies, service.getDependencies());
+
+const clearDependencies = () =>
+    request_dispatch(types.dependencies, Promise.resolve([]));
 
 const actions = {
     // example
@@ -70,5 +73,6 @@ const actions = {
     getTipology,
     updateAcquisition,
     getDependencies,
+    clearDependencies,
 };
 export default actions;

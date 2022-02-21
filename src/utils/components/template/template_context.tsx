@@ -77,7 +77,7 @@ const TemplateProvider: FC = React.memo(({ children }) => {
                     //TODO: mensaje modal warnirg sakarlo al dar click
                 });
                 set_idNode(data.id as string);
-                console.log('connect to service socket success', data.id);
+                // console.log('connect to service socket success', data.id);
             });
             set_socket(new_socket);
         }
