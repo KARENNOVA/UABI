@@ -179,6 +179,7 @@ const Projects = () => {
             title: 'ID',
             dataIndex: 'id',
             align: 'center' as 'center',
+            responsive: ['md'],
         },
         {
             title: 'Nombre',
@@ -189,24 +190,27 @@ const Projects = () => {
             title: 'Dependencia',
             dataIndex: 'dependency',
             align: 'left' as 'left',
+            responsive: ['md'],
         },
         {
             title: 'Fecha Creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-
+            responsive: ['md'],
             render: (audit_trail) => formatDate(audit_trail?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (audit_trail) => audit_trail?.created_by,
         },
         {
             title: 'Estado',
             dataIndex: 'status',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (s) => {
                 if (s === 'Activo') return <Tag color="success">{s}</Tag>;
                 return <Tag color="default">{s}</Tag>;

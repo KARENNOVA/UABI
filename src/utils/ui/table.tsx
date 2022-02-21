@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Table, { ColumnsType, TablePaginationConfig } from 'antd/lib/table';
-import {Empty} from "antd";
+import { Empty } from 'antd';
 
 interface CompressTableProps {
-    columns: ColumnsType<any>;
+    columns: any;
     items: any[];
     title?: string;
     change_page?: (page: number, pageSize?: number) => void;
@@ -18,6 +18,7 @@ const getPaginator = (
     change_page?: (page: number, pageSize?: number) => void
 ): TablePaginationConfig => {
     return {
+        showLessItems: true,
         position: ['bottomRight', 'topRight'],
         total: total || 0,
         ...(change_page
@@ -31,7 +32,9 @@ const getPaginator = (
         showTotal: (total /*, current*/) => {
             return (
                 <div>
-                    <span className="total-results">Total de resultados :<span style={{ color: '#F28C02' }}>: {total}</span></span>
+                    <span className="total-results">
+                        Total de resultados :<span style={{ color: '#F28C02' }}>: {total}</span>
+                    </span>
                     <span className="results-text"> Registros por página </span>
                 </div>
             );
@@ -64,12 +67,12 @@ const CompressTable: FC<CompressTableProps> = ({
                     image={Empty.PRESENTED_IMAGE_SIMPLE}
                     imageStyle={{
                         height: 60,
-                        color: "blue"
+                        color: 'blue',
                     }}
                     description={
                         <span className="text-primary">
                             No hay datos para mostrar.
-                            <br/>
+                            <br />
                             Por favor intente realizar una busqueda.
                         </span>
                     }
