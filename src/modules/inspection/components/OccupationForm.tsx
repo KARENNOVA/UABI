@@ -1,7 +1,8 @@
 import { Field, Form, Formik } from 'formik';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 import ErrorMessage from '../../../utils/ui/error_messge';
-import {IOccupation} from "../custom_types";
+import { IOccupation } from "../custom_types";
 
 interface OccupationFormPros {
     disabled?: boolean;
@@ -12,6 +13,7 @@ interface OccupationFormPros {
     onSubmit: (values) => void;
 }
 const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef, onSubmit }) => {
+    const context = useContext(TemplateContext);
     const is_clear = new_.use === '' && new_.tenure === '' && new_.ownership === '' && new_.contractual === '';
     const initialValues = {
         old: {
@@ -26,7 +28,7 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
             use: '',
             ownership: '',
             contractual: '',
-            ...(!is_clear? new_: old)
+            ...(!is_clear ? new_ : old)
         },
     };
     const submit = (values, actions) => {
@@ -41,7 +43,9 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                         <div className="row">
                             <div className="col-6">
                                 <label htmlFor="tenure_id" className="form-label">
-                                    Estado de la tenencia
+                                    {(context.device === "lg" || context.device === "md") && "Estado de la tenencia"}
+                                    {context.device === "sm" && "tenencia"}
+
                                 </label>
                                 <Field
                                     as="textarea"
@@ -57,7 +61,9 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                             </div>
                             <div className="col-6">
                                 <label htmlFor="tenure_id" className="form-label">
-                                    Estado actual de la tenencia
+                                    {(context.device === "lg" || context.device === "md") && "Estado actual de la tenencia"}
+                                    {context.device === "sm" && "tenencia actual"}
+
                                 </label>
                                 <Field
                                     as="textarea"
@@ -92,7 +98,8 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                             </div>
                             <div className="col-6">
                                 <label htmlFor="use_id" className="form-label">
-                                    Estado actual del uso
+                                    {(context.device === "lg" || context.device === "md") && "Estado actual del uso"}
+                                    {context.device === "sm" && "Estado uso actual"}
                                 </label>
                                 <Field
                                     as="textarea"
@@ -111,7 +118,9 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                         <div className="row">
                             <div className="col-6">
                                 <label htmlFor="ownership_id" className="form-label">
-                                    Estado de titularidad
+                                    {(context.device === "lg" || context.device === "md") && "Estado de titularidad"}
+                                    {context.device === "sm" && "titularidad"}
+
                                 </label>
                                 <Field
                                     as="textarea"
@@ -128,7 +137,8 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                             </div>
                             <div className="col-6">
                                 <label htmlFor="ownership_id" className="form-label">
-                                    Estado actual de titularidad
+                                    {(context.device === "lg" || context.device === "md") && "Estado actual de titularidad"}
+                                    {context.device === "sm" && "titularidad actual"}
                                 </label>
                                 <Field
                                     as="textarea"
@@ -147,7 +157,8 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                         <div className="row">
                             <div className="col-6">
                                 <label htmlFor="contractual_id" className="form-label">
-                                    Estado contractual
+                                    {(context.device === "lg" || context.device === "md") && "Estado contractual"}
+                                    {context.device === "sm" && "contractual"}
                                 </label>
                                 <Field
                                     as="textarea"
@@ -164,7 +175,8 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                             </div>
                             <div className="col-6">
                                 <label htmlFor="contractual_id" className="form-label">
-                                    Estado contractual actual
+                                    {(context.device === "lg" || context.device === "md") && "Estado contractual actual"}
+                                    {context.device === "sm" && "contractual actual"}
                                 </label>
                                 <Field
                                     as="textarea"

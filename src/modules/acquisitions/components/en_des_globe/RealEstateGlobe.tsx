@@ -26,19 +26,14 @@ const RealEstateGlobe: FC<RealEstateModalProps> = ({ disabled, arrayRealEstates,
     const location = useLocation<IParams>();
     const history: any = useHistory();
     const dispatch = useDispatch();
-    console.log(location.state);
     const { index, realEstateData, DataRealEstate, valueArea, data, action, realEstates } = location.state;
     const dependencies: any = useSelector((states: any) => states.acquisitions.dependencies.value);
     useEffect(() => {
         dispatch(actions.getDependencies());
     }, []);
-    console.log(dependencies)
     const createRealEstate = async (values, form, isFinish) => {
-        // console.log('valores englobe', values);
-        //const doc: any = compute_doc_enrollment(values.document);
         const arrayRealEstates = [...DataRealEstate];
         arrayRealEstates[index] = values;
-        // console.log(arrayRealEstates);
         history.push({ pathname: `/englobar/realEstates/`, state: { arrayRealEstates, valueArea, data, action, realEstates } });
     };
 

@@ -194,13 +194,14 @@ const Projects = () => {
             title: 'Fecha Creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-
+            responsive: ['md'],
             render: (audit_trail) => formatDate(audit_trail?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (audit_trail) => audit_trail?.created_by,
         },
         {

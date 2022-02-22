@@ -185,6 +185,7 @@ export const ListRoles = () => {
             title: 'ID',
             dataIndex: 'id',
             align: 'center' as 'center',
+            responsive: ['md'],
         },
         {
             title: 'Rol',
@@ -195,12 +196,14 @@ export const ListRoles = () => {
             title: 'Fecha Creación',
             dataIndex: 'audit_trail',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (dates) => formatDate(dates?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (data) => data?.created_by,
         },
 
@@ -234,8 +237,8 @@ export const ListRoles = () => {
                             </>
                         }>
                         <div className="row justify-content-between">
-                            <div className="col-5 d-flex">
-                                <div className="col-6 ">
+                            <div className="col-12 col-lg-5 d-flex">
+                                <div className="col-12 col-md-6 col-lg-6">
                                     <FilterForm filters={[{ key: 'role_name', name: 'Nombre' }]} onSubmit={filter} />
                                 </div>
                             </div>

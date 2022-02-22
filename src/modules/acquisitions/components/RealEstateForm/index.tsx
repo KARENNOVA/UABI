@@ -37,7 +37,6 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
     dependencies,
     getout
 }) => {
-    // console.log(dependencies)
     const dispatch = useDispatch();
     const history = useHistory<any>();
     const [tipologies, realEstate, projects] = useSelector((store: any) => [
@@ -225,7 +224,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
             .max(9999999999, 'El maximo 10 es caracteres'),
 
         active_type: Yup.array().required('obligatorio'),
-
+        tipology_id: Yup.number().required('obligatorio'),
         total_area: Yup.number()
             .when('active_type', {
                 is: (active_type) => Array.isArray(active_type) && active_type.includes('Lote'),

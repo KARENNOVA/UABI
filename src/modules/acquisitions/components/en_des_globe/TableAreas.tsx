@@ -24,7 +24,7 @@ export const TableAreas = () => {
     const [realEstatesEdit, setRealEstatesEdit] = useState([]);
     const { valueArea, numberRealEstates, data, action, realEstates, arrayRealEstates } = location.state;
     const arrayEditRealEsates = [];
-    // console.log(data, realEstates )
+    console.log(data, realEstates)
     useEffect(() => {
         if (data && realEstates) {
             data.map((bienInmueble) => {
@@ -33,18 +33,20 @@ export const TableAreas = () => {
                         intact_area: bienInmueble.intact_area,
                         id: bienInmueble.id,
                         type: bienInmueble.type,
+                        active_code: bienInmueble.key,
                     });
                 }
             });
             const editables = arrayEditRealEsates.map((r) => {
-                return realEstates.find((realEsate) => realEsate.id === r.id);
+                return realEstates.find((realEsate) => realEsate.active_code === r.active_code);
             });
 
             let result = editables.filter((item, index) => {
                 return editables.indexOf(item) === index;
             });
+            // console.log(result)
             const real_estates_edit = result.map((realEstate) => {
-                const editRealEstate = arrayEditRealEsates.filter((r) => r.id === realEstate?.id);
+                const editRealEstate = arrayEditRealEsates.filter((r) => r.active_code === realEstate?.active_code);
                 let areaCons = null;
                 let arealote = null;
                 if (editRealEstate !== undefined) {
@@ -59,12 +61,10 @@ export const TableAreas = () => {
                     });
                     const real = {
                         // ...realEstate,
-                        // id: realEstate.id,
+                        id: realEstate.id,
                         active_code: realEstate.active_code,
                         construction_area: areaCons === null ? realEstate?.construction_area : areaCons,
                         plot_area: arealote === null ? realEstate.plot_area : arealote,
-
-
                     };
                     return {
                         ...real,
@@ -75,6 +75,9 @@ export const TableAreas = () => {
                 }
             });
 
+
+
+            console.log(real_estates_edit)
             setRealEstatesEdit(real_estates_edit);
         }
     }, []);
@@ -113,7 +116,7 @@ export const TableAreas = () => {
                     type: 4,
                 },
             ],
-            active_type: 'Lote',
+            active_type: ['Lote'],
             project_id: 0,
             status: 0,
             audit_trail: null,
@@ -177,9 +180,11 @@ export const TableAreas = () => {
     }
 
     const CreateRealEstate = async (DataRealEstate, realEstatesEdit) => {
-        const result = await dispatch(actions.createRealEstates(DataRealEstate, realEstatesEdit, action, "many"))
+        console.log(DataRealEstate)
+        console.log(realEstatesEdit)
+        // const result = await dispatch(actions.createRealEstates(DataRealEstate, realEstatesEdit, action, "many"))
         // console.log(result);
-        return result
+        // return result
         //history.push(`/acquisitions/real-estates/`);
         //return Promise.resolve();
 

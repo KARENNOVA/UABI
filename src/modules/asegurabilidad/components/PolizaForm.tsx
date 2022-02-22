@@ -115,10 +115,10 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
 
             })
         ),
-        // policy_number: Yup.number()
-        //     .required('Campo obligatorio')
-        //     .min(0, 'El minimo es 0')
-        //     .max(9999999999, 'El maximo 10 es caracteres'),
+        policy_number: Yup.number()
+            .required('Campo obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(9999999999, 'El maximo 10 es caracteres'),
 
         // .test({
         //     message: 'Revise los porcentajes',

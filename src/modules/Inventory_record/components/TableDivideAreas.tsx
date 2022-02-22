@@ -92,7 +92,7 @@ export class TableDivideAreas extends React.Component<any, EditableTableState> {
                 construction_area: newRealEstates[0].construction_area,
             }
 
-            const result = await this.props.dispatch(actions.createRealEstates(realestateCreate,realEstateEdit, "divide", "many"))
+            const result = await this.props.dispatch(actions.createRealEstates(realestateCreate, realEstateEdit, "divide", "many"))
             this.props.setShowTable(false);
             this.props.setNumberAreas(2)
             this.setState({ dataSource: [] })
@@ -227,29 +227,29 @@ export class TableDivideAreas extends React.Component<any, EditableTableState> {
                             // const codigos = "GC0005L, GC0005MJ".split(',');
                             console.log(codigos)
                             const codePlot = codigos.filter((cod) => cod.charAt(cod.length - 1) === 'L');
-                            const codeConstruction = codigos.filter((cod) => cod.charAt(cod.length - 1) === 'J');
+                            const codeConstruction = codigos.filter((cod) => cod.charAt(cod.length - 1) !== 'L');
                             const materials = this.props.formik.values.materials.join(",")
                             console.log(this.props.formik.values)
                             for (let i = 0; i < this.props.numberAreas; i++) {
-                                // if (this.props.type === "Lote") {
-                                newRealEstates.push({
-                                    ...this.props.formik.values,
-                                    plot_area: Number(this.state.dataSource[i].area),
-                                    active_code: `${codigos[0]}-${i + 1}`, /*`${codePlot[0]}-${i + 1}` ,*/
-                                    materials,
-                                    projects_id: [this.props.formik.values.projects_id],
-                                    type: 'divide_areas'
-                                })
-                                // } else if (this.props.type === "Construcción") {
-                                //     newRealEstates.push({
-                                //         ...this.props.formik.values,
-                                //         construction_area: Number(this.state.dataSource[i].area),
-                                //         active_code: `${codeConstruction[0]}-${i + 1}` ,
-                                //         materials,
-                                //         projects_id: [this.props.formik.values.projects_id],
-                                //         type: 'divide_areas'
-                                //     })
-                                // }
+                                if (this.props.type === "Lote") {
+                                    newRealEstates.push({
+                                        ...this.props.formik.values,
+                                        plot_area: Number(this.state.dataSource[i].area),
+                                        active_code: `${codigos[0]}-${i + 1}`, /*`${codePlot[0]}-${i + 1}` ,*/
+                                        materials,
+                                        projects_id: [this.props.formik.values.projects_id],
+                                        type: 'divide_areas'
+                                    })
+                                } else {
+                                    newRealEstates.push({
+                                        ...this.props.formik.values,
+                                        construction_area: Number(this.state.dataSource[i].area),
+                                        active_code: `${codeConstruction[0]}-${i + 1}`,
+                                        materials,
+                                        projects_id: [this.props.formik.values.projects_id],
+                                        type: 'divide_areas'
+                                    })
+                                }
                             }
                             this.divideAreas(newRealEstates)
                         }}

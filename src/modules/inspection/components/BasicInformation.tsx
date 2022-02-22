@@ -37,11 +37,11 @@ const BasicInformation: FC<BasicInformationProps> = ({
                     <div className="table_content" style={{ margin: 7 }}>
                         <div className="detailForm" style={{ width: '100%' }}>
                             <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Codigo CBML</label>
                                     <div className="my-3">{real_estate?.address?.cbmls?.uabi ?? '-'}</div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Título de adquisición</label>
                                     <div className="my-3">
                                         {real_estate?.acquisitions?.reduce(
@@ -50,7 +50,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                         ) ?? '-'}
                                     </div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Fecha del título de adquisición</label>
                                     <div className="my-3">
                                         {real_estate?.acquisitions?.reduce(
@@ -59,7 +59,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                         ) ?? '-'}
                                     </div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Tipo de entidad</label>
                                     <div className="my-3">
                                         {real_estate?.acquisitions?.reduce(
@@ -68,7 +68,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                         ) ?? '-'}
                                     </div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">No entidad que emite el títulomento</label>
                                     <div className="my-3">
                                         {real_estate?.acquisitions?.reduce(
@@ -79,34 +79,34 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                 </div>
                             </div>
                             <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Avalúo del BI</label>
                                     <div className="my-3">{writtenNumber(real_estate?.patrimonial_value, { lang: 'es' }) ?? '-'}</div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Dirección del BI</label>
                                     <div className="my-3">{real_estate?.address?.address ?? '-'}</div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Tipo de inmueble</label>
                                     <div className="my-3">{real_estate?.active_type?.join(', ') ?? '-'}</div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Categoría del BI</label>
                                     <div className="my-3">{real_estate?.destination_type ?? '-'}</div>
                                 </div>
-                                <div className="col-2">
+                                <div className="col-12 col-lg-2 col-md-4">
                                     <label htmlFor="">Nombre del BI</label>
                                     <div className="my-3">{real_estate?.name ?? '-'}</div>
                                 </div>
                             </div>
                             {real_estate?.contrat &&
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                                    <div className="col-2">
+                                    <div className="col-12 col-lg-2 col-md-4">
                                         <label htmlFor="">Número de contrato </label>
                                         <div className="my-3">{real_estate?.contrat ?? '-'}</div>
                                     </div>
-                                    <div className="col-2">
+                                    <div className="col-12 col-lg-2 col-md-4">
                                         <label htmlFor="">Vigencia del contrato</label>
                                         <div className="my-3">{real_estate?.contract?.number ?? '-'}</div>
                                     </div>

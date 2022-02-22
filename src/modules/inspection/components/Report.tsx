@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { Field, Form, Formik } from 'formik';
 import { Card } from '../../../utils/ui';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import { PDFViewer } from '@react-pdf/renderer';
 import InpectionDoc from './InpectionDoc';
 import { AnySchema } from 'yup';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 interface ReportProps {
     disabled?: boolean;
@@ -16,16 +17,17 @@ interface ReportProps {
     user: any;
 }
 const Report: FC<ReportProps> = ({ disabled, obs, innerRef, onSubmit, data, real_estate, user }) => {
+    const context = useContext(TemplateContext);
     return (
         <div className="container-fluid">
             <Card
                 title="Vista previa informe de inspección"
-                className="h-100"
+                className={`${(context.device === "lg" ) && "h-100" }`}
                 style={{ margin: 0 }}
                 bodyStyle={{ height: 'calc(100% - 60px)' }}
             >
                 <div className="row h-100">
-                    <div className="col-4">
+                    <div className="col-12 col-lg-4 col-md-4">
                         <Formik
                             innerRef={innerRef}
                             enableReinitialize
@@ -70,7 +72,7 @@ const Report: FC<ReportProps> = ({ disabled, obs, innerRef, onSubmit, data, real
                                                 <ErrorMessage name="special_actions" withCount max={250} />
                                             </div>
                                         </div>
-                                        <div className="row">
+                                        <div className="row my-3">
                                             <div className="col">
                                                 <button
                                                     type="button"
@@ -89,7 +91,7 @@ const Report: FC<ReportProps> = ({ disabled, obs, innerRef, onSubmit, data, real
                             }}
                         </Formik>
                     </div>
-                    <div className="col-8 h-100">
+                    <div className="col-12 col-lg-8 col-md-8 h-100">
                         <PDFViewer
                             className="w-100"
                             showToolbar={false}

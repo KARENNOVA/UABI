@@ -2,9 +2,11 @@ import React, { FC } from 'react';
 import { Card } from '../../../utils/ui';
 // import { useHistory } from 'react-router-dom';
 import UpgradeForm from './UpgradeForm';
-import {IOccupant, NewInspection} from '../custom_types';
-import {PersonalInformationForm} from "../../../utils/ui/PersonaM";
-import {compute_persona_name} from "../../../utils";
+import { IOccupant, NewInspection } from '../custom_types';
+import { PersonalInformationForm } from "../../../utils/ui/PersonaM";
+import { compute_persona_name } from "../../../utils";
+import { useContext } from 'react';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 interface CreateUpgradeProps {
     inspection: NewInspection;
     owner: any;
@@ -14,6 +16,7 @@ interface CreateUpgradeProps {
 const CreateUpgrade: FC<CreateUpgradeProps> = ({ owner, innerRef, onSubmit }) => {
     // console.log("PersonalInformationForm", owner)
     // const history = useHistory();
+    const context = useContext(TemplateContext);
     return (
         <div className="container-fluid">
             <div className="row ">
@@ -26,16 +29,25 @@ const CreateUpgrade: FC<CreateUpgradeProps> = ({ owner, innerRef, onSubmit }) =>
                                     <tr>
                                         <th>Nombres y apellido</th>
                                         <th>Documento de identidad</th>
-                                        <th>Teléfono de contacto</th>
-                                        <th>Correo electrónico</th>
+                                        {(context.device === 'lg' || context.device === 'md') &&
+                                            <>
+                                                <th>Teléfono de contacto</th>
+                                                <th>Correo electrónico</th>
+                                            </>
+
+                                        }
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>{compute_persona_name(owner) || '-'}</td>
                                         <td>{owner?.documentNumber || '-'}</td>
-                                        <td>{owner?.phoneNumber || '-'}</td>
-                                        <td>{owner?.email || '-'}</td>
+                                        {(context.device === 'lg' || context.device === 'md') &&
+                                            <>
+                                                <td>{owner?.phoneNumber || '-'}</td>
+                                                <td>{owner?.email || '-'}</td>
+                                            </>
+                                        }
                                     </tr>
                                 </tbody>
                             </table>
