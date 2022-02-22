@@ -27,7 +27,6 @@ const ProjectModal: FC<LocationModalProps> = ({ /*onSave,*/ disabled, openArea, 
     }, [realEstates]);
     return (
         <>
-
             <button
                 type="button"
                 className="btn btn-primary"
@@ -48,9 +47,48 @@ const ProjectModal: FC<LocationModalProps> = ({ /*onSave,*/ disabled, openArea, 
 
             <Modal
                 footer={[
+                    ...(realEstates?.length > 1
+                        ? [
+                              <button
+                                  type="submit"
+                                  className="btn btn-outline-primary mb-1"
+                                  key="2"
+                                  onClick={() => {
+                                      openArea('englobar');
+                                      close();
+                                  }}
+                              >
+                                  Englobar
+                              </button>,
+                          ]
+                        : [
+                              <button
+                                  type="submit"
+                                  className="btn btn-outline-primary mb-1"
+                                  key="3"
+                                  disabled
+                                  onClick={() => {
+                                      openArea('englobar');
+                                      close();
+                                  }}
+                              >
+                                  Englobar
+                              </button>,
+                          ]),
                     <button
                         type="submit"
-                        className="btn btn-outline-primary "
+                        key="4"
+                        className="btn btn-outline-primary mb-1"
+                        onClick={() => {
+                            openArea('desenglobar');
+                            close();
+                        }}
+                    >
+                        Desenglobar
+                    </button>,
+                    <button
+                        type="submit"
+                        className="btn btn-outline-primary mb-1"
                         key="1"
                         onClick={() => {
                             if (realEstates.length === 1) {
@@ -65,48 +103,6 @@ const ProjectModal: FC<LocationModalProps> = ({ /*onSave,*/ disabled, openArea, 
                         }}
                     >
                         Finalizar Proyecto
-                    </button>,
-                    ...(realEstates?.length > 1
-                        ? [
-                              <button
-                                  type="submit"
-                                  className="btn btn-outline-primary "
-                                  key="2"
-                                  style={{ marginLeft: '30px' }}
-                                  onClick={() => {
-                                      openArea('englobar');
-                                      close();
-                                  }}
-                              >
-                                  Englobar
-                              </button>,
-                          ]
-                        : [
-                              <button
-                                  type="submit"
-                                  className="btn btn-outline-primary "
-                                  key="3"
-                                  disabled
-                                  style={{ marginLeft: '30px' }}
-                                  onClick={() => {
-                                      openArea('englobar');
-                                      close();
-                                  }}
-                              >
-                                  Englobar
-                              </button>,
-                          ]),
-                    <button
-                        type="submit"
-                        style={{ marginLeft: '30px', marginRight: '110px' }}
-                        key="4"
-                        className="btn btn-outline-primary"
-                        onClick={() => {
-                            openArea('desenglobar');
-                            close();
-                        }}
-                    >
-                        Desenglobar
                     </button>,
                 ]}
                 title=""

@@ -31,14 +31,15 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
         set_is_visible(false);
     };
 
-    const data = realEstates.map((r, i ) => {
+    const data = realEstates.map((r, i) => {
         return { ...r, key: `${r.id}_${i}` };
     });
 
-    const columns = [
+    const columns: any = [
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['md'],
         },
         {
             title: 'Bien Inmueble',
@@ -51,10 +52,12 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
         {
             title: 'Dirección',
             dataIndex: '',
+            responsive: ['md'],
         },
         {
             title: 'Fecha de ultima Inspección',
-            dataIndex: '-',
+            dataIndex: '',
+            responsive: ['md'],
         },
         {
             title: '',
@@ -70,7 +73,8 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
                         });
                     }}
                 >
-                    inspeccionar
+                    <i className="fa fa-search d-inline-block d-sm-none" aria-hidden="true" />
+                    <span className="d-none d-sm-inline-block">Inspeccionar</span>
                 </button>
             ),
         },

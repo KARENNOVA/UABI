@@ -30,13 +30,10 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
     const [selectRowKeys, setSelectRowKeys] = useState([]);
     const [form] = Form.useForm();
 
-
     useEffect(() => {
         dispatch(actions.getProjects());
         dispatch(actions.getRealEstatesByProject(Number(id), {}));
-
     }, []);
-
 
     // let newrealEstates = [];
     // console.log(realEstates)
@@ -190,7 +187,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
         },
     };
 
-    const columns = [
+    const columns: any = [
         // {
         //     title: 'ID',
         //     dataIndex: 'id',
@@ -203,21 +200,26 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
             title: 'Bien Inmueble',
             dataIndex: 'name',
             width: '20%',
+            responsive: ['md'],
         },
         {
             title: 'Area Total',
             dataIndex: 'total_area',
+            align: 'center'
         },
         {
             title: 'Area a Utilizar',
             dataIndex: 'use_area',
             editable: true,
             width: '20%',
+            align: 'center'
         },
         {
             title: 'Area Intacta',
             dataIndex: 'intact_area',
             width: '20%',
+            align: 'center',
+            responsive: ['md'],
         },
         {
             title: 'Editar',
@@ -227,10 +229,12 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                 return editable ? (
                     <span>
                         <a onClick={() => save(record.key)} style={{ marginRight: 8 }}>
-                            Guardar
+                            <i className="fa fa-save d-inline d-sm-none me-1" style={{ color: '#1FAEEF', fontSize: 16 }} />
+                            <span className="d-none d-sm-inline-block">Guardar</span>
                         </a>
                         <Popconfirm title="Seguro que desea cancelar?" onConfirm={cancel}>
-                            Cancelar
+                            <i className="fa fa-window-close d-inline d-sm-none text-danger me-1" style={{ fontSize: 16 }}/>
+                            <span className="d-none d-sm-inline-block">Cancelar</span>
                         </Popconfirm>
                     </span>
                 ) : (
@@ -274,7 +278,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                 dataSource={data}
                 columns={mergedColumns}
                 rowClassName="editable-row"
-            // pagination={false}
+                // pagination={false}
             />
             <div className="col-6 my-3">
                 <label htmlFor="number_real_estates" className="form-label">
@@ -331,7 +335,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                                         text: `El valor del área a ${action} no puede ser cero`,
                                     });
                                 } else {
-                                    console.log(action)
+                                    console.log(action);
                                     history.push({
                                         pathname: `/englobar/realEstates/`,
                                         state: { numberRealEstates, valueArea, data, action, realEstates },

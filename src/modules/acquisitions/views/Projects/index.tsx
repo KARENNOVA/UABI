@@ -179,6 +179,7 @@ const Projects = () => {
             title: 'ID',
             dataIndex: 'id',
             align: 'center' as 'center',
+            responsive: ['md'],
         },
         {
             title: 'Nombre',
@@ -189,6 +190,7 @@ const Projects = () => {
             title: 'Dependencia',
             dataIndex: 'dependency',
             align: 'left' as 'left',
+            responsive: ['md'],
         },
         {
             title: 'Fecha Creación',
@@ -208,6 +210,7 @@ const Projects = () => {
             title: 'Estado',
             dataIndex: 'status',
             align: 'center' as 'center',
+            responsive: ['md'],
             render: (s) => {
                 if (s === 'Activo') return <Tag color="success">{s}</Tag>;
                 return <Tag color="default">{s}</Tag>;
