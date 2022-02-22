@@ -5,7 +5,6 @@ import TableInspectionPhysycal from './TableInspectionPhysycal';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import { Field, Form, Formik } from 'formik';
 import { IPhysicalinspection, NewInspection } from '../custom_types';
-import { values } from 'lodash';
 interface CreateInspectionPhysicalProps {
     inspection: NewInspection;
     physical_inspection: IPhysicalinspection;
@@ -237,6 +236,7 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                                                         id="enclosure_prev_id"
                                                         className="form-control"
                                                         name={`public_services[${i}].subscriber`}
+                                                        disabled={formik.values.public_services[i].status === "3" ? true : false}
                                                         autoComplete="off"
                                                         onChange={(e) => {
                                                             e.preventDefault();
@@ -259,6 +259,7 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                                                         id="enclosure_prev_id"
                                                         className="form-control"
                                                         name={`public_services[${i}].accountant`}
+                                                        disabled={formik.values.public_services[i].status === "3" ? true : false}
                                                         autoComplete="off"
                                                         onChange={(e) => {
                                                             e.preventDefault();
@@ -280,6 +281,15 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                                                         id="enclosure_id"
                                                         as="select"
                                                         className="form-select"
+                                                        onChange={(e) => {
+                                                            e.preventDefault();
+                                                            if(e.target.value === "3") {
+                                                                formik.setFieldValue(`public_services[${i}].accountant`, 0);
+                                                                formik.setFieldValue(`public_services[${i}].subscriber`, 0);
+                                                            }
+                                                            formik.handleChange(e);
+                                                        }}
+
                                                     >
                                                         <option value="" hidden>
                                                             -- Seleccione estado --

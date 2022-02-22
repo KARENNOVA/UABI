@@ -556,12 +556,6 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                                     </button>
                                 )}
 
-                                {inventory &&
-
-                                    <a href="/supervisionArrendamientos.xlsx" target="_blank" className='btn btn-outline-primary me-3 btn-sm' download="supervisionArrendamientos.xlsx" >plantilla sap</a>
-
-                                }
-
                                 {globe === true && (
                                     <>
                                         <div className="flex-fill" />

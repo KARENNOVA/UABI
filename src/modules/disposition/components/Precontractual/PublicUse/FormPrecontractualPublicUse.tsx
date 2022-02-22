@@ -71,7 +71,15 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                         className="form-control"
                         disabled={false}
                         min={1}
-                        max={12}
+                        max={3}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(`^[+]?\\d{0,3}$`);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="contract_period" />
                 </div>
@@ -89,6 +97,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                             min={10}
                             max={100}
                             type="number"
+                            onChange={(e) => {
+                                e.preventDefault();
+                                const { value } = e.target;
+                                const regex = new RegExp(`^[+]?\\d{0,3}$`);
+                                if (regex.test(value.toString())) {
+                                    formik.handleChange(e);
+                                }
+                            }}
                         />
                         <div className="input-group-prepend">
                             <span className="input-group-text bg-white border-start-0">%</span>
@@ -150,6 +166,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                         placeholder="Tipo de negocio"
                         autoComplete="off"
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="business_type" withCount max={200} />
                 </div>
@@ -166,6 +190,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                         placeholder="Riesgos ambientales"
                         autoComplete="off"
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="environmental_risk" withCount max={200} />
                 </div>
@@ -182,6 +214,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                         placeholder="Actividades"
                         autoComplete="off"
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="destination_realestate" withCount max={200} />
                 </div>
@@ -199,6 +239,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="boundaries" withCount max={200} />
                 </div>
@@ -241,6 +289,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                                     id={`obligation_${i}`}
                                     name={`obligations[${i}].obligation`}
                                     maxLength={100}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            formik.handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name={`obligations[${i}].obligation`} withCount max={100} />
                             </div>
@@ -303,6 +359,14 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
                                     id={`prohibition_${i}`}
                                     name={`prohibitions[${i}].prohibition`}
                                     maxLength={100}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            formik.handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name={`prohibitions[${i}].prohibition`} withCount max={100} />
                             </div>

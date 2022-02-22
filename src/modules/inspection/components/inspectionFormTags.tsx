@@ -330,7 +330,7 @@ const useInit = (
 
     const callback = (key: string) => {
         const int_key = parseInt(active_key);
-        console.groupCollapsed('guardando', int_key);
+        // console.groupCollapsed('guardando', int_key);
         const save = steps[int_key - 1]?.save;
         save &&
             save().then(() => {

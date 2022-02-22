@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import { Card } from '../../../utils/ui';
 import { Field, Form, Formik } from 'formik';
 import ErrorMessage from '../../../utils/ui/error_messge';
@@ -6,7 +6,6 @@ import { ModalNotificar } from '../../disposition/components/ModalNotificar';
 import Map from '../../../utils/components/template/map';
 import writtenNumber from 'written-number';
 import {NewInspection} from "../custom_types";
-import {PersonalInformationForm} from "../../../utils/ui/PersonaM";
 
 interface BasicInformationProps {
     obs: string
@@ -135,7 +134,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                         observations: obs || inspection?.basic_information.differences || '',
                     }}
                 >
-                    {() => {
+                    {({handleChange}) => {
                         return (
                             <Form>
                                 <div className="row">
@@ -153,6 +152,14 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                             disabled={disabled}
                                             autoComplete="off"
                                             maxLength={250}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="observations" withCount max={250} />
                                     </div>

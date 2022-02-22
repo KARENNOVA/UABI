@@ -429,6 +429,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                             placeholder="digite el tipo de negocio"
                             autoComplete="off"
                             maxLength={200}
+                            onChange={(e) => {
+                                e.preventDefault();
+                                const { value } = e.target;
+                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                if (regex.test(value.toString())) {
+                                    formik.handleChange(e);
+                                }
+                            }}
                         />
                         <ErrorMessage name="business_type.input" withCount max={200} />
                     </div>
@@ -447,6 +455,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="destination_realestate" withCount max={200} />
                 </div>
@@ -465,6 +481,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="peacesafe" withCount max={200} />
                 </div>
@@ -482,6 +506,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="social_event" withCount max={200} />
                 </div>
@@ -500,6 +532,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="action_field" withCount max={200} />
                 </div>
@@ -518,6 +558,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="dependence" withCount max={200} />
                 </div>
@@ -534,6 +582,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         placeholder="Riesgos ambientales"
                         autoComplete="off"
                         maxLength={500}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="environmental_risk" withCount max={500} />
                 </div>
@@ -552,6 +608,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         placeholder="Actividades"
                         autoComplete="off"
                         maxLength={500}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="activities" withCount max={500} />
                 </div>
@@ -569,6 +633,14 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         autoComplete="off"
                         style={{ height: '33px' }}
                         maxLength={200}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="boundaries" withCount max={200} />
                 </div>

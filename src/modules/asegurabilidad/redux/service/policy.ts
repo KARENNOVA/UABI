@@ -67,12 +67,16 @@ export const getPolicy = async (
         let res: AxiosResponse<IPolicyResponse> = await http.get(URI, {
             params: { id },
         });
-        res.data.results.insurance_document = await getDocument(
-            res.data.results.insurance_document_id
-        );
+        if(res.data.results) {
+            res.data.results.insurance_document = await getDocument(
+                res.data.results?.insurance_document_id
+            );
+
+        }
 
         return res.data.results;
     } catch (error) {
+        console.log(error)
         return Promise.reject('Error');
     }
 };

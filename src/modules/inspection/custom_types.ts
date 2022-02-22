@@ -40,7 +40,7 @@ export interface NewInspection {
     name: string;
     subscriber: number;
     accountant: number;
-    status: number;
+    status: number | string;
   }
 
   export interface IOccupation {
