@@ -11,7 +11,7 @@ interface DispositionFormPros {
 const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontractual, contractual }) => {
     const history = useHistory();
     return (
-        <div className="col-3-12">
+        <div className="col-12">
             <div className="content_box_table">
                 <div className="title" style={{ borderBottom: '1px solid #e2e4e4' }}>
                     Bien inmueble:{' '}
@@ -19,27 +19,27 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label style={{ color: '#8d8c8c' }} htmlFor="">
                                     ID
                                 </label>
                                 <div className="my-3" >{realEstate?.id}</div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Nombre del Inmuebles</label>
                                 <div className="my-3" >{realEstate?.name}</div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Matrícula</label>
                                 <div className="my-3" >{realEstate?.registry_number}</div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Disposición</label>
                                 <div className="my-3">{precontractual?.type_disposition ?? "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Fecha de la ultima inspección</label>
                                 <div className="row">
                                     <div className="col-4 my-3" style={{ width: 'auto', padding: '1em' }}>
@@ -52,7 +52,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Estado de contratación</label>
                                 {contractual ?
                                     <div className="my-3">Contratual</div>
@@ -63,7 +63,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                 }
                             </div>
 
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Historial de contratos</label>
                                 <div className="my-3">
                                     <button type="button" className="btn btn-outline-primary  btn-sm"
@@ -75,7 +75,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                     </button>
                                 </div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Informe de supervisión</label>
                                 <div className="my-3">
                                     <button type="button" className="btn btn-outline-primary  btn-sm">
@@ -85,15 +85,15 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">CBML</label>
                                 <div className="my-3">{realEstate?.address?.cbmls?.uabi}</div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Dirección</label>
                                 <div className="my-3">{realEstate?.address?.address}</div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Etapa Precontractual</label>
                                 <div className=" my-3">
                                     {precontractual ?
@@ -110,7 +110,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                     }
                                 </div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="">Contrato Vigente</label>
                                 <div className=" my-3">
                                     {contractual ?

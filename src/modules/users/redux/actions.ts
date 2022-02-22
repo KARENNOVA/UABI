@@ -38,7 +38,7 @@ const get_user_by_id = (id) =>
     request_dispatch(types.get_user, service.get_user_by_id(id));
 const update_user = (id, data: any) =>
     request_dispatch(types.update_user, service.update_user(id, data));
-const clear_user = () => request_dispatch(types.clear_user, Promise.resolve());
+const clear_user = () => request_dispatch(types.clear_user, Promise.resolve(null));
 
 const actions = {
     // example

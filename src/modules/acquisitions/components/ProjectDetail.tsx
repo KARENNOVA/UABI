@@ -19,19 +19,19 @@ const ProjectDetail: FC<IUserFormPros> = ({ project }) => {
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Código del proyecto</label>
-                                <div className="my-3">{project?.id}</div>
+                                <div className="my-3">{project?.id || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Nombre del proyecto</label>
-                                <div className="my-3">{project?.name}</div>
+                                <div className="my-3">{project?.name || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Dependecia</label>
-                                <div className="my-3">{project?.dependency}</div>
+                                <div className="my-3">{project?.dependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Sub. Dependecia</label>
-                                <div className="my-3">{project?.subdependency}</div>
+                                <div className="my-3">{project?.subdependency || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
@@ -65,7 +65,7 @@ const ProjectDetail: FC<IUserFormPros> = ({ project }) => {
                                             width: project?.description ? project?.description.length * 13 : '1000px',
                                         }}
                                     >
-                                        {project?.description}
+                                        {project?.description || "-"}
                                     </div>
                                 </div>
                             </div>

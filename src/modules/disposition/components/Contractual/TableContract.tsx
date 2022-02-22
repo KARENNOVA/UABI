@@ -87,6 +87,7 @@ export const TableContract: FC<ContractProps> = ({ user, contrats }) => {
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['md'],
             align: 'left' as 'left',
         },
         // {

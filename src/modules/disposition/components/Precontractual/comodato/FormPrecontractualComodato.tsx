@@ -15,8 +15,8 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
     return (
         <>
             <div className="row">
-                <div className="col-3">
-                    <label htmlFor="registration_date_id" className="form-label mt-3 mt-lg-0">
+                <div className="col-12 col-lg-3 col-md-6">
+                    <label htmlFor="registration_date_id" className="form-label">
                         Fecha de Registro estudio previo
                     </label>
                     <Field
@@ -29,7 +29,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="registration_date" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="patrimonial_value_id" className="form-label">
                         Valor Patrimonial
                     </label>
@@ -49,7 +49,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     </div>
                     <ErrorMessage name="patrimonial_value" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="loan_value_id" className="form-label">
                         Valor comodato
                     </label>
@@ -77,7 +77,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     </div>
                     <ErrorMessage name="loan_value" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="contract_period_id" className="form-label">
                         Duración del contrato<span className="text-danger">*</span>
                     </label>
@@ -101,7 +101,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="contract_period" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="loan_typology_id" className="form-label">
                         Tipología del comodato<span className="text-danger">*</span>
                     </label>
@@ -124,7 +124,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     </Field>
                     <ErrorMessage name="loan_typology" />
                 </div>
-                <div className="col-3 form-inline">
+                <div className="col-12 col-lg-3 col-md-6 form-inline">
                     <label htmlFor="lockable_base_id" className="form-label">
                         Base asegurable<span className="text-danger">*</span>
                     </label>
@@ -153,7 +153,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
 
                     <ErrorMessage name="lockable_base" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3">
                     <label htmlFor="competitive_process_id" className="form-label">
                         Aplica Proceso competitivo<span className="text-danger">*</span>
                     </label>
@@ -208,8 +208,8 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                 </div>
             )}
             <div className="row">
-                <div className="col-3">
-                    <label htmlFor="prediation_date_id" className="form-label mt-3 mt-lg-0">
+                <div className="col-12 col-lg-3 col-md-6">
+                    <label htmlFor="prediation_date_id" className="form-label">
                         Fecha de Prediación<span className="text-danger">*</span>
                     </label>
                     <Field
@@ -222,7 +222,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="prediation_date" />
                 </div>
-                <div className="form-group col-3">
+                <div className="form-group col-12 col-lg-3 col-md-6">
                     <label htmlFor="horizontal_property_id" className="form-label">
                         Propiedad Horizontal<span className="text-danger">*</span>
                     </label>
@@ -245,7 +245,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     </Field>
                     <ErrorMessage name="horizontal_property"></ErrorMessage>
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="resolution_id" className="form-label">
                         ¿resolución SSS202050083439?<span className="text-danger">*</span>
                     </label>
@@ -269,7 +269,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     <ErrorMessage name="resolution" />
                 </div>
                 {formik.values.resolution === "no" &&
-                    <div className="col-3">
+                    <div className="col-12 col-lg-3 col-md-6">
                         <label htmlFor="commercial_appraisal_id" className="form-label">
                             Valor Avalúo Comercial
                         </label>
@@ -298,7 +298,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     </div>
 
                 }
-                <div className={`col-${(formik.values.resolution === 'no') ? 6 : 3}`}>
+                <div className={`col-12 col-lg-${(formik.values.resolution === 'no') ? 6 : 3} col-md-6`} >
                     {/*{`col-${(formik.values.economic_exploitation === 'si' ) ? 3 : 6}`}*/}
                     <label htmlFor="economic_exploitation_id" className="form-label">
                         ¿Autoriza explotación económica?<span className="text-danger">*</span>
@@ -323,7 +323,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     <ErrorMessage name="economic_exploitation" />
                 </div>
                 {/* {console.log('valor', formik.values.public_service)} */}
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="public_service_id" className="form-label">
                         Servicios publicos por Aforo<span className="text-danger">*</span>
                     </label>
@@ -349,7 +349,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                 </div>
                 {formik.values.public_service === 'si' && (
                     <>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="value_public_service_id" className="form-label">
                                 valor de servicios públicos por aforo<span className="text-danger">*</span>
                             </label>
@@ -368,7 +368,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                             </div>
                             <ErrorMessage name="value_public_service" />
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="capacity_specification_id" className="form-label">
                                 Especificación del Aforo<span className="text-danger">*</span>
                             </label>
@@ -394,7 +394,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         </div>
                     </>
                 )}
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="business_type_select_id" className="form-label">
                         Tipo de negocio<span className="text-danger">*</span>
                     </label>
@@ -416,7 +416,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     <ErrorMessage name="business_type.select" />
                 </div>
                 {formik.values.business_type.select === "otro" &&
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6 col-md-6">
                         <label htmlFor="business_type_input_id" className="form-label">
                             cual tipo de negocio
                         </label>
@@ -433,7 +433,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                         <ErrorMessage name="business_type.input" withCount max={200} />
                     </div>
                 }
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="destination_realEstate_id" className="form-label">
                         Destinación de bien Inmueble<span className="text-danger">*</span>
                     </label>
@@ -450,7 +450,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="destination_realestate" withCount max={200} />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="peacesafe_id" className="form-label">
                         Paz y Salvo de Rubros<span className="text-danger">*</span>
                     </label>
@@ -468,7 +468,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="peacesafe" withCount max={200} />
                 </div>
-                <div className="col-6">
+                <div className={`col-12  col-lg-${(formik.values.business_type.select !== 'otro') ? 12 : 6}  col-md-${(formik.values.business_type.select !== 'otro') ? 12 : 6}`}>
                     <label htmlFor="social_event_id" className="form-label">
                         Eventos sociales<span className="text-danger">*</span>
                     </label>
@@ -485,7 +485,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="social_event" withCount max={200} />
                 </div>
-                <div className="col-6">
+                <div className={`col-12 col-lg-${(formik.values.resolution === 'si') ? 12 : 6} col-md-${(formik.values.resolution === 'si') ? 12 : 6}`}>
                     <label htmlFor="action_field_id" className="form-label">
                         Campo de acción<span className="text-danger">*</span>
                     </label>
@@ -503,7 +503,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="action_field" withCount max={200} />
                 </div>
-                <div className={`col-${formik.values.resolution === "si" ? 12 : 6 }`}>
+                <div className={`col-12 col-lg-${formik.values.resolution === "si" ? 12 : 6 } col-md-${formik.values.resolution === "si" ? 12 : 6 }`}>
                     <label htmlFor="dependence_id" className="form-label">
                         Como contribuye la dependencia<span className="text-danger">*</span>
                     </label>
@@ -521,7 +521,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="dependence" withCount max={200} />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="environmental_risk_id" className="form-label">
                         Riesgos Ambientales<span className="text-danger">*</span>
                     </label>
@@ -538,7 +538,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                     <ErrorMessage name="environmental_risk" withCount max={500} />
                 </div>
 
-                <div className="col-6">
+                <div className={`col-12 col-lg-${formik.values.resolution === "no" ? 12 : 6 } col-md-${formik.values.resolution === "no" ? 12 : 6 }`}>
                     <label htmlFor="activities_id" className="form-label">
                         Actividades<span className="text-danger">*</span>
                     </label>

@@ -58,7 +58,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                     <Form>
                         <div className="row">
                             {insurance_broker && (
-                                <div className="col-4">
+                                <div className="col-12 col-lg-4 col-md-6">
                                     <label htmlFor="id_id" className="form-label">
                                         Código
                                     </label>
@@ -74,7 +74,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                     <ErrorMessage name="id" />
                                 </div>
                             )}
-                            <div className={`col-${insurance_broker ? 4 : 6}`}>
+                            <div className={`col-12 col-md-6 col-lg-${insurance_broker ? 4 : 6}`}>
                                 <label htmlFor="name_id" className="form-label">
                                     Nombre del corredor de seguros
                                 </label>
@@ -97,7 +97,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                 />
                                 <ErrorMessage name="name" withCount max={100} />
                             </div>
-                            <div className={`col-${insurance_broker ? 4 : 6}`}>
+                            <div className={`col-12 col-md-6 col-lg-${insurance_broker ? 4 : 6}`}>
                                 <label htmlFor="nit_id" className="form-label">
                                     NIT
                                 </label>
@@ -120,7 +120,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                 />
                                 <ErrorMessage name="nit" withCount max={20} />
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                                 <div className="row">
                                     <div className="col-8">
                                         <label htmlFor="phone_number" className="form-label">
@@ -163,21 +163,21 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="state_id" className="form-label">
                                     Departamento
                                 </label>
                                 <Field type="text" className="form-control" id="state_id" name="state" disabled />
                                 <ErrorMessage name="state" />
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="city_id" className="form-label">
                                     Ciudad
                                 </label>
                                 <Field type="text" className="form-control" id="city_id" name="city" disabled />
                                 <ErrorMessage name="city" />
                             </div>
-                            <div className="form-group col-6">
+                            <div className="form-group col-12 col-lg-6 col-md-6">
                                 <label htmlFor="location" className="form-label">
                                     Dirección
                                 </label>
@@ -198,7 +198,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                 </div>
                                 <ErrorMessage name="address" />
                             </div>
-                            <div className="form-group col-6">
+                            <div className="form-group col-12 col-lg-6 col-md-6">
                                 <label htmlFor="contact_name_id" className="form-label">
                                     Nombre de contacto
                                 </label>
@@ -221,7 +221,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                 />
                                 <ErrorMessage name="contact_information.name" withCount max={50} />
                             </div>
-                            <div className="form-group col-6">
+                            <div className="form-group col-12 col-lg-6 col-md-6">
                                 <label htmlFor="contact_email_id" className="form-label">
                                     Correo Electronico de contacto
                                 </label>
@@ -235,7 +235,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                 />
                                 <ErrorMessage name="contact_information.email" />
                             </div>
-                            <div className="form-group col-6">
+                            <div className="form-group col-12 col-lg-6 col-md-6">
                                 <div className="row">
                                     <div className="col-8">
                                         <label htmlFor="phone_number" className="form-label">

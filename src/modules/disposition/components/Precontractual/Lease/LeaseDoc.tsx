@@ -46,7 +46,6 @@ const LeaseDoc = () => {
                         className="btn btn-outline-primary"
                         onClick={async () =>  {
                             // let value_public_service = 0
-                            // console.log(values)
                             const final_values = {
                                 ...values,
                                 applicant: {

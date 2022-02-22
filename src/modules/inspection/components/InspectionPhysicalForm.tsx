@@ -12,12 +12,12 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
         <>
             {formik.values.properties?.map((property, i) => {
                 const p = formik.values.properties[i];
-                console.log(p, p.status_property)
+                // console.log(p, p.status_property)
                 const show_upload = p.status_property === "2" || p.status_property === "3";
                 const old_p = formik.values.old_properties?.find((op) => op.name === p.name);
                 return (
                     <div className="row border-1" key={`properties_${i}`}>
-                        <div className={`form-group col${show_upload ? '-3' : '-6'}`}>
+                        <div className={`form-group col-12 col-lg${show_upload ? '-3' : '-6'} col-md${show_upload ? '-3' : '-6'} `}>
                             <label htmlFor="enclosure_prev_id" className="form-label">
                                 {property.name}
                             </label>
@@ -31,7 +31,7 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                             />
                             <ErrorMessage name={`properties[${i}].status_property`} />
                         </div>
-                        <div className={`form-group col${show_upload ? '-3' : '-6'}`}>
+                        <div className={`form-group col-12 col-lg${show_upload ? '-3' : '-6'} col-md${show_upload ? '-3' : '-6'}`}>
                             <label htmlFor="enclosure_id" className="form-label">
                                 {property.name}
                             </label>
@@ -54,7 +54,7 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                         </div>
 
                         {show_upload && (
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                                 <label htmlFor="form-select" className="form-label">
                                     Imagen
                                 </label>
@@ -68,7 +68,7 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                             </div>
                         )}
 
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="enclosure_obligations_id" className="form-label">
                                 Observaciones anteriores de {property.name}
                             </label>
@@ -82,8 +82,9 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                                 style={{ height: '20px' }}
                                 disabled
                             />
+                            <ErrorMessage/>
                         </div>
-                        <div className="col-6">
+                        <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="enclosure_obligations_id" className="form-label">
                                 Observaciones {property.name}
                             </label>

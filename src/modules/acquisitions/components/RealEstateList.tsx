@@ -158,12 +158,14 @@ const RealEstateList: FC<RealEstateListProps> = ({
             title: 'Fecha Creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (dates) => formatDate(dates?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
+            responsive: ['md'],
             render: (data) => data.created_by,
         },
         {

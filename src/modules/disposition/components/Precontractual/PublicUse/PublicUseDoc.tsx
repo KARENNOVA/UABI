@@ -48,7 +48,6 @@ const PublicUseDoc = () => {
                             type="button"
                             className="btn btn-outline-primary"
                             onClick={async () => {
-                                console.log(values)
                                 let final_values = {
                                     ...values,
                                     applicant: {

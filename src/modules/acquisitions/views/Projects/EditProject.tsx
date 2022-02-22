@@ -30,6 +30,7 @@ const DetailProject: FC<IProps> = () => {
     const project: IProjectAttributes = useSelector((states: any) => states.acquisitions.project.value);
 
     useEffect(() => {
+        dispatch(actions.clearDependencies())
         dispatch(actions.getDependencies())
     }, [])
 
@@ -41,10 +42,10 @@ const DetailProject: FC<IProps> = () => {
     };
 
     useEffect(() => {
+        dispatch(actions.clearProject())
         dispatch(actions.getProject(id));
     }, []);
 
-    // console.log(dependencies)
 
     return (
         <div className="h-100 d-flex flex-column">

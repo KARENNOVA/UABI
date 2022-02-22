@@ -17,7 +17,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
             </div>
             <hr />
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="dependence_id" className="form-label">
                         dependencia
                     </label>
@@ -33,7 +33,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                     />
                     <ErrorMessage name="dependency" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="secretary_id" className="form-label">
                         Secretaria
                     </label>
@@ -51,7 +51,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="leader" className="form-label">
                         Información Lider<span className="text-danger">*</span>
                     </label>
@@ -63,7 +63,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                     />
                     <ErrorMessage name="leader" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="elaborated" className="form-label">
                         Elaboró<span className="text-danger">*</span>
                     </label>
@@ -76,7 +76,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="revised" className="form-label">
                         Revisó<span className="text-danger">*</span>
                     </label>
@@ -87,7 +87,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                     />
                     <ErrorMessage name="revised" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="approved" className="form-label">
                         Aprobó<span className="text-danger">*</span>
                     </label>

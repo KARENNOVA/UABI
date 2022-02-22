@@ -9,7 +9,7 @@ const BeneficiaryForm: FC<FormProps> = ({ formik }) => {
     return (
         <>
             <div className="row">
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="population_id" className="form-label">
                         Población<span className="text-danger">*</span>
                     </label>
@@ -23,7 +23,7 @@ const BeneficiaryForm: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="population" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="benefited_sector_id" className="form-label">
                         Sector Beneficiado<span className="text-danger">*</span>
                     </label>
@@ -38,7 +38,7 @@ const BeneficiaryForm: FC<FormProps> = ({ formik }) => {
                     />
                     <ErrorMessage name="benefited_sector" />
                 </div>
-                <div className="form-group col-6">
+                <div className="form-group col-12 col-lg-6">
                     <label htmlFor="location_id" className="form-label">
                         Comuna Y Barrio<span className="text-danger">*</span>
                     </label>

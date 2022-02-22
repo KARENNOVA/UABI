@@ -26,6 +26,7 @@ const EditPolicy = () => {
     useEffect(() => {
         dispatch(actions.get_list_companies());
         dispatch(actions.get_all_brokers());
+        dispatch(actions.clearPolicy())
         dispatch(actions.getPolicy(id));
         dispatch(actions.realEstatesPolicy(Number(id)));
         // dispatch(actions.getRealEstateEdit("12"));K
@@ -36,7 +37,6 @@ const EditPolicy = () => {
     useEffect(() => {
         if(realEstatesPolicy.length > 0) {
             const id_bis = realEstatesPolicy.map(r => r.id).join(",");
-            console.log(id_bis)
             realEstatesWithoutPolicy(id_bis);
         }
     }, [realEstatesPolicy]);

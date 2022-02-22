@@ -26,7 +26,7 @@ const RoleViewForm: FC<IUserFormPros> = ({ role }) => {
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12">
                                 <label htmlFor="">Rol</label>
-                                <div className="my-3">{role.name}</div>
+                                <div className="my-3">{role?.name}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>

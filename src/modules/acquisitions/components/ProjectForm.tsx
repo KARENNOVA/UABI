@@ -43,6 +43,8 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
         cost_center_id: "",
         budget_value: '',
         contracts: [],
+        management_center: "",
+        cost_center: "",
         ...project,
     };
 
@@ -157,7 +159,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className={`col-12 col-md-6 col-lg-${project ? 3 : 4}`}>
                                     <label htmlFor="dependency_id" className="form-label">
-                                        Dependecia
+                                        Dependecia o Secretaría
                                     </label>
                                     <Field
                                         component={Select}
@@ -191,7 +193,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className={`col-12 col-md-6 col-lg-${project ? 3 : 4}`}>
                                     <label htmlFor="subdependency_id" className="form-label">
-                                        Subdependencia Dependecia
+                                        Subsecretaría o Subdirección
                                     </label>
                                     <Field
                                         component={Select}
@@ -360,7 +362,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                         >
                             {values.contracts?.length > 0 &&
                                 values.contracts?.map((contract, i) => (
-                                    <div className="row">
+                                    <div className="row" key={i}>
                                         <div className="col-12 col-lg-3">
                                             <label htmlFor="contract_number_id" className="form-label">
                                                 Numero de Contrato

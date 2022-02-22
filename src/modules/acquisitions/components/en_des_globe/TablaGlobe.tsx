@@ -36,7 +36,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
     }, []);
 
     // let newrealEstates = [];
-    console.log(realEstates);
+    // console.log(realEstates)
     // const codes = realEstates.map(realEstate => realEstate.sap_id.split(",")).map(codigo => codigo?.filter(cod => cod.charAt(cod.length - 1) !== 'J'))
     //console.log('bienes',realEstates)
     // newrealEstates = realEstates.reduce((valor_anterior, valor_actual) => {
@@ -51,43 +51,57 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
     //     }
     //     return valor_anterior;
     // }, []);
-
+    console.log()
     useEffect(() => {
         // const dataTable = [];
         const dataTable = realEstates.map((realEstate) => {
-            const object = {
-                key: realEstate.active_code,
-                name: realEstate.name,
-                total_area: realEstate.construction_area ? realEstate.construction_area : realEstate.plot_area,
-                intact_area: realEstate.construction_area ? realEstate.construction_area : realEstate.plot_area,
-                use_area: 0,
-                type: realEstate.construction_area ? 'constrution' : 'lote',
-                id: realEstate.id,
-            };
-            return object;
-            // if (realEstate?.active_code?.charAt(realEstate?.active_code?.length - 1) === 'J') {
-            //     dataTable.push({
-            //         key: realEstate.active_code,
-            //         name: realEstate.name,
-            //         total_area: realEstate.construction_area,
-            //         intact_area: realEstate.construction_area,
-            //         use_area: 0,
-            //         type: 'constrution',
-            //         id: realEstate.id,
-            //     });
-
-            // } else {
-            //     dataTable.push({
-            //         key: realEstate.active_code,
-            //         name: realEstate.name,
-            //         total_area: realEstate.plot_area,
-            //         intact_area: realEstate.plot_area,
-            //         use_area: 0,
-            //         type: 'lote',
-            //         id: realEstate.id,
-            //     });
+            // const object = {
+            //     key: realEstate.active_code,
+            //     name: realEstate.name,
+            //     total_area: realEstate.construction_area ? realEstate.construction_area : realEstate.plot_area,
+            //     intact_area: realEstate.construction_area ? realEstate.construction_area : realEstate.plot_area,
+            //     use_area: 0,
+            //     type: realEstate.construction_area ?  'constrution' : 'lote',
+            //     id: realEstate.id,
             // }
+            // return object;
+
+            if (realEstate?.active_code?.charAt(realEstate?.active_code?.length - 1) === 'J') {
+                return {
+                    key: realEstate.active_code,
+                    name: realEstate.name,
+                    total_area: realEstate.construction_area,
+                    intact_area: realEstate.construction_area,
+                    use_area: 0,
+                    type: 'constrution',
+                    id: realEstate.id,
+                };
+
+            } else if (realEstate?.active_code?.charAt(realEstate?.active_code?.length - 1) === 'L') {
+                return{
+                    key: realEstate.active_code,
+                    name: realEstate.name,
+                    total_area: realEstate.plot_area,
+                    intact_area: realEstate.plot_area,
+                    use_area: 0,
+                    type: 'lote',
+                    id: realEstate.id,
+                };
+            } else {
+                return{
+                    key: realEstate.active_code,
+                    name: realEstate.name,
+                    total_area: realEstate.construction_area ? realEstate.construction_area : 0,
+                    intact_area: realEstate.construction_area ? realEstate.construction_area : 0,
+                    use_area: 0,
+                    type: 'constrution',
+                    id: realEstate.id,
+                };
+            }
+
         });
+        console.log(dataTable)
+
         setData(dataTable);
     }, []);
 
@@ -163,8 +177,8 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
     const rowSelection = {
         onChange: (selectedRowKeys: [], selectedRows: any[]) => {
             const idRealEstaesSelect = selectedRows.reduce((valor_anterior, valor_actual) => {
-                if (!valor_anterior.includes(valor_actual.id)) {
-                    valor_anterior.push(valor_actual.id);
+                if (!valor_anterior.includes(valor_actual.key)) {
+                    valor_anterior.push(valor_actual.key);
                 }
                 return valor_anterior;
             }, []);
@@ -285,7 +299,6 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
             <button
                 className="btn btn-primary"
                 onClick={(e) => {
-                    //console.log(data)
                     const dataSelect = data.filter((a) => selectRowKeys.includes(a.key));
                     let areaSelect = dataSelect.every((b) => b.use_area > 0);
                     //console.log(selectRealEsates)
@@ -329,6 +342,10 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                                     });
                                 }
                             } else {
+                                swal_warning.fire({
+                                    title: `No se puede desnglobar`,
+                                    text: `El número de Bienes Inmuebles a ${action} debe ser mayor a los seleccionados `,
+                                });
                                 console.log('no valido');
                             }
                             break;

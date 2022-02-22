@@ -63,6 +63,15 @@ export const PassChangeForm: FC<OwnProps> = ({ change_password, onOk, children, 
                         {!sent_success && (
                             <Fragment>
                                 <div className="text-left">
+                                    <div className="form-group  mt-4 text-left">
+                                        <label>Contraseña anterior</label>
+                                        <Field type="password" className="form-control" name="lastPassword" />
+                                        <ErrorMessage
+                                            name="lastPassword"
+                                            component="span"
+                                            className="text-danger text-left d-block w-100 mt-1"
+                                        />
+                                    </div>
                                     <div className="form-group mt-4 text-left">
                                         <label>Contraseña</label>
                                         <Field type="password" className="form-control" name="password" />

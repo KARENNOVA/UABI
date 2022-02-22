@@ -28,111 +28,111 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Proyecto al que pertenece</label>
-                                <div className="my-3">{realEstate?.project?.name}</div>
+                                <div className="my-3">{realEstate?.project?.name || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Tipologia</label>
-                                <div className="my-3">{tipology?.tipology}</div>
+                                <div className="my-3">{tipology?.tipology || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Cuenta Contable</label>
-                                <div className="my-3">{tipology?.accounting_account}</div>
+                                <div className="my-3">{tipology?.accounting_account || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Dependencia</label>
-                                <div className="my-3">{realEstate?.dependency?.dependency}</div>
+                                <div className="my-3">{realEstate?.dependency?.dependency || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Subdependencia</label>
-                                <div className="my-3">{realEstate?.cost_center?.subdependency}</div>
+                                <div className="my-3">{realEstate?.cost_center?.subdependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Centro Gestor</label>
-                                <div className="my-3">{realEstate?.dependency?.management_center}</div>
+                                <div className="my-3">{realEstate?.dependency?.management_center || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Centro de costos</label>
-                                <div className="my-3">{realEstate?.cost_center?.cost_center}</div>
+                                <div className="my-3">{realEstate?.cost_center?.cost_center || "-"}</div>
                             </div>
 
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Nombre del Bien Inmueble</label>
-                                <div className="my-3">{realEstate?.name}</div>
+                                <div className="my-3">{realEstate?.name || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Número de Matrícula</label>
-                                <div className="my-3">{realEstate?.registry_number}</div>
+                                <div className="my-3">{realEstate?.registry_number || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Código Activo</label>
-                                <div className="my-3">{realEstate?.active_code}</div>
+                                <div className="my-3">{realEstate?.active_code || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Tipo de Uso</label>
-                                <div className="my-3">{realEstate?.destination_type}</div>
+                                <div className="my-3">{realEstate?.destination_type|| "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Valor patrimonial</label>
-                                <div className="my-3">{realEstate?.patrimonial_value}</div>
+                                <div className="my-3">{realEstate?.patrimonial_value || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Área Total</label>
-                                <div className="my-3">{realEstate?.total_area}</div>
+                                <div className="my-3">{realEstate?.total_area || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Valor de reconstruccón</label>
-                                <div className="my-3">{realEstate?.reconstruction_value}</div>
+                                <div className="my-3">{realEstate?.reconstruction_value || "-"}</div>
                             </div>
 
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Materiales de construcción</label>
-                                <div className="my-3">{Array.isArray(realEstate?.materials) && realEstate?.materials?.map(m => m)?.join(", ")}</div>
+                                <div className="my-3">{(Array.isArray(realEstate?.materials) && realEstate?.materials?.map(m => m)?.join(", ")) || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Porcentaje Total</label>
-                                <div className="my-3">{realEstate?.total_percentage}</div>
+                                <div className="my-3">{realEstate?.total_percentage || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Zona del Bien Inmueble</label>
-                                <div className="my-3">{realEstate?.zone}</div>
+                                <div className="my-3">{realEstate?.zone || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Tipo de activo</label>
-                                <div className="my-3">{Array.isArray(realEstate?.active_type) && realEstate?.active_type?.map(active => active)?.join(", ")}</div>
+                                <div className="my-3">{(Array.isArray(realEstate?.active_type) && realEstate?.active_type?.map(active => active)?.join(", ")) || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Área Lote</label>
-                                <div className="my-3">{realEstate?.plot_area}</div>
+                                <div className="my-3">{realEstate?.plot_area || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Área Construcción</label>
-                                <div className="my-3">{realEstate?.construction_area}</div>
+                                <div className="my-3">{realEstate?.construction_area || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">CBML</label>
-                                <div className="my-3">{realEstate?.address?.cbmls?.uabi}</div>
+                                <div className="my-3">{realEstate?.address?.cbmls?.uabi || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Dirección</label>
-                                <div className="my-3">{realEstate?.address?.address}</div>
+                                <div className="my-3">{realEstate?.address?.address || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Creado por</label>
-                                <div className="my-3">{realEstate?.audit_trail?.created_by}</div>
+                                <div className="my-3">{realEstate?.audit_trail?.created_by || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="">Fecha creación</label>
-                                <div className="my-3">{newDate}</div>
+                                <div className="my-3">{newDate || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
@@ -178,48 +178,48 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Importe Contabilidad</label>
-                                        <div className="my-3">{realEstate?.accounting_amount}</div>
+                                        <div className="my-3">{realEstate?.accounting_amount || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Periodo contable</label>
-                                        <div className="my-3">{extractMonth(realEstate?.audit_trail?.created_on)}</div>
+                                        <div className="my-3">{extractMonth(realEstate?.audit_trail?.created_on) || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Contrapartida</label>
-                                        <div className="my-3">{realEstate?.counterpart}</div>
+                                        <div className="my-3">{realEstate?.counterpart || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Asignaciones</label>
-                                        <div className="my-3">{realEstate?.assignments}</div>
+                                        <div className="my-3">{realEstate?.assignments || "-"}</div>
                                     </div>
                                 </div>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Valor Aprovechamiento</label>
-                                        <div className="my-3">{realEstate?.exploitation_value}</div>
+                                        <div className="my-3">{realEstate?.exploitation_value || "-"}</div>
                                     </div>
 
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Valor de Autorización</label>
-                                        <div className="my-3">{realEstate?.authorization_value}</div>
+                                        <div className="my-3">{realEstate?.authorization_value || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Valor del Canon</label>
-                                        <div className="my-3">{realEstate?.canyon_value}</div>
+                                        <div className="my-3">{realEstate?.canyon_value || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="">Vida util años</label>
-                                        <div className="my-3">{realEstate?.years_useful_life}</div>
+                                        <div className="my-3">{realEstate?.years_useful_life || "-"}</div>
                                     </div>
                                 </div>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
-                                    <div className="col-6">
+                                    <div className="col-12 col-lg-6 col-md-6">
                                         <label htmlFor="">Vida util Períodos</label>
-                                        <div className="my-3">{realEstate?.useful_life_periods}</div>
+                                        <div className="my-3">{realEstate?.useful_life_periods || "-"}</div>
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-12 col-lg-6 col-md-6">
                                         <label htmlFor="">Tipo Disposición</label>
-                                        <div className="my-3">{realEstate?.disposition_type}</div>
+                                        <div className="my-3">{realEstate?.disposition_type || "-"}</div>
                                     </div>
                                 </div>
                             </>

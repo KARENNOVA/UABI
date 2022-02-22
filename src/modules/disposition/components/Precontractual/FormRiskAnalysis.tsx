@@ -15,7 +15,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
             <hr />
             <div className="row">
                 {/* <div className="col-2 text-center" style={{marginTop: 30, fontSize: '14px', fontWeight: 'bold'}}>Riesgo regulatorio</div> */}
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="regulatory_risk.degree_occurrence" className="form-label">
                         Grado de Ocurrencia
                     </label>
@@ -47,7 +47,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                     </Field>
                     <ErrorMessage name="regulatory_degree_occurrence" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="regulatory_risk.impact_degree" className="form-label">
                         Grado de Impacto
                     </label>
@@ -79,7 +79,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                     </Field>
                     <ErrorMessage name="regulatory_risk.impact_degree" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-12">
                     <label htmlFor="regulatory_risk.responsible" className="form-label">
                         Responsable
                     </label>
@@ -125,7 +125,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
             </div>
             <hr />
             <div className="row">
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="operational_risk.degree_occurrence" className="form-label">
                         Grado de Ocurrencia
                     </label>
@@ -157,7 +157,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                     </Field>
                     <ErrorMessage name="operational_risk.degree_occurrence" />
                 </div>
-                <div className="col-3">
+                <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="operational_risk.impact_degree" className="form-label">
                         Grado de Impacto
                     </label>
@@ -189,7 +189,7 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                     </Field>
                     <ErrorMessage name="operational_risk.impact_degree" />
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 col-md-12">
                     <label htmlFor="operational_risk.responsible" className="form-label">
                         Responsable
                     </label>

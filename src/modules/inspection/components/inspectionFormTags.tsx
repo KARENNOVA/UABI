@@ -174,7 +174,6 @@ const useInit = (
         {
             ref: useRef<FormikProps<FormikValues>>(),
             save: async () => {
-                console.log(1);
                 set_is_saving(true);
                 await steps[0].ref.current?.submitForm();
             },
@@ -282,7 +281,6 @@ const useInit = (
                 await steps[5].ref.current?.submitForm();
             },
             onSave: async (values) => {
-                console.log(values);
                 const new_data = {
                     ...new_inspection,
                     basic_information: {

@@ -64,7 +64,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
 
     const initialValues = {
         registry_numbers: realEstatesPolicy ? realEstatesPolicy.map((r) => `${r.registry_number} - ${r.name}`) : [],
-        //policy_number: "",
+        policy_number: "",
         policy_type: '',
         vigency_start: '',
         vigency_end: '',
@@ -115,10 +115,10 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
 
             })
         ),
-        // policy_number: Yup.number()
-        //     .required('Campo obligatorio')
-        //     .min(0, 'El minimo es 0')
-        //     .max(9999999999, 'El maximo 10 es caracteres'),
+        policy_number: Yup.number()
+            .required('Campo obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(9999999999, 'El maximo 10 es caracteres'),
 
         // .test({
         //     message: 'Revise los porcentajes',
@@ -136,7 +136,6 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
     });
 
     const submit = (values, actions) => {
-        //console.log(values);
         const newDate = moment(values.vigency_start).format('YYYY/MM/DD');
         const newDate2 = moment(values.vigency_end).format('YYYY/MM/DD');
         const finalValues = {
@@ -144,9 +143,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
             vigency_start: new Date(newDate).getTime(),
             vigency_end: new Date(newDate2).getTime(),
         };
-        if (finalValues.vigency_start < finalValues.vigency_end) {
-            console.log('si es menor');
-        }
+
         let total = 0;
         Array.isArray(values.insurance_companies) &&
             finalValues.insurance_companies.map((valor) => (total = total + valor.percentage_insured));
@@ -184,7 +181,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                     <Form>
                         <div className="row">
                             {type !== 'view' && (
-                                <div className="form-group col-6">
+                                <div className="form-group col-12 col-lg-6 col-md-6">
                                     <label htmlFor="real_estates_id_id" className="form-label">
                                         Matrícula
                                     </label>
@@ -223,7 +220,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                     <ErrorMessage name="real_estates_id" />
                                 </div>
                             )}
-                            <div className={`col-${type === 'view' ? 3 : 6}`}>
+                            <div className={`col-12 col-md-6 col-lg-${type === 'view' ? 3 : 6}`}>
                                 <label htmlFor="policy_type" className="form-label">
                                     Tipo de Póliza
                                 </label>
@@ -257,7 +254,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                     <div className="row"></div>
                                 </>
                             )} */}
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                                 <label htmlFor="policy_number_id" className="form-label mt-3 mt-lg-0">
                                     Número de Póliza
                                 </label>
@@ -271,7 +268,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                 />
                                 <ErrorMessage name="policy_number" />
                             </div>
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="vigency_start" className="form-label mt-3 mt-lg-0">
                                     Fecha de Inicio
                                 </label>
@@ -286,7 +283,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                 <ErrorMessage name="vigency_start" />
                             </div>
 
-                            <div className="col-3">
+                            <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="vigency_end" className="form-label mt-3 mt-lg-0">
                                     Fecha Final
                                 </label>
@@ -302,7 +299,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                 />
                                 <ErrorMessage name="vigency_end" />
                             </div>
-                            <div className={`col-${type === 'view' ? 3 : 6}`}>
+                            <div className={`col-12 col-md-6 col-lg-${type === 'view' ? 3 : 6}`}>
                                 <label htmlFor="insurance_broker_id_id" className="form-label">
                                     Corredor de Seguros
                                 </label>
@@ -328,7 +325,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                 </span>
                             </div>
                             {type !== 'view' && (
-                                <div className="col-6">
+                                <div className="col-12 col-lg-6 col-md-6">
                                     <label htmlFor="form-select" className="form-label">
                                         Adjuntar Póliza
                                     </label>
@@ -349,7 +346,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                         </div>
 
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6 col-md-6">
                                 <label htmlFor="rebuild_value" className="form-label">
                                     Valor de la Póliza
                                 </label>
@@ -375,7 +372,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                 </div>
                             </div>
                             {type !== 'view' && (
-                                <div className="form-group col-6">
+                                <div className="form-group col-12 col-lg-6 col-md-6">
                                     <label htmlFor="zone_id" className="form-label">
                                         Tipo de aseguramiento
                                         <Tooltip title="Lorem impsu texto descriptivo">
@@ -452,7 +449,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             )}
                             {/* {Array.isArray(values.insurance_companies)  && console.log(values.insurance_companies?.map( company => company.join(", ")))} */}
                             {type === 'view' && (
-                                <div className={`form-inline col-6`}>
+                                <div className={`form-inline col-12 col-md-6 col-lg-6`}>
                                     <label htmlFor="companies" className="form-label">
                                         Compañías Aseguradoras
                                     </label>
@@ -476,7 +473,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                     values.insurance_companies?.map((item, i) => {
                                         return (
                                             <div className="row form-group" key={i}>
-                                                <div className={`form-inline col-6`}>
+                                                <div className={`form-inline col-12 col-lg-6 col-md-6`}>
                                                     <label htmlFor={`id_${i}`} className="form-label">
                                                         Compañía Aseguradora
                                                     </label>
@@ -510,7 +507,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                                     <ErrorMessage name={`insurance_companies[${i}].id`} />
                                                 </div>
 
-                                                <div className="col-5 form-inline">
+                                                <div className="col-11 col-lg-5 col-md-5 form-inline">
                                                     <label htmlFor={`percentage_insured_${i}`} className="form-label">
                                                         Porcentaje de Aseguramiento
                                                     </label>

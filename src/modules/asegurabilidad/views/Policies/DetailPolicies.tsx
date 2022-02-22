@@ -18,6 +18,7 @@ const DetailInsurability = () => {
     const realEstatesPolicy: any = useSelector((store: any) => store.insurability.policiesRealEstate.value);
 
     useEffect(() => {
+        dispatch(actions.clearPolicy())
         dispatch(actions.realEstatesPolicy(Number(id)));
     }, [dispatch, id]);
 

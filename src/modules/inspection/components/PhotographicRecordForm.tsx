@@ -34,7 +34,7 @@ const PhotographicRecordForm: FC<PhotographicRecordFormProps> = ({ records,  pho
                         <Form>
                             <Card title="Fotografias Generales">
                                 <div className="row">
-                                    <div className="col-6">
+                                    <div className="col-12 col-lg-6 col-md-6">
                                         <label htmlFor="form-select" className="form-label">
                                             Fachada
                                         </label>
@@ -46,7 +46,7 @@ const PhotographicRecordForm: FC<PhotographicRecordFormProps> = ({ records,  pho
                                         />
                                         <ErrorMessage name="documento1" />
                                     </div>
-                                    <div className="col-6">
+                                    <div className="col-12 col-lg-6 col-md-6">
                                         <label htmlFor="form-select" className="form-label">
                                             Generales
                                         </label>

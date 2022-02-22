@@ -23,6 +23,7 @@ const DetailUser = () => {
         store.users.user.value?.permits,
     ]);
     useEffect(() => {
+        dispatch(actions.clear_user())
         dispatch(actions.get_user_by_id(parseInt(id)));
     }, [dispatch, id]);
 

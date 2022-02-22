@@ -16,11 +16,10 @@ export const createPolicy = async (
     id?: number
 ): Promise<IPolicyAttributes | string> => {
     try {
-        console.log('service', data);
         let URI = `/insurabilities`;
         const doc: any = await compute_doc_policy(data.insurance_document);
         const create_doc: any = await create_document(doc, null);
-        console.log('doc', create_doc);
+
         delete data.insurance_document;
         delete data.registry_numbers;
         const dataFinal = {
@@ -36,7 +35,6 @@ export const createPolicy = async (
         return res.data.results;
     } catch (error) {
         console.error(error);
-        console.log('error');
         //await swal.fire('Error', '', 'error');
 
         return Promise.reject('Error');
@@ -69,11 +67,9 @@ export const getPolicy = async (
         let res: AxiosResponse<IPolicyResponse> = await http.get(URI, {
             params: { id },
         });
-        //console.log(res.data.results);
         res.data.results.insurance_document = await getDocument(
             res.data.results.insurance_document_id
         );
-        //console.log(res.data.results);
 
         return res.data.results;
     } catch (error) {
@@ -101,7 +97,6 @@ export const getRealEstateEdit = async (
         let res: AxiosResponse = await http.get(URI, {
             params: { id },
         });
-        console.log(res.data.results)
         return res.data.results;
     } catch (error) {
         console.error(error);
@@ -113,7 +108,6 @@ export const getRealEstatesWithoutPolicy = async (
     without: string,
     id_bis: []
 ): Promise<IRealEstateAttributes | string> => {
-    console.log('ids del bi',id_bis)
 
     const key = "registry_number";
     try {
@@ -131,7 +125,7 @@ export const getRealEstatesWithoutPolicy = async (
 // Services: PUT
 export const updatePolicy = async (data: any, id: number) => {
     try {
-        console.log('servicio', data);
+
         // Crea un documento nuevo si se cambio el documento
         let new_doc: any = { id: '' };
         if (
@@ -164,7 +158,6 @@ export const updatePolicy = async (data: any, id: number) => {
         delete finalData.registry_numbers;
         delete finalData.audit_trail;
         delete finalData.status;
-        console.log('servicio final', finalData);
 
         let URI = `/insurabilities`;
         let res: AxiosResponse<IPolicyResponse> = await http.put(

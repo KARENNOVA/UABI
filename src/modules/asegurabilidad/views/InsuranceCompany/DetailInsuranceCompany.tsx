@@ -18,8 +18,9 @@ const DetailInsuranceCompany = () => {
     const insurance_company: any = useSelector((store: any) => store.insurability.company.value);
 
     useEffect(() => {
+        dispatch(actions.clear_company())
         dispatch(actions.get_company_by_id(id));
-    }, []);
+    }, [dispatch, id]);
 
     useEffect(() => {
         (async () => {

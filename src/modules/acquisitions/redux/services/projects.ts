@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { http } from '../../../../config/axios_instances';
-import { swal, swal_success, swal_warning } from '../../../../utils';
+import { swal_success, swal_warning } from '../../../../utils';
 
 import {
     IProjectAttributes,
@@ -135,7 +135,6 @@ export const updateProject = async (data: any, id: number) => {
     data.contracts = contratos
     data.cost_center_id = Number(data.cost_center_id)
 
-    console.log(data)
 
 
 

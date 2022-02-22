@@ -119,7 +119,6 @@ const DocumentsModal: FC<LocationModalProps> = ({
                     innerRef={form_ref}
                     file_type={file_type}
                     onSubmit={(values) => {
-                        console.log(values);
                         const data = {
                             label: doc?.label || '',
                             type: doc?.type || -1,

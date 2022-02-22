@@ -90,7 +90,7 @@ export const FormTypeDisposition: FC<DispositionFormPros> = ({ realEstate, onTyp
         <Formik enableReinitialize onSubmit={submit} initialValues={initialValues} validationSchema={schema}>
             <Form>
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-12 col-lg-3 col-md-6">
                         <label htmlFor="destination_type_id" className="form-label">
                             Tipo de Uso
                         </label>
@@ -102,7 +102,7 @@ export const FormTypeDisposition: FC<DispositionFormPros> = ({ realEstate, onTyp
                         disabled
                         />
                     </div>
-                    <div className="col-3">
+                    <div className="col-12 col-lg-3 col-md-6">
                         <label htmlFor="disposition_type_id" className="form-label">
                             Tipo de Activo
                         </label>
@@ -114,7 +114,7 @@ export const FormTypeDisposition: FC<DispositionFormPros> = ({ realEstate, onTyp
                             disabled
                         />
                     </div>
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6 col-md-12">
                         <label htmlFor="availability_id" className="form-label">
                             Tipo disposición
                         </label>
