@@ -320,6 +320,14 @@ export const PersonalInformationForm = ({
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="names.firstName" />
                                     </div>
@@ -336,6 +344,14 @@ export const PersonalInformationForm = ({
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="names.lastName" />
                                     </div>
@@ -352,6 +368,14 @@ export const PersonalInformationForm = ({
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="surnames.firstSurname" />
                                     </div>
@@ -368,6 +392,14 @@ export const PersonalInformationForm = ({
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="surnames.lastSurname" />
                                     </div>

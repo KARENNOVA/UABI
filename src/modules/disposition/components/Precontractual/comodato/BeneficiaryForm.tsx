@@ -20,6 +20,14 @@ const BeneficiaryForm: FC<FormProps> = ({ formik }) => {
                         name="population"
                         aria-describedby="emailHelp"
                         autoComplete="off"
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="population" />
                 </div>
@@ -35,6 +43,14 @@ const BeneficiaryForm: FC<FormProps> = ({ formik }) => {
                         aria-describedby="emailHelp"
                         placeholder=""
                         autoComplete="off"
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="benefited_sector" />
                 </div>

@@ -4,7 +4,6 @@ import { Card } from '../../../utils/ui';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import { PDFViewer } from '@react-pdf/renderer';
 import InpectionDoc from './InpectionDoc';
-import { AnySchema } from 'yup';
 import { TemplateContext } from '../../../utils/components/template/template_context';
 
 interface ReportProps {
@@ -68,6 +67,14 @@ const Report: FC<ReportProps> = ({ disabled, obs, innerRef, onSubmit, data, real
                                                     disabled={disabled}
                                                     autoComplete="off"
                                                     maxLength={250}
+                                                    onChange={(e) => {
+                                                        e.preventDefault();
+                                                        const { value } = e.target;
+                                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                                        if (regex.test(value.toString())) {
+                                                            formik.handleChange(e);
+                                                        }
+                                                    }}
                                                 />
                                                 <ErrorMessage name="special_actions" withCount max={250} />
                                             </div>

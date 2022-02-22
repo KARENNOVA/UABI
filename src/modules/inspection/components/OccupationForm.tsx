@@ -37,7 +37,7 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
     };
     return (
         <Formik enableReinitialize onSubmit={submit} initialValues={initialValues} innerRef={innerRef}>
-            {() => {
+            {({handleChange}) => {
                 return (
                     <Form>
                         <div className="row">
@@ -74,6 +74,14 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                                     disabled={disabled}
                                     autoComplete="off"
                                     maxLength={250}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name="now.tenure" withCount max={250} />
                             </div>
@@ -111,6 +119,14 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                                     disabled={disabled}
                                     autoComplete="off"
                                     maxLength={250}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name="now.use" withCount max={250} />
                             </div>
@@ -150,6 +166,14 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                                     disabled={disabled}
                                     autoComplete="off"
                                     maxLength={250}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name="now.ownership" withCount max={250} />
                             </div>
@@ -188,6 +212,14 @@ const OccupationForm: FC<OccupationFormPros> = ({ disabled, old, new_, innerRef,
                                     disabled={disabled}
                                     autoComplete="off"
                                     maxLength={250}
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                        if (regex.test(value.toString())) {
+                                            handleChange(e);
+                                        }
+                                    }}
                                 />
                                 <ErrorMessage name="now.contractual" withCount max={250} />
                             </div>

@@ -2,7 +2,6 @@ import { Field } from 'formik';
 import React, { FC } from 'react';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import DocumentModal from '../../../utils/components/DocumentsModal';
-import { IProperty } from '../custom_types';
 
 interface InspectionPhysicalFormProps {
     formik: any;
@@ -35,11 +34,19 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                             <label htmlFor="enclosure_id" className="form-label">
                                 {property.name}
                             </label>
+
                             <Field
                                 name={`properties[${i}].status_property`}
                                 id="enclosure_id"
                                 as="select"
                                 className="form-select"
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    if (e.target.value === "0") {
+                                        formik.setFieldValue(`properties[${i}].observation`, "");
+                                    }
+                                    formik.handleChange(e);
+                                }}
 
                             >
                                 <option value="" hidden>
@@ -82,7 +89,7 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                                 style={{ height: '20px' }}
                                 disabled
                             />
-                            <ErrorMessage/>
+                            <ErrorMessage />
                         </div>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="enclosure_obligations_id" className="form-label">
@@ -93,9 +100,18 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
                                 className="form-control"
                                 id="enclosure_obligations_id"
                                 name={`properties[${i}].observation`}
+                                disabled={(formik.values.properties[i].status_property === "0" || formik.values.properties[i].status_property === 0 ) ? true : false}
                                 autoComplete="off"
                                 maxLength={250}
                                 style={{ height: '20px' }}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    const { value } = e.target;
+                                    const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()"]*$/g);
+                                    if (regex.test(value.toString())) {
+                                        formik.handleChange(e);
+                                    }
+                                }}
                             />
                             <ErrorMessage name="enclosure_obligations" withCount max={250} />
                         </div>

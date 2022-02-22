@@ -6,7 +6,7 @@ interface FormProps {
     formik: any;
 }
 
-export const FormRiskAnalysis: FC<FormProps> = () => {
+export const FormRiskAnalysis: FC<FormProps> = ({formik}) => {
     return (
         <>
             <div className="div" style={{ fontWeight: 'bold', fontSize: '14px' }}>
@@ -116,6 +116,14 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                         placeholder=""
                         autoComplete="off"
                         maxLength={280}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="regulatory_risk.mitigation_mechanism" withCount max={280} />
                 </div>
@@ -227,6 +235,14 @@ export const FormRiskAnalysis: FC<FormProps> = () => {
                         placeholder=""
                         autoComplete="off"
                         maxLength={280}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="operational_risk.mitigation_mechanism" withCount max={280} />
                 </div>

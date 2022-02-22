@@ -9,7 +9,7 @@ import * as Yup from 'yup';
 import { FormRiskAnalysis } from '../FormRiskAnalysis';
 import moment from 'moment';
 import actions from './../../../redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { swal_success } from '../../../../../utils/index';
 
 interface FormPros {
@@ -77,7 +77,7 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
             ...precontractual,
             prediation_date: precontractual?.prediation_date ? moment(new Date(Number(precontractual?.prediation_date))).format('YYYY-MM-DD') : "",
             registration_date: precontractual?.registration_date ? moment(new Date(Number(precontractual?.registration_date))).format('YYYY-MM-DD') : moment(new Date()).format('YYYY-MM-DD'),
-            leader: {
+            leader: precontractual?.leader ? {
                 id: precontractual?.leader?.id || "",
                 documentType: precontractual?.leader?.document_type || "",
                 documentNumber: precontractual?.leader?.document_number || "",
@@ -90,8 +90,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 gender: precontractual?.leader?.gender || "",
                 post: precontractual?.leader?.post || "",
                 location_id: precontractual?.leader?.location_id || "",
-            },
-            elaborated: {
+            } : "",
+            elaborated: precontractual?.elaborated  ? {
                 id: precontractual?.elaborated?.id || "",
                 documentType: precontractual?.elaborated?.document_type || "",
                 documentNumber: precontractual?.elaborated?.document_number || "",
@@ -104,8 +104,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 gender: precontractual?.elaborated?.gender || "",
                 post: precontractual?.elaborated?.post || "",
                 location_id: precontractual?.elaborated?.location_id || "",
-            },
-            revised: {
+            } : "",
+            revised: precontractual?.revised ? {
                 id: precontractual?.revised?.id || "",
                 documentType: precontractual?.revised?.document_type || "",
                 documentNumber: precontractual?.revised?.document_number || "",
@@ -118,8 +118,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 gender: precontractual?.revised?.gender || "",
                 post: precontractual?.revised?.post || "",
                 location_id: precontractual?.revised?.location_id || "",
-            },
-            approved: {
+            } : "",
+            approved: precontractual?.approved ? {
                 id: precontractual?.approved?.id || "",
                 documentType: precontractual?.approved?.document_type || "",
                 documentNumber: precontractual?.approved?.document_number || "",
@@ -132,8 +132,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 gender: precontractual?.approved?.gender || "",
                 post: precontractual?.approved?.post || "",
                 location_id: precontractual?.approved?.location_id || "",
-            },
-            applicant: {
+            } : "",
+            applicant: precontractual?.applicant ? {
                 id: precontractual?.applicant?.id || "",
                 documentType: precontractual?.applicant?.document_type || "NIT",
                 documentNumber: precontractual?.applicant?.document_number || "",
@@ -147,6 +147,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 post: precontractual?.applicant?.post || "",
                 location_id: precontractual?.applicant?.location_id || "",
                 location: precontractual?.applicant?.location?.address || "",
+            } : {
+                documentType: "NIT",
             },
             representative: {
                 id: precontractual?.representative?.id || "",
@@ -180,18 +182,35 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
     };
 
     const schema = Yup.object().shape({
-        cadastral_value: Yup.string().required('obligatorio'),
-        prediation_number: Yup.number().required('obligatorio'),
+        cadastral_value: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(99999999999999999999, 'maximo 20 caracteres'),
+        prediation_number: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(99999999999999999999, 'maximo 20 caracteres'),
         prediation_date: Yup.string().required('obligatorio'),
         destination_realestate: Yup.string().required('obligatorio'),
-        contract_period: Yup.string().required('obligatorio'),
-        contract_value: Yup.string().required('obligatorio'),
+        contract_period: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(999, 'maximo 3 caracteres'),
+        contract_value: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(99999999999999999999, 'maximo 20 caracteres'),
         environmental_risk: Yup.string().required('obligatorio'),
         lockable_base: Yup.number().required('obligatorio').min(10, 'El minimo es 10').max(100, 'El maximo es 100'),
         business_type: Yup.string().required('obligatorio'),
         registration_date: Yup.string().required('obligatorio'),
         boundaries: Yup.string().required('obligatorio'),
+
         applicant: Yup.object().required('obligatorio'),
+        leader: Yup.object().required('obligatorio'),
+        elaborated: Yup.object().required('obligatorio'),
+        revised: Yup.object().required('obligatorio'),
+        approved: Yup.object().required('obligatorio'),
 
     });
     return (
