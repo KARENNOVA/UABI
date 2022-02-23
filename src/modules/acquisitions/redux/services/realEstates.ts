@@ -18,6 +18,7 @@ import {
     compute_docs,
     upload_documents,
 } from '../../views/RealEstate/realEstate.utils';
+import { Action } from '../../../users/redux/service';
 
 // REAL ESTATES
 // Services: GET
@@ -412,9 +413,9 @@ const getAddress = async (values) => {
     }
 };
 
-const deleteRealEstate = async (id) => {
+const deleteRealEstate = async (id, action: Action) => {
     try {
-        const URI = `/real-estates/inactivate`;
+        const URI = `/real-estates/change-status`;
         const body = {};
         const res: AxiosResponse<IRealEstateResponse> = await http.patch(
             URI,
@@ -422,6 +423,7 @@ const deleteRealEstate = async (id) => {
             {
                 params: {
                     id,
+                    action,
                 },
             }
         );

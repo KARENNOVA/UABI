@@ -28,7 +28,6 @@ const RealEstateList: FC<RealEstateListProps> = ({
     user,
     // change_page
 }) => {
-
     const dispatch = useDispatch();
     const [realEstates, loading, total_results] = useSelector((store: any) => [
         store.acquisitions.realEstates.value,
@@ -47,7 +46,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
         });
 
         if (result.isConfirmed) {
-            await dispatch(actions.deleteRealEstate(id));
+            await dispatch(actions.deleteRealEstate(id, status === 'Inactivo' ? 'activate' : 'inactivate'));
             await dispatch(actions.getRealEstates({ with: 'pagination', key: 'registry_number' }));
             // const _res: any = await dispatch(actions.deleteProject(id));
 
@@ -66,8 +65,8 @@ const RealEstateList: FC<RealEstateListProps> = ({
     const acciones = {
         title: 'Acciones',
         fixed: true,
-        children: []
-    }
+        children: [],
+    };
     const ver = {
         title: 'Ver',
         dataIndex: 'id',
@@ -75,18 +74,14 @@ const RealEstateList: FC<RealEstateListProps> = ({
         render: (id) => {
             return (
                 <Link
-                    to={
-                        register
-                            ? `/inventory-record/real-estates/${id}/`
-                            : `/acquisitions/real-estates/${id}/`
-                    }
+                    to={register ? `/inventory-record/real-estates/${id}/` : `/acquisitions/real-estates/${id}/`}
                     name=""
                     avatar={false}
                     icon={<i className="fa fa-eye" aria-hidden="true" />}
                 />
             );
         },
-    }
+    };
 
     const editar = {
         title: 'Editar',
@@ -106,7 +101,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
                 />
             );
         },
-    }
+    };
 
     const eliminar = {
         title: 'Desactivar',
@@ -115,17 +110,24 @@ const RealEstateList: FC<RealEstateListProps> = ({
         render: (id, row) => {
             return (
                 <div className="text-danger" onClick={deleteRealEstate(id, row.status)}>
-                    {row.status === "Activo" ?
-                        <i className="fa fa-toggle-on" aria-hidden="true" style={{ fontSize: "18px", color: '#1FAEEF' }} />
-                        :
-                        <i className="fa fa-toggle-off" aria-hidden="true" style={{ fontSize: "18px", color: '#1FAEEF' }} />
-
-                    }
+                    {row.status === 'Activo' ? (
+                        <i
+                            className="fa fa-toggle-on"
+                            aria-hidden="true"
+                            style={{ fontSize: '18px', color: '#1FAEEF' }}
+                        />
+                    ) : (
+                        <i
+                            className="fa fa-toggle-off"
+                            aria-hidden="true"
+                            style={{ fontSize: '18px', color: '#1FAEEF' }}
+                        />
+                    )}
                     {/* <i className="fa fa-times-circle" aria-hidden="true" /> */}
                 </div>
             );
         },
-    }
+    };
 
     const table_columns: any = [
         {
@@ -146,13 +148,13 @@ const RealEstateList: FC<RealEstateListProps> = ({
 
         ...(withProject
             ? [
-                {
-                    title: 'Proyecto Asociado',
-                    dataIndex: 'project',
-                    align: 'left' as 'left',
-                    render: (p) => `${p.id} - ${p?.name}` || '',
-                },
-            ]
+                  {
+                      title: 'Proyecto Asociado',
+                      dataIndex: 'project',
+                      align: 'left' as 'left',
+                      render: (p) => `${p.id} - ${p?.name}` || '',
+                  },
+              ]
             : []),
         {
             title: 'Fecha Creación',
@@ -177,20 +179,19 @@ const RealEstateList: FC<RealEstateListProps> = ({
                 return <Tag color="default">{s}</Tag>;
             },
         },
-
     ];
 
     if (guards.detailRealEstate({ user })) {
-        acciones.children.push(ver)
+        acciones.children.push(ver);
     }
     if (guards.editRealEstate({ user })) {
-        acciones.children.push(editar)
+        acciones.children.push(editar);
     }
     if (guards.deleteRealEstate({ user }) && !register) {
-        acciones.children.push(eliminar)
+        acciones.children.push(eliminar);
     }
     if (acciones.children.length > 0) {
-        table_columns.push(acciones)
+        table_columns.push(acciones);
     }
 
     // if(withProject && register){
@@ -229,13 +230,10 @@ const RealEstateList: FC<RealEstateListProps> = ({
     //     }
     // }
 
-
-
     const change_page = (page, pageSize) => {
         // console.log(filters)
         if (project_id) {
             dispatch(actions.getRealEstatesByProject(project_id, { page, pageSize, with: 'pagination', ...filters }));
-
         } else {
             dispatch(actions.getRealEstates({ page, pageSize, with: 'pagination', ...filters }));
         }
@@ -250,7 +248,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
             dispatch(actions.clearRealEstates());
             dispatch(actions.getRealEstatesByProject(project_id, {}));
         }
-    }, [project_id])
+    }, [project_id]);
 
     return (
         <Table
