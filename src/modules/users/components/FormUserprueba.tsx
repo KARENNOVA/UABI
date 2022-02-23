@@ -129,7 +129,7 @@ const FormUserprueba: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, inn
                             />
                         </Card>
                         <Card
-                            title="Asignar Permisos Al Usuario"
+                            title="Asignar Permisos A Usuario"
                         >
                             <DataformRole
                                 formik={formik}

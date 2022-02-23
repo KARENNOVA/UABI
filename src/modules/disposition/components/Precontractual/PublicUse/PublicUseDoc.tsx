@@ -37,7 +37,7 @@ const PublicUseDoc = () => {
                             history.push({ pathname: "/disposition/create/", state: { dispositionType, stage: "pre-contractual", realEstate, values } })
                         }}
                     >
-                        Atras
+                        Atrás
                     </button>
                     <div className="flex-fill" />
                     <PDFDownloadLink

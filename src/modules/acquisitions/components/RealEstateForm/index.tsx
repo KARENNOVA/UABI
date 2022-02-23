@@ -39,6 +39,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
 }) => {
     const dispatch = useDispatch();
     const history = useHistory<any>();
+
     const [tipologies, realEstate, projects] = useSelector((store: any) => [
         store.acquisitions.tipologies.value,
         store.acquisitions.realEstate.value,
@@ -69,11 +70,11 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         materials: [],
         supports_documents: [
             {
-                label: 'Documento de Matricula',
+                label: 'Documento de Matrícula',
                 type: 3,
             },
             {
-                label: 'Documento de Titulo',
+                label: 'Documento de Título',
                 type: 4,
             },
         ],
@@ -140,7 +141,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
             }),
     };
 
-    // console.log('inicial', initial_values)
+
 
     if (!Array.isArray(initial_values.materials) && typeof initial_values.materials === 'string') {
         initial_values.materials = initial_values.materials.split(',');
@@ -149,11 +150,11 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
     if (initial_values.supports_documents.length === 0) {
         initial_values.supports_documents = [
             {
-                label: 'Documento de Matricula',
+                label: 'Documento de Matrícula',
                 type: 3,
             },
             {
-                label: 'Documento de Titulo',
+                label: 'Documento de Título',
                 type: 4,
             },
         ];
@@ -207,6 +208,8 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
     if (!initial_values._address.cbml) {
         initial_values._address.cbml = '';
     }
+
+
 
     const schema = Yup.object().shape({
         destination_type: Yup.string().required('Campo obligatorio'),
@@ -291,7 +294,6 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
     });
 
     const submit = (aux_values, form) => {
-        console.log('entro al submit')
         const isFinish = aux_values._type === 'finish';
         const values: any = { ...aux_values };
         const project_id = values.projects_id;
@@ -354,10 +356,12 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         <Formik enableReinitialize onSubmit={submit} initialValues={initial_values} validationSchema={schema}>
             {(formik) => {
                 const { name, registry_number, projects_id } = formik.values;
+
                 const update_project = (id) => {
                     if (/*Number.isInteger(id)*/ typeof Number(id) === "number") {
                         formik.setFieldValue('_project', {}, false);
                         service.getProject(id + '').then((_project: any) => {
+
                             formik.setFieldValue('projects_id', `${_project.id}`, false);
                             formik.setFieldValue('dependency', _project.dependency, false);
                             formik.setFieldValue('subdependency', _project.subdependency, false);
@@ -376,15 +380,18 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                         });
                     }
                 };
-                if (formik.values._project === undefined) {
-                    if (history.location?.state && history.location?.state?.realEstateData?.project_id !== undefined) {
+
+
+                if (formik.values._project === undefined  ) {
+                    if (history.location?.state && history.location?.state?.project_id !== undefined) {
                         // console.log('ok',history.location.state)
-                        update_project(history.location.state.realEstateData.project_id);
+                        update_project(history.location?.state?.project_id);
                     } else {
                         // console.log('fail',projects_id)
                         update_project(Number(projects_id));
                     }
                 }
+
                 const TitleSpan = ({ name, registry_number }) => {
                     return (
                         <>
@@ -509,7 +516,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
 
                                     }}
                                 >
-                                    Atras
+                                    Atrás
                                 </button>
 
                                 <div className="flex-fill" />

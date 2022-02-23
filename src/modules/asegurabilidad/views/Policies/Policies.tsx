@@ -80,7 +80,7 @@ const Policies = () => {
             align: 'center' as 'center',
         },
         {
-            title: 'Compañias Aseguradoras',
+            title: 'Compañías Aseguradoras',
             dataIndex: 'insurance_companies',
             align: 'left' as 'left',
             responsive: ['md'],

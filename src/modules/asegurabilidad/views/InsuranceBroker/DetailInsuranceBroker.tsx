@@ -55,7 +55,7 @@ const DetailInsuranceBroker = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
             </div>

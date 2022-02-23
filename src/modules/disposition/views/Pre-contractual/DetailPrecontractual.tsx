@@ -98,7 +98,7 @@ const DetailPrecontractual = () => {
                         // history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
             </div>
         </div>

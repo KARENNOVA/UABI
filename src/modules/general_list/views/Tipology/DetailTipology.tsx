@@ -45,7 +45,7 @@ const DetailTipology = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
             </div>

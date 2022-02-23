@@ -49,7 +49,7 @@ const DetailNotification = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
             </div>
         </div>

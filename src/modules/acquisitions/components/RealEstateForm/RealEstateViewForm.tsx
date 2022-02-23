@@ -31,7 +31,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="my-3">{realEstate?.project?.name || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Tipologia</label>
+                                <label htmlFor="">Tipología</label>
                                 <div className="my-3">{tipology?.tipology || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -39,13 +39,13 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="my-3">{tipology?.accounting_account || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Dependencia</label>
+                                <label htmlFor="">Dependencia o Secretaría</label>
                                 <div className="my-3">{realEstate?.dependency?.dependency || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Subdependencia</label>
+                                <label htmlFor="">Subsecretaría o Subdirección</label>
                                 <div className="my-3">{realEstate?.cost_center?.subdependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -153,7 +153,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 </div>
                             }
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Fecha de Inspeccion</label>
+                                <label htmlFor="">Fecha de Inspección</label>
                                 <div className="my-3">
                                     <div className="row">
                                         <div className="col">
@@ -163,7 +163,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 </div>
                             </div>
                             <div className={`col-${inventory ? 3 : 6}`}>
-                                <label htmlFor="">fecha finalizacion contrato</label>
+                                <label htmlFor="">fecha finalización contrato</label>
                                 <div className="my-3">
                                     21/12/2021
                                     {/* <button type="button" className="btn btn-outline-primary  btn-sm">
@@ -181,7 +181,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                         <div className="my-3">{realEstate?.accounting_amount || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Periodo contable</label>
+                                        <label htmlFor="">Período contable</label>
                                         <div className="my-3">{extractMonth(realEstate?.audit_trail?.created_on) || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
@@ -208,13 +208,13 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                         <div className="my-3">{realEstate?.canyon_value || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Vida util años</label>
+                                        <label htmlFor="">Vida útil años</label>
                                         <div className="my-3">{realEstate?.years_useful_life || "-"}</div>
                                     </div>
                                 </div>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-lg-6 col-md-6">
-                                        <label htmlFor="">Vida util Períodos</label>
+                                        <label htmlFor="">Vida útil Períodos</label>
                                         <div className="my-3">{realEstate?.useful_life_periods || "-"}</div>
                                     </div>
                                     <div className="col-12 col-lg-6 col-md-6">

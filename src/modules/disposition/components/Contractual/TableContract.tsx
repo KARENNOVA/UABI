@@ -106,7 +106,7 @@ export const TableContract: FC<ContractProps> = ({ user, contrats }) => {
         //     align: 'left' as 'left',
         // },
         {
-            title: 'Numero de contrato',
+            title: 'Número de contrato',
             dataIndex: 'decree_number',
             align: 'center' as 'center',
         },

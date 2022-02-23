@@ -8,7 +8,6 @@ import { useSelector, useDispatch } from 'react-redux';
 // INTERFACES
 import { IProjectAttributes } from '../../../../utils/interfaces';
 import swal from 'sweetalert';
-import { Card } from '../../../../utils/ui';
 import ProjectForm from '../../components/ProjectForm';
 import {  useRef } from 'react';
 import { FormikProps, FormikValues } from 'formik';
@@ -80,7 +79,7 @@ const DetailProject: FC<IProps> = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <button

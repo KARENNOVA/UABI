@@ -64,7 +64,7 @@ const DetailContract = () => {
                         // history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
             </div>
         </div>

@@ -78,7 +78,7 @@ const CreatePrecontractual: FC<FormPros> = ({ dispositionType, realEstate, value
                         history.push({ pathname: `/disposition/edit/${realEstate.id}`, state: { dispositionType } })
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <button
