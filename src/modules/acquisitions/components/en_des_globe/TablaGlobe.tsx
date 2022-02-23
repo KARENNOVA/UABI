@@ -203,7 +203,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
             responsive: ['md'],
         },
         {
-            title: 'Area Total',
+            title: 'Área Total',
             dataIndex: 'total_area',
             align: 'center'
         },

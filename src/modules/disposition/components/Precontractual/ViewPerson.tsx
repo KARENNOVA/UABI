@@ -39,7 +39,7 @@ const ViewPerson: FC<FormPros> = ({ dispositionType, title, person }) => {
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             {person?.document_type !== "NIT" &&
                                 <div className="col-3">
-                                    <label htmlFor="">Genero</label>
+                                    <label htmlFor="">Género</label>
                                     <div className="my-3">{person?.gender === "F" ? "Femenino" : person?.gender === "M" ? "Masculino" : "otro"}</div>
                                 </div>
 

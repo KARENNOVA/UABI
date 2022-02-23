@@ -55,7 +55,7 @@ const CreateInsuranceCompany = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <button

@@ -99,7 +99,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/insurabilities/policy/',
-                              name: 'Polizas de Seguro',
+                              name: 'Pólizas de Seguro',
                           },
                       ]
                     : []),
@@ -107,7 +107,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/insurabilities/company/',
-                              name: 'Compañias Aseguradoras',
+                              name: 'Compañías Aseguradoras',
                           },
                       ]
                     : []),

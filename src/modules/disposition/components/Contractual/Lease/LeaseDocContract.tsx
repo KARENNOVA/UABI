@@ -122,7 +122,7 @@ const LeaseDocContract = () => {
                         history.push({ pathname: "/disposition/create/", state: { dispositionType, stage: "contractual", realEstate, values_contract } })
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <PDFDownloadLink

@@ -73,7 +73,7 @@ export const PassChangeForm: FC<OwnProps> = ({ change_password, onOk, children, 
                                         />
                                     </div>
                                     <div className="form-group mt-4 text-left">
-                                        <label>Contraseña</label>
+                                        <label>Contraseña nueva</label>
                                         <Field type="password" className="form-control" name="password" />
                                         <ErrorMessage
                                             name="password"
@@ -90,7 +90,7 @@ export const PassChangeForm: FC<OwnProps> = ({ change_password, onOk, children, 
                                         </span>
                                     </div>
                                     <div className="form-group  mt-4 text-left">
-                                        <label>Contraseña (repetir)</label>
+                                        <label>Contraseña nueva (repetir)</label>
                                         <Field type="password" className="form-control" name="re_password" />
                                         <ErrorMessage
                                             name="re_password"

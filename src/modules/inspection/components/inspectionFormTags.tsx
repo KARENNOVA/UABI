@@ -96,7 +96,7 @@ const InspectionFormTags: FC<InspectionFormTagsProps> = ({ inspection, real_esta
                 style={{ padding: 16, borderTop: '1px solid #ccc' }}
             >
                 <button type="button" className="btn btn-outline-primary" onClick={goBack}>
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 {show_next && (

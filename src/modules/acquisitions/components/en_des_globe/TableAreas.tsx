@@ -108,11 +108,11 @@ export const TableAreas = () => {
             materials: [],
             supports_documents: [
                 {
-                    label: 'Documento de Matricula',
+                    label: 'Documento de Matrícula',
                     type: 3,
                 },
                 {
-                    label: 'Documento de Titulo',
+                    label: 'Documento de Título',
                     type: 4,
                 },
             ],
@@ -238,7 +238,7 @@ export const TableAreas = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <button

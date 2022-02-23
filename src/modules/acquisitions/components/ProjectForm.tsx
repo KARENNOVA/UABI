@@ -159,7 +159,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className={`col-12 col-md-6 col-lg-${project ? 3 : 4}`}>
                                     <label htmlFor="dependency_id" className="form-label">
-                                        Dependecia o Secretaría
+                                        Dependencia o Secretaría
                                     </label>
                                     <Field
                                         component={Select}
@@ -264,7 +264,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                             className="form-control border-start-0 text-end"
                                             min={0}
                                             max={9999999999}
-                                            // onChange={number_validate(10)}
+                                        // onChange={number_validate(10)}
 
                                         />
                                     </div>
@@ -365,7 +365,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                     <div className="row" key={i}>
                                         <div className="col-12 col-lg-3">
                                             <label htmlFor="contract_number_id" className="form-label">
-                                                Numero de Contrato
+                                                Número de Contrato
                                             </label>
                                             <Field
                                                 type="number"

@@ -188,7 +188,7 @@ const InsuranceCompanies = () => {
             <div className="row justify-content-center">
                 <div className="col-md-12">
                     <Card
-                        title="Compañias Aseguradoras"
+                        title="Compañías Aseguradoras"
                         extra={<Link to="/insurabilities/company/create/" name="Crear" iconText="+" />}
                     >
                         <div className="row justify-content-between">

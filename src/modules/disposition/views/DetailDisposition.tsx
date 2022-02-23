@@ -81,7 +81,7 @@ export const DetailDisposition = () => {
                             history.goBack();
                         }}
                     >
-                        Atras
+                        Atrás
                     </button>
                 </div>
             </div>

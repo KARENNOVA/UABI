@@ -374,7 +374,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             {type !== 'view' && (
                                 <div className="form-group col-12 col-lg-6 col-md-6">
                                     <label htmlFor="zone_id" className="form-label">
-                                        Tipo de aseguramiento
+                                        Tipo de Aseguramiento
                                         <Tooltip title="Lorem impsu texto descriptivo">
                                             <i className="fa fa-info-circle text-muted ms-2" style={{ fontSize: 14 }} />
                                         </Tooltip>

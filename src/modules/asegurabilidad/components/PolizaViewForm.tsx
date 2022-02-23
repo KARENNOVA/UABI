@@ -60,12 +60,12 @@ export const PolizaViewForm: FC<IpolizaFormPros> = ({ policy_id }) => {
                                 <div className="my-3">{poliza?.insurance_value || "-"}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Tipo de aseguramiento</label>
+                                <label htmlFor="">Tipo de Aseguramiento</label>
                                 <div className="my-3">{poliza?.type_assurance || "-"}</div>
                             </div>
 
                             <div className="col-12 col-lg-6 col-md-6">
-                                <label htmlFor="">Compañias Aseguradoras</label>
+                                <label htmlFor="">Compañías Aseguradoras</label>
                                 <div className="my-3">{companies || "-"}</div>
                             </div>
                         </div>

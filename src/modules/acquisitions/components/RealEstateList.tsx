@@ -152,7 +152,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
                       title: 'Proyecto Asociado',
                       dataIndex: 'project',
                       align: 'left' as 'left',
-                      render: (p) => `${p.id} - ${p?.name}` || '',
+                      render: (p) => `${p?.id} - ${p?.name}` || '',
                   },
               ]
             : []),

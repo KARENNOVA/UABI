@@ -17,7 +17,7 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
             dataIndex: 'acquisition_type',
         },
         {
-            title: 'No Acto administrativo',
+            title: 'No. Acto administrativo',
             align: 'center' as 'center',
             dataIndex: 'act_number',
         },
@@ -49,7 +49,7 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
                       dataIndex: 'acquired_percentage',
                   },
                   {
-                      title: 'Area Total',
+                      title: 'Área Total',
                       align: 'center' as 'center',
                       dataIndex: 'area',
                   },

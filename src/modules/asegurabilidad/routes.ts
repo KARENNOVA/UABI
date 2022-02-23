@@ -187,7 +187,7 @@ const get_routes = (): IRoute[] => {
             can_access: guards.listInsuranceCompany,
             path: '/insurabilities/company/',
             template_props: {
-                breadcrumbs: [{ name: 'Compañias Aseguradoras' }],
+                breadcrumbs: [{ name: 'Compañías Aseguradoras' }],
             },
             component: InsuranceCompanies,
         },
@@ -199,7 +199,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     {
-                        name: 'Compañias Aseguradoras',
+                        name: 'Compañías Aseguradoras',
                         to: '/insurabilities/company/',
                     },
                     { name: 'Crear' },
@@ -217,7 +217,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     {
-                        name: 'Compañias Aseguradoras',
+                        name: 'Compañías Aseguradoras',
                         to: '/insurabilities/company/',
                     },
                     { name: 'Detalle' },
@@ -232,7 +232,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     {
-                        name: 'Compañias Aseguradoras',
+                        name: 'Compañías Aseguradoras',
                         to: '/insurabilities/company/',
                     },
                     { name: 'Editar' },

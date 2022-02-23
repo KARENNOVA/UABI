@@ -63,7 +63,7 @@ const CreateContract: FC<FormPros> = ({ dispositionType, realEstate, values_cont
                         //history.push({ pathname: `/disposition/edit/${realEstate.id}`, state: { dispositionType } })
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <button
