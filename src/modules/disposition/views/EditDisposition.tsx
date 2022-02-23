@@ -100,7 +100,7 @@ export const EditDisposition = () => {
                         history.push("/disposition/list/");
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 {dispositionType !== '' && (

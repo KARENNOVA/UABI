@@ -61,7 +61,7 @@ const DetailRoles = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
             </div>
         </div>

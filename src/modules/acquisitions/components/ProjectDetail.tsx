@@ -26,11 +26,11 @@ const ProjectDetail: FC<IUserFormPros> = ({ project }) => {
                                 <div className="my-3">{project?.name || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Dependecia</label>
+                                <label htmlFor="">Dependencia o Secretaría</label>
                                 <div className="my-3">{project?.dependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Sub. Dependecia</label>
+                                <label htmlFor="">Subsecretaría o Subdirección</label>
                                 <div className="my-3">{project?.subdependency || "-"}</div>
                             </div>
                         </div>

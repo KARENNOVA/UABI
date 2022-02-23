@@ -12,7 +12,7 @@ const RealEstate = () => {
     const history: any = useHistory();
     const dispatch = useDispatch();
     const dependencies: any = useSelector((states: any) => states.acquisitions.dependencies.value);
-    // console.log(history.location.state.project_id);
+
     useEffect(() => {
         dispatch(clearRealEstate());
         dispatch(actions.getDependencies());

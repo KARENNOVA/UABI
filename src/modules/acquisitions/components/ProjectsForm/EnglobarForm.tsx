@@ -515,7 +515,7 @@ const EnglobarForm: FC<GeneralDataFormProps> = ({
                 </div>
                 <div className="col-4">
                     <label htmlFor="periodo_contable_id" className="form-label">
-                        Periodo contable
+                        Período contable
                     </label>
                     <Field
                         type="text"

@@ -92,9 +92,9 @@ const get_docucments_whit_service = async (docs) => {
                 ...doc,
                 label:
                     doc.type === 3
-                        ? 'Documento de Matricula'
+                        ? 'Documento de Matrícula'
                         : doc.type === 4
-                        ? 'Documento de Titulo'
+                        ? 'Documento de Título'
                         : doc.type === 6
                         ? 'Documento Avalúo'
                         : doc.type === 7

@@ -51,7 +51,7 @@ const ComodatoDoc = () => {
                         history.push({ pathname: "/disposition/create/", state: { dispositionType, stage: "pre-contractual", realEstate, values, precontractual: values?.edit === true ? values : null } })
                     }}
                 >
-                    Atras
+                    Atrás
                 </button>
                 <div className="flex-fill" />
                 <PDFDownloadLink

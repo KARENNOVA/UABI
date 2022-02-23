@@ -86,7 +86,7 @@ const EditInsuranceCompany: FC<IProps> = () => {
                         history.goBack();
                     }}
                 >
-                    Atras
+                Atrás
                 </button>
                 <div className="flex-fill" />
                 <button

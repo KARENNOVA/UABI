@@ -57,7 +57,7 @@ const TipologyForm: FC<TipologyFormPros> = ({ tipology, onSubmit, disabled, inne
                             )}
                             <div className={`col-${tipology ? 4 : 6}`}>
                                 <label htmlFor="tipology_id" className="form-label">
-                                    Nombre de la Tipologia
+                                    Nombre de la Tipología
                                 </label>
                                 <Field
                                     type="text"

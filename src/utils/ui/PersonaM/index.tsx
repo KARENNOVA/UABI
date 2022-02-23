@@ -30,7 +30,7 @@ const PersonaModal: FC<PersonaModalProps> = ({
 }) => {
     const [is_visible, set_is_visible] = useState<boolean>(false);
     const form_ref = useRef<any>();
-    const title = modal_name ? modal_name : 'Datos basicos de la Persona ';
+    const title = modal_name ? modal_name : 'Datos básicos de la Persona ';
     const close = () => {
         set_is_visible(false);
     };
@@ -264,7 +264,7 @@ export const PersonalInformationForm = ({
                             {values.documentType !== 'NIT' && (
                                 <div className="col-12 col-6 col-lg-3">
                                     <label htmlFor="username" className="form-label">
-                                        Genero
+                                        Género
                                     </label>
                                     <Field
                                         as="select"
@@ -275,7 +275,7 @@ export const PersonalInformationForm = ({
                                         disabled={disabled}
                                     >
                                         <option value="" hidden>
-                                            --Genero--
+                                            --Género--
                                         </option>
                                         <option value="F">Femenino</option>
                                         <option value="M">Masculino</option>
@@ -340,7 +340,7 @@ export const PersonalInformationForm = ({
                                             className="form-control"
                                             id="second_name_id"
                                             name="names.lastName"
-                                            placeholder="Segundo nombre"
+                                            placeholder="Segundo Nombre"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -364,7 +364,7 @@ export const PersonalInformationForm = ({
                                             className="form-control"
                                             id="surname_id"
                                             name="surnames.firstSurname"
-                                            placeholder="Primer apellido"
+                                            placeholder="Primer Apellido"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -388,7 +388,7 @@ export const PersonalInformationForm = ({
                                             className="form-control"
                                             id="second_surname_id"
                                             name="surnames.lastSurname"
-                                            placeholder="Segundo apellido"
+                                            placeholder="Segundo Apellido"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}

@@ -6,6 +6,7 @@ import { ICountryAddressAttributes } from '../../interfaces';
 import Tooltip from 'antd/lib/tooltip';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import Select from '../../ui/select';
+import TooltipField from '../../ui/tooltip_field';
 
 interface LocationProps {
     modalClose?: (values, callback) => void;
@@ -276,15 +277,9 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                         </div>
                                         <div className="form-group col-12 col-md-6 col-lg-6">
                                             <label htmlFor="" className="form-label">
-                                                Manzana
-                                                <Tooltip title="Lorem impsu texto descriptivo">
-                                                    <i
-                                                        className="fa fa-info-circle text-muted ms-2 me-2"
-                                                        style={{ fontSize: 14 }}
-                                                    />
-                                                </Tooltip>
-                                                <span className="text-danger">*</span>
+                                                Manzana <span className="text-danger">*</span>
                                             </label>
+                                            <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
                                                 className="w-100 form-control"
                                                 type="text"
@@ -307,15 +302,9 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
 
                                         <div className="form-group col-12 col-lg-6 col-md-6">
                                             <label htmlFor="" className="form-label">
-                                                Lote
-                                                <Tooltip title="Lorem impsu texto descriptivo">
-                                                    <i
-                                                        className="fa fa-info-circle text-muted ms-2 me-2"
-                                                        style={{ fontSize: 14 }}
-                                                    />
-                                                </Tooltip>
-                                                <span className="text-danger">*</span>
+                                                Lote <span className="text-danger">*</span>
                                             </label>
+                                            <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
                                                 className="w-100 form-control"
                                                 type="string"
@@ -507,7 +496,7 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                     <div className="form-group col-12 col-md-4 col-lg-4">
                                         <label htmlFor="" className="form-label">
                                             Estrato
-                                            <span className="text-danger">*</span>
+                                            <span className="text-danger"> *</span>
                                         </label>
                                         <Field
                                             name="social_stratum"
@@ -528,17 +517,12 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                     <div className="form-group col-12 col-md-8 col-lg-8">
                                         <label htmlFor="" className="form-label">
                                             Indicaciones
-                                            <Tooltip title="Lorem impsu texto descriptivo">
-                                                <i
-                                                    className="fa fa-info-circle text-muted ms-2 me-2"
-                                                    style={{ fontSize: 14 }}
-                                                />
-                                            </Tooltip>
                                         </label>
+                                        <TooltipField text="Lorem impsu texto descriptivo" />
                                         <Field
                                             name="indicaciones"
                                             type="text"
-                                            className="w-100 form-control"
+                                            className="form-control"
                                             autoComplete="off"
                                             onChange={(e) => {
                                                 e.preventDefault();

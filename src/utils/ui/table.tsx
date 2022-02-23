@@ -73,7 +73,7 @@ const CompressTable: FC<CompressTableProps> = ({
                         <span className="text-primary">
                             No hay datos para mostrar.
                             <br />
-                            Por favor intente realizar una busqueda.
+                            Por favor intente realizar una búsqueda.
                         </span>
                     }
                 />

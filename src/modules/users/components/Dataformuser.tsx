@@ -70,7 +70,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                     <>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="dependency_id" className="form-label">
-                                Dependecia <span className="text-danger">*</span>
+                                Dependencia o Secretaría <span className="text-danger">*</span>
                             </label>
                             <Field
                                 component={Select}
@@ -107,7 +107,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         </div>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="subdependency_id" className="form-label">
-                                Sub. Dependecia <span className="text-danger">*</span>
+                                Subsecretaría o Subdirección <span className="text-danger">*</span>
                             </label>
                             <Field
                                 component={Select}
@@ -230,7 +230,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="username" className="form-label">
-                        Numero de documento <span className="text-danger">*</span>
+                        Número de documento <span className="text-danger">*</span>
                     </label>
                     <Field
                         type="text"
@@ -263,7 +263,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                 </div>
                 <div className={`col-12 col-md-6 col-lg-${type === 'create' || is_admin ? 3 : 6}`}>
                     <label htmlFor="username" className="form-label">
-                        Correo Electronico <span className="text-danger">*</span>
+                        Correo Electrónico <span className="text-danger">*</span>
                     </label>
                     <Field
                         type="email"
@@ -356,7 +356,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="username" className="form-label">
-                        Genero <span className="text-danger">*</span>
+                        Género <span className="text-danger">*</span>
                     </label>
                     <Field
                         as="select"
@@ -367,7 +367,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         disabled={disabled}
                     >
                         <option value="" hidden>
-                            --Selecciona Genero--
+                            --Selecciona Género--
                         </option>
                         <option value="F">Femenino</option>
                         <option value="M">Masculino</option>

@@ -58,7 +58,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
         dispatch(actions.getTipologies());
     }, []);
     const [subs, set_subs] = useState<any[]>([]);
-    const active_type = ['Lote', 'Mejora', 'Construccion', 'Construccion para demoler', 'Mejora para demoler'];
+    const active_type = ['Lote', 'Mejora', 'Construcción', 'Construcción para demoler', 'Mejora para demoler'];
     const onChangeActiveType = (active_types, setFieldValue) => (e) => {
 
         const data_now = [...active_types];
@@ -187,9 +187,8 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
             <div className="row">
                 <div className="col-12 col-md-6 col-lg-3">
                     <label htmlFor="dependency_id" className="form-label">
-                        Dependecia
+                        Dependencia o Secretaría
                     </label>
-                    {/* {console.log()} */}
                     <Field
                         component={Select}
                         name="dependency"
@@ -226,7 +225,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                 </div>
                 <div className="col-12 col-md-6 col-lg-3">
                     <label htmlFor="subdependency_id" className="form-label">
-                        Sub. Dependecia
+                        Subsecretaría o Subdirección
                     </label>
                     <Field
                         component={Select}
@@ -313,21 +312,24 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
 
                     <ErrorMessage name="registry_number" withCount max={20} />
                 </div>
-                <div className="form-group col-12 col-md-6 col-lg-3">
-                    <label htmlFor="active_code_id" className="form-label">
-                        Código Activo
-                    </label>
-                    <Field
-                        disabled
-                        name="active_code"
-                        id="active_code_id"
-                        type="text"
-                        className="form-control"
-                        autoComplete="off"
-                    />
-                    <ErrorMessage name="active_code" />
-                </div>
-                <div className="form-group col-12 col-md-6 col-lg-3">
+                {type === "edit" &&
+                    <div className="form-group col-12 col-md-6 col-lg-3">
+                        <label htmlFor="active_code_id" className="form-label">
+                            Código Activo
+                        </label>
+                        <Field
+                            disabled
+                            name="active_code"
+                            id="active_code_id"
+                            type="text"
+                            className="form-control"
+                            autoComplete="off"
+                        />
+                        <ErrorMessage name="active_code" />
+                    </div>
+                }
+
+                <div className={`form-group col-12 col-md-${type === "edit" ? 3: 6} col-lg-${type === "edit" ? 3: 6}`}>
                     <label htmlFor="destination_type_id" className="form-label">
                         Tipo de Uso <span className="text-danger">*</span>
                     </label>
@@ -500,7 +502,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                 </div>
                 <div className="form-group col-12 col-md-6 col-lg-3">
                     <label htmlFor="zone_id" className="form-label">
-                        Zona del Bien Inmueble
+                        Zona de Bien Inmueble
                     </label>
 
                     <div className="form-check-inline me-5">
@@ -689,12 +691,12 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                 )
                             }
                             onChange={number_validate(10)}
-                            // onChange={(e) => {
-                            //     formik.handleChange(e);
-                            //     // const value2 = parseFloat(e.target.value || 0);
-                            //     // const value1 = parseFloat(formik.values.plot_area || 0);
-                            //     //formik.setFieldValue('total_area', value1 + value2, false);
-                            // }}
+                        // onChange={(e) => {
+                        //     formik.handleChange(e);
+                        //     // const value2 = parseFloat(e.target.value || 0);
+                        //     // const value1 = parseFloat(formik.values.plot_area || 0);
+                        //     //formik.setFieldValue('total_area', value1 + value2, false);
+                        // }}
                         />
                         <div className="input-group-prepend">
                             <Field
@@ -837,7 +839,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                 </div>
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="periodo_contable_id" className="form-label">
-                                        Periodo contable
+                                        Período contable
                                     </label>
                                     <Field
                                         type="text"
@@ -920,7 +922,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                 </div>
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="years_useful_life_id" className="form-label">
-                                        Vida util años
+                                        Vida útil años
                                     </label>
                                     <Field
                                         //disabled
@@ -933,7 +935,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                 </div>
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="useful_life_periods_id" className="form-label">
-                                        Vida util Períodos
+                                        Vida útil Períodos
                                     </label>
                                     <Field
                                         //disabled
@@ -958,7 +960,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                                 <LinkButton
                                                     name="Aplicar Porcentaje"
                                                     icon={<i className="fa fa-plus-circle" aria-hidden="true" />}
-                                                    onClick={ () => {
+                                                    onClick={() => {
                                                         context.set_canon_type(formik.values.disposition_type === "Inversión Social" ? "inversion_social" : formik.values.disposition_type === "Inversión" ? "inversion" : null)
                                                         context.toggle_percentage_modal();
                                                     }}

@@ -14,7 +14,7 @@ export const FormUser: FC<FormProps> = ({ formik, comodato, lease }) => {
     return (
         <>
             <div className="row">
-                <div className={`col-12 col-lg-${formik.values.applicant.document_type === "NIT" ? `6` : `12`} col-md-${formik.values.applicant.document_type === "NIT" ? `6` : `12`}`}>
+                <div className={`col-12 col-lg-6 col-md-6`}>
                     <label htmlFor="applicant" className="form-label">
                         Información Del Solicitante<span className="text-danger">*</span>
                     </label>
@@ -26,7 +26,7 @@ export const FormUser: FC<FormProps> = ({ formik, comodato, lease }) => {
                     <ErrorMessage name="applicant" />
                 </div>
 
-                {(formik.values.applicant.document_type === "NIT" || formik.values.applicant.documentNumber === "NIT") &&
+                {/* {(formik.values.applicant.document_type === "NIT" || formik.values.applicant.documentNumber === "NIT") && */}
                     <div className="col-12 col-lg-6 col-md-6">
                         <label htmlFor="representative" className="form-label">
                             Información Representante<span className="text-danger">*</span>
@@ -37,7 +37,7 @@ export const FormUser: FC<FormProps> = ({ formik, comodato, lease }) => {
                         />
                         <ErrorMessage name="representative" />
                     </div>
-                }
+                {/* } */}
             </div>
         </>
     );

@@ -314,7 +314,7 @@ const GeneralForm: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, addres
                             </div>
                             <div className="col-3">
                                 <label htmlFor="username" className="form-label">
-                                    Numero de documento <span className="text-danger">*</span>
+                                    Número de documento <span className="text-danger">*</span>
                                 </label>
                                 <Field
                                     type="number"
@@ -422,7 +422,7 @@ const GeneralForm: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, addres
                             </div>
                             <div className="col-3">
                                 <label htmlFor="username" className="form-label">
-                                    Genero <span className="text-danger">*</span>
+                                    Género <span className="text-danger">*</span>
                                 </label>
                                 <Field
                                     as="select"
@@ -433,7 +433,7 @@ const GeneralForm: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, addres
                                     disabled={disabled}
                                 >
                                     <option value="" hidden>
-                                        --Selecciona Genero--
+                                        --Selecciona Género--
                                     </option>
                                     <option value="F">Femenino</option>
                                     <option value="M">Masculino</option>
