@@ -79,7 +79,7 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
             enableReinitialize
             innerRef={innerRef}
             initialValues={initialValues}
-            validationSchema={(view === 'general' || view === "user") && schema}
+            validationSchema={(view === 'general' || view === 'user') && schema}
             onSubmit={(values, { setSubmitting, resetForm }) => {
                 modalClose &&
                     modalClose(values, () => {
@@ -99,7 +99,6 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                 const has_communisses = communisses.length > 0;
                 const has_neighborhoods = neighborhoods.length > 0;
 
-
                 const comune = communisses.find((c: any) => c.id === values.commune);
                 const _neighborhood = neighborhoods.find((c: any) => c.id === values.neighborhood);
                 const cb = `${comune ? `${comune.code}`.padStart(2, '0') : ''}${
@@ -118,7 +117,6 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                     const city = cities.find((c: any) => c.id === 1);
                     setFieldValue('city_name', city?.name, false);
                 }
-
 
                 const number_validate = (limit?: number) => (e) => {
                     e.preventDefault();
@@ -289,12 +287,19 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <Field
                                                 className="w-100 form-control"
-                                                type="number"
+                                                type="text"
                                                 name="block"
                                                 autoComplete="off"
                                                 min={0}
                                                 max={9999}
-                                                onChange={number_validate(4)}
+                                                onChange={(e) => {
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    const regex = /^[0-9]{0,3}$/;
+                                                    if (regex.test(value.toString())) {
+                                                        handleChange(e);
+                                                    }
+                                                }}
                                             />
 
                                             <ErrorMessage name="block" />
@@ -313,12 +318,19 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <Field
                                                 className="w-100 form-control"
-                                                type="number"
+                                                type="string"
                                                 name="lot"
                                                 autoComplete="off"
                                                 min={0}
                                                 max={999}
-                                                onChange={number_validate(3)}
+                                                onChange={(e) => {
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    const regex = /^[0-9]{0,4}$/;
+                                                    if (regex.test(value.toString())) {
+                                                        handleChange(e);
+                                                    }
+                                                }}
                                             />
 
                                             <ErrorMessage name="lot" />
