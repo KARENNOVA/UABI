@@ -60,7 +60,7 @@ const Importer: FC<any> = (props) => {
                         message="Formato"
                         description={
                             <Fragment>
-                                <a style={{ marginRight: 8 }} href="./Historic.xslx" download="formato.xlsx">
+                                <a style={{ marginRight: 8 }} href="/Historic.xlsx" download="formato.xlsx">
                                     formato.xlsx
                                 </a>
                                 <br />
