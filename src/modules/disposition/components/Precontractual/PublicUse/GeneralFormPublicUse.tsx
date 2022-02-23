@@ -147,10 +147,8 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 post: precontractual?.applicant?.post || "",
                 location_id: precontractual?.applicant?.location_id || "",
                 location: precontractual?.applicant?.location?.address || "",
-            } : {
-                documentType: "NIT",
-            },
-            representative: {
+            } : "",
+            representative: precontractual?.representative ? {
                 id: precontractual?.representative?.id || "",
                 documentType: precontractual?.representative?.document_type || "",
                 documentNumber: precontractual?.representative?.document_number || "",
@@ -164,7 +162,7 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
                 post: precontractual?.representative?.post || "",
                 location_id: precontractual?.representative?.location_id || "",
                 location: precontractual?.representative?.location?.address || "",
-            },
+            } : "",
 
 
         },
@@ -211,6 +209,7 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
         elaborated: Yup.object().required('obligatorio'),
         revised: Yup.object().required('obligatorio'),
         approved: Yup.object().required('obligatorio'),
+        representative: Yup.object().required('obligatorio'),
 
     });
     return (
