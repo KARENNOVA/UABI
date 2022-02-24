@@ -325,7 +325,7 @@ export const FormPrecontractualComodato: FC<FormProps> = ({ formik }) => {
                 {/* {console.log('valor', formik.values.public_service)} */}
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="public_service_id" className="form-label">
-                        Servicios publicos por Aforo<span className="text-danger">*</span>
+                        Servicios públicos por Aforo<span className="text-danger">*</span>
                     </label>
                     <Field
                         as="select"

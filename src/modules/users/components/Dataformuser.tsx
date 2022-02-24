@@ -4,7 +4,6 @@ import ErrorMessage from '../../../utils/ui/error_messge';
 import Select from '../../../utils/ui/select';
 import LocationModal from '../../../utils/components/Location/LocationModal';
 import { Field } from 'formik';
-import { IUserAttributes } from '../../../utils/interfaces/users';
 import { useSelector } from 'react-redux';
 
 interface IUserFormPros {
@@ -26,7 +25,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
             <div className="row">
                 <div className={`col-lg-${formik.values.entity_type === 'Publica' ? 3 : 6} col-12 col-md-6`}>
                     <label htmlFor="id" className="form-label">
-                        Tipo de Sociedad <span className="text-danger">*</span>
+                        Tipo de sociedad <span className="text-danger">*</span>
                     </label>
                     <Field
                         as="select"
@@ -37,10 +36,10 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         disabled={disabled}
                     >
                         <option value="" hidden>
-                            --Tipo de Sociedad--
+                            --Tipo de sociedad--
                         </option>
-                        <option value="N">Persona Natural</option>
-                        <option value="J">Persona Juridica</option>
+                        <option value="N">Persona natural</option>
+                        <option value="J">Persona jurídica</option>
                     </Field>
                     <ErrorMessage name="detailsUser.society_type" />
                 </div>
@@ -57,9 +56,9 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         disabled={disabled}
                     >
                         <option value="" hidden>
-                            --Tipo de Entidad--
+                            --Tipo de entidad--
                         </option>
-                        <option value="O">Organizacion sin Animo de lucro</option>
+                        <option value="O">Organizacion sin animo de lucro</option>
                         <option value="T">Otro</option>
                         <option value="R">Privada</option>
                         <option value="P">Publica</option>
@@ -70,7 +69,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                     <>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="dependency_id" className="form-label">
-                                Dependencia o Secretaría <span className="text-danger">*</span>
+                                Dependencia o secretaría <span className="text-danger">*</span>
                             </label>
                             <Field
                                 component={Select}
@@ -107,7 +106,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         </div>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="subdependency_id" className="form-label">
-                                Subsecretaría o Subdirección <span className="text-danger">*</span>
+                                Subsecretaría o subdirección <span className="text-danger">*</span>
                             </label>
                             <Field
                                 component={Select}
@@ -141,7 +140,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
             <div className="row">
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="first_name_id" className="form-label">
-                        Primer Nombre <span className="text-danger">*</span>
+                        Primer nombre <span className="text-danger">*</span>
                     </label>
                     <Field
                         type="text"
@@ -152,13 +151,21 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         autoComplete="off"
                         disabled={disabled}
                         maxLength={20}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
 
                     />
                     <ErrorMessage name="detailsUser.names.firstName" />
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="second_name_id" className="form-label">
-                        Segundo Nombre
+                        Segundo nombre
                     </label>
                     <Field
                         type="text"
@@ -169,6 +176,14 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         autoComplete="off"
                         disabled={disabled}
                         maxLength={20}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="detailsUser.names.lastName" />
                 </div>
@@ -181,10 +196,18 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         className="form-control"
                         id="surname_id"
                         name="detailsUser.surnames.firstSurname"
-                        placeholder="Primer pellido"
+                        placeholder="Primer apellido"
                         autoComplete="off"
                         disabled={disabled}
                         maxLength={20}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="detailsUser.surnames.firstSurname" />
                 </div>
@@ -201,6 +224,14 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         autoComplete="off"
                         disabled={disabled}
                         maxLength={20}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ]*$/g);
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="detailsUser.surnames.lastSurname" />
                 </div>
@@ -208,7 +239,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
             <div className="row">
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="id" className="form-label">
-                        Tipo de Documento <span className="text-danger">*</span>
+                        Tipo de documento <span className="text-danger">*</span>
                     </label>
                     <Field
                         as="select"
@@ -219,7 +250,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         disabled={disabled}
                     >
                         <option value="" hidden>
-                            --Tipo de Documento--
+                            --Tipo de documento--
                         </option>
                         <option value={1}>Cedula de Ciudadania</option>
                         <option value={2}>Tarjeta de identidad</option>
@@ -263,7 +294,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                 </div>
                 <div className={`col-12 col-md-6 col-lg-${type === 'create' || is_admin ? 3 : 6}`}>
                     <label htmlFor="username" className="form-label">
-                        Correo Electrónico <span className="text-danger">*</span>
+                        Correo electrónico <span className="text-danger">*</span>
                     </label>
                     <Field
                         type="email"
@@ -367,12 +398,12 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         disabled={disabled}
                     >
                         <option value="" hidden>
-                            --Selecciona Género--
+                            --Selecciona género--
                         </option>
                         <option value="F">Femenino</option>
                         <option value="M">Masculino</option>
                         <option value="I">Intersexual</option>
-                        <option value="NA">No Deseo Responder</option>
+                        <option value="NA">No deseo responder</option>
                     </Field>
                     <ErrorMessage name="detailsUser.gender" />
                 </div>

@@ -19,7 +19,7 @@ const LeaseDocContract = () => {
     console.log(values_contract, realEstate, dispositionType);
     const arrendamiento = {
         //info general
-        boundaries: "descripcion de linderos",
+        boundaries: "descripción de linderos",
         business_type: { select: 'otro', input: 'casino' },
         contract_period: 12,
         destination_realestate: "destinacion del bien inmueble",

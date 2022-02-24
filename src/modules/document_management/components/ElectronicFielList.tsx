@@ -37,7 +37,7 @@ const ElectronicFielList = () => {
             align: 'left' as 'left',
         },
         {
-            title: 'Activo Fijo',
+            title: 'Activo fijo',
             dataIndex: 'sap_id',
             align: 'center' as 'center',
         },

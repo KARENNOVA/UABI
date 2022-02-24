@@ -7,7 +7,7 @@ interface IPros {
 
 const DetailComodato: FC<IPros> = ({ precontractual }) => {
     return (
-        <div className="col-3-12">
+        <div className="col-12">
             <div className="content_box_table">
                 <div className="title" style={{ borderBottom: '1px solid #e2e4e4' }}>
                     Estudio Previo Para Comodato
@@ -65,7 +65,7 @@ const DetailComodato: FC<IPros> = ({ precontractual }) => {
                                 <div className="my-3">{precontractual?.economic_exploitation}</div>
                             </div>
                             <div className="col-3">
-                                <label htmlFor="">Servicios publicos por Aforo</label>
+                                <label htmlFor="">Servicios públicos por Aforo</label>
                                 <div className="my-3">{precontractual?.public_service}</div>
                             </div>
                         </div>
@@ -139,7 +139,7 @@ const DetailComodato: FC<IPros> = ({ precontractual }) => {
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-6 movimiento">
-                                <label htmlFor="">Descripcion de linderos</label>
+                                <label htmlFor="">Descripción de linderos</label>
                                 <div className="my-3" style={{ height: '60px', overflowX: 'auto' }}>
                                     <div style={{ width: '1000px' }}>
                                         {precontractual?.boundaries}

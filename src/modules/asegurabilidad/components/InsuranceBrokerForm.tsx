@@ -39,7 +39,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
         address: Yup.string().required('Campo obligatorio'),
         contact_information: Yup.object({
             name: Yup.string().required('Campo Obligatorio'),
-            email: Yup.string().required('Campo Obligatorio'),
+            email: Yup.string().email('email invalido').required('Campo obligatorio'),
             phone: Yup.string().required('Campo Obligatorio'),
         })
     });
@@ -223,7 +223,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                             </div>
                             <div className="form-group col-12 col-lg-6 col-md-6">
                                 <label htmlFor="contact_email_id" className="form-label">
-                                    Correo Electronico de contacto
+                                    Correo Electrónico de contacto
                                 </label>
                                 <Field
                                     type="email"
@@ -232,6 +232,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                                     name="contact_information.email"
                                     disabled={disabled}
                                     autoComplete="off"
+
                                 />
                                 <ErrorMessage name="contact_information.email" />
                             </div>

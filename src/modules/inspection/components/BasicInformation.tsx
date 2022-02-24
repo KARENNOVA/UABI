@@ -37,7 +37,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                         <div className="detailForm" style={{ width: '100%' }}>
                             <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                 <div className="col-12 col-lg-2 col-md-4">
-                                    <label htmlFor="">Codigo CBML</label>
+                                    <label htmlFor="">Código CBML</label>
                                     <div className="my-3">{real_estate?.address?.cbmls?.uabi ?? '-'}</div>
                                 </div>
                                 <div className="col-12 col-lg-2 col-md-4">
@@ -68,7 +68,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                     </div>
                                 </div>
                                 <div className="col-12 col-lg-2 col-md-4">
-                                    <label htmlFor="">No entidad que emite el títulomento</label>
+                                    <label htmlFor="">No. entidad que emite el títulomento</label>
                                     <div className="my-3">
                                         {real_estate?.acquisitions?.reduce(
                                             (res, acq) => `${res ? `${res},` : ''} ${acq.entity_number}`,

@@ -13,18 +13,18 @@ const PolizaList: FC<InsurabilityListProps> = ({ policies }) => {
             align: 'center' as 'center',
         },
         {
-            title: 'Matricula',
+            title: 'Matrícula',
             dataIndex: 'matricula',
             align: 'center' as 'center',
         },
         {
-            title: 'Fecha Inicial de la Póliza',
+            title: 'Fecha inicial de la póliza',
             dataIndex: 'initialDate',
             align: 'center' as 'center',
             render: (dates) => formatDate(dates?.created_on),
         },
         {
-            title: 'Fecha Final de Poliza',
+            title: 'Fecha final de póliza',
             dataIndex: 'finalDate',
             align: 'center' as 'center',
             render: (dates) => formatDate(dates?.created_on),

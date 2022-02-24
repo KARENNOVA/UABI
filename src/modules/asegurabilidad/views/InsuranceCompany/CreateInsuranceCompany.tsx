@@ -15,7 +15,7 @@ const CreateInsuranceCompany = () => {
 
     const createInsuranceCompany = async (data: Company) => {
         const res: any = await dispatch(actions.create_company(data));
-        await swal('Compañia aseguradora creada', res.message, 'success');
+        await swal('Compañía aseguradora creada', res.message, 'success');
         history.push(`/insurabilities/company/${res.results.id}`);
     };
 

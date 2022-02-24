@@ -86,7 +86,7 @@ const InsuranceCompanyForm: FC<InsuranceCompanyFormPros> = ({ insurance_company,
                             )}
                             <div className={`col-12 col-md-6 col-lg-${insurance_company ? 9 : 12}`}>
                                 <label htmlFor="name_id" className="form-label">
-                                    Nombre de la compañia
+                                    Nombre de la compañía
                                 </label>
                                 <Field
                                     type="text"

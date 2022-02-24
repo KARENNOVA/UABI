@@ -33,7 +33,7 @@ const EditInsuranceCompany: FC<IProps> = () => {
 
     const _updateInsuranceCompany = async (data: Company) => {
         const res: any = await dispatch(actions.update_company(data.id, data));
-        await swal('Compañia aseguradora actulizada', res.message, 'success');
+        await swal('Compañía aseguradora actulizada', res.message, 'success');
         history.push(`/insurabilities/company/${res.results.id}/`);
     };
 

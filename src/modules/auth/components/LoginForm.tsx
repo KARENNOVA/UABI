@@ -44,7 +44,7 @@ const LoginForm: FC<IloginFormPros> = ({ onSubmit, disabled, alert }) => {
                     <Form>
                         <div className="container-inputs-login usuario-item-login">
                             <label htmlFor="user_id" className="form-label">
-                                Numero de identificación
+                                Número de identificación
                             </label>
                             <Field
                                 type="text"

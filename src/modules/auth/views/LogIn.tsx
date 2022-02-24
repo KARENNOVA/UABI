@@ -59,7 +59,7 @@ export default function SignIn({ location, redirect }) {
                             <Image className="image-logo-container-login" src={logo} />
                         </div>
                         <h5 className="sub-header-login text-center">
-                            Sistema para la Administración de Bienes Inmuebles
+                            Sistema para la administración de bienes inmuebles
                         </h5>
                         <div className='form-login'>
                             <div>

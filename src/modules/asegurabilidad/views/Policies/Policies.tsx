@@ -80,7 +80,7 @@ const Policies = () => {
             align: 'center' as 'center',
         },
         {
-            title: 'Compañías Aseguradoras',
+            title: 'Compañías aseguradoras',
             dataIndex: 'insurance_companies',
             align: 'left' as 'left',
             responsive: ['md'],
@@ -147,7 +147,7 @@ const Policies = () => {
             <div className="row justify-content-center">
                 <div className="col-md-12">
                     <Card
-                        title="Registro de Pólizas"
+                        title="Registro de pólizas"
                         extra={
                             <>
                                 {guards.createPolicy({ user: aux_user }) && (
@@ -162,7 +162,7 @@ const Policies = () => {
                                     <FilterForm
                                         filters={[
                                             { key: 'policy_number', name: 'Número póliza' },
-                                            { key: 'policy_type', name: 'Tipo de Póliza' },
+                                            { key: 'policy_type', name: 'Tipo de póliza' },
                                             { key: 'registry_number', name: 'Matrícula' },
                                         ]}
                                         onSubmit={filter}

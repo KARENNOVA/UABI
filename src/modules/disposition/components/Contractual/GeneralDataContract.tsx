@@ -119,7 +119,7 @@ export const GeneralDataContract: FC<FormPros> = ({ onSubmit, innerRef, realEsta
                                     <div className="my-3">{precontractual?.contract_value}</div>
                                 </div>
                                 <div className="col-3">
-                                    <label htmlFor="">Fecha de Registro Estudio Previo</label>
+                                    <label htmlFor="">Fecha de registro estudio previo</label>
                                     <div className="my-3">{moment(new Date(Number(precontractual?.registration_date))).format('YYYY-MM-DD') ?? "-" }</div>
                                 </div>
 

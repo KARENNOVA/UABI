@@ -68,7 +68,7 @@ const Register = () => {
                             <div className="container-center">
                                 <img width="200" src={logo} alt="" />
                             </div>
-                            <h5 className="sub-header-login">Registro de Usuario</h5>
+                            <h5 className="sub-header-login">Registro de usuario</h5>
                             <SignUpForm />
                         </div>
                         {/* <Form className="form-creacion-cuentas">

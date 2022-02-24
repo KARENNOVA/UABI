@@ -13,13 +13,13 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
     return (
         <>
             <div className="div" style={{ fontWeight: 'bold', fontSize: '15px' }}>
-                Lider encargado
+                Líder encargado
             </div>
             <hr />
             <div className="row">
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="dependence_id" className="form-label">
-                        dependencia
+                        Dependencia o Secretaría
                     </label>
                     <Field
                         type="text"
@@ -35,7 +35,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
                 </div>
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="secretary_id" className="form-label">
-                        Secretaria
+                        Subsecretaría o Subdirección
                     </label>
                     <Field
                         type="text"
@@ -53,7 +53,7 @@ const FormLider: FC<FormProps> = ({ lease, formik }) => {
             <div className="row">
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="leader" className="form-label">
-                        Información Lider<span className="text-danger">*</span>
+                        Información Líder<span className="text-danger">*</span>
                     </label>
                     <Field
                         component={PersonaM}

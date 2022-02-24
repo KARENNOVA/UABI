@@ -15,7 +15,7 @@ interface AcquisitionsFromProps {
 const AcquisitionsView: FC<AcquisitionsFromProps> = ({ type, disabled, acquisitions, formik, inventory }) => {
     return (
         <Card
-            title="Información de Adquisición"
+            title="Información de adquisición"
             extra={
                 <>{!inventory ?
                     <AcquisitionModal

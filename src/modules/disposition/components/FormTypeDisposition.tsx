@@ -92,7 +92,7 @@ export const FormTypeDisposition: FC<DispositionFormPros> = ({ realEstate, onTyp
                 <div className="row">
                     <div className="col-12 col-lg-3 col-md-6">
                         <label htmlFor="destination_type_id" className="form-label">
-                            Tipo de Uso
+                            Tipo de uso
                         </label>
                         <Field
                         type="text"
@@ -104,7 +104,7 @@ export const FormTypeDisposition: FC<DispositionFormPros> = ({ realEstate, onTyp
                     </div>
                     <div className="col-12 col-lg-3 col-md-6">
                         <label htmlFor="disposition_type_id" className="form-label">
-                            Tipo de Activo
+                            Tipo de activo
                         </label>
                         <Field
                             type="text"

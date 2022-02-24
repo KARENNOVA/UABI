@@ -283,12 +283,20 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
                                                 className="form-control"
-                                                type="number"
+                                                type="text"
                                                 name="block"
                                                 autoComplete="off"
                                                 min={0}
                                                 max={999}
-                                                onChange={number_validate(3)}
+                                                // onChange={number_validate(3)}
+                                                onChange={(e) => {
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    const regex = /^[0-9]{0,3}$/;
+                                                    if (regex.test(value.toString())) {
+                                                        handleChange(e);
+                                                    }
+                                                }}
                                             />
 
                                             <ErrorMessage name="block" />

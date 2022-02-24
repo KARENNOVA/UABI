@@ -193,7 +193,7 @@ export const ListRoles = () => {
             align: 'center' as 'center',
         },
         {
-            title: 'Fecha Creación',
+            title: 'Fecha creación',
             dataIndex: 'audit_trail',
             align: 'center' as 'center',
             responsive: ['md'],

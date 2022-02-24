@@ -108,11 +108,11 @@ export const TableAreas = () => {
             materials: [],
             supports_documents: [
                 {
-                    label: 'Documento de Matrícula',
+                    label: 'Documento de matrícula',
                     type: 3,
                 },
                 {
-                    label: 'Documento de Título',
+                    label: 'Documento de título',
                     type: 4,
                 },
             ],

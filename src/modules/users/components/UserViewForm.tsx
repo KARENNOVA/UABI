@@ -82,49 +82,49 @@ const UserViewForm: FC<IUserFormPros> = ({ user }) => {
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información del Usuario
+                    Información del usuario
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Primer Nombre</label>
+                                <label htmlFor="">Primer nombre</label>
                                 <div className="my-3">{user?.names.firstName || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Segundo Nombre</label>
+                                <label htmlFor="">Segundo nombre</label>
                                 <div className="my-3">{user?.names.lastName || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Primer Apellido</label>
+                                <label htmlFor="">Primer apellido</label>
                                 <div className="my-3">{user?.surnames.firstSurname || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Segundo Apellido</label>
+                                <label htmlFor="">Segundo apellido</label>
                                 <div className="my-3">{user?.surnames.lastSurname || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Tipo de Sociedad</label>
+                                <label htmlFor="">Tipo de sociedad</label>
                                 <div className="my-3">{type_society || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Tipo Entidad</label>
+                                <label htmlFor="">Tipo entidad</label>
                                 <div className="my-3">{type_entity || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Tipo de Documento</label>
+                                <label htmlFor="">Tipo de documento</label>
                                 <div className="my-3">{type_doc || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Número de Documento</label>
+                                <label htmlFor="">Número de documento</label>
                                 <div className="my-3">{user?.id_number || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                <label htmlFor="">Correo Electrónico</label>
+                                <label htmlFor="">Correo electrónico</label>
                                 <div className="my-3">{user?.email || "-"}</div>
                             </div>
                             <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
@@ -149,11 +149,11 @@ const UserViewForm: FC<IUserFormPros> = ({ user }) => {
                             {user?.entity_type === 'P' && (
                                 <>
                                     <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                        <label htmlFor="">Dependencia o Secretaría</label>
+                                        <label htmlFor="">Dependencia o secretaría</label>
                                         <div className="my-3">{user?.dependency || "-"}</div>
                                     </div>
                                     <div className={`col-6 col-lg-3 col-md-${context.menu_collapsed ? 3 : 6 }`}>
-                                        <label htmlFor="">Subsecretaría o Subdirección</label>
+                                        <label htmlFor="">Subsecretaría o subdirección</label>
                                         <div className="my-3">{user?.subdependency || "-"}</div>
                                     </div>
                                 </>

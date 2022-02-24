@@ -20,7 +20,7 @@ const AssignRolePermitsView: FC<IUserFormPros> = ({ roles, permits }) => {
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Roles y Permisos del Usuario
+                    Roles y permisos del usuario
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -45,7 +45,7 @@ const AssignRolePermitsView: FC<IUserFormPros> = ({ roles, permits }) => {
                             )}
                             {!has_roles && (
                                 <div className="row">
-                                    <div className="col-12">Sin roles Asignados</div>
+                                    <div className="col-12">Sin roles asignados</div>
                                 </div>
                             )}
                             {/* <div className="col-12">
@@ -83,7 +83,7 @@ const AssignRolePermitsView: FC<IUserFormPros> = ({ roles, permits }) => {
                             )}
                             {!has_permits && (
                                 <div className="row">
-                                    <div className="col-12">Sin Permisos Asignados</div>
+                                    <div className="col-12">Sin permisos asignados</div>
                                 </div>
                             )}
                         </div>

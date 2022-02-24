@@ -37,7 +37,7 @@ const InsuranceCompanies = () => {
             const result = await swal_warning.fire({
                 icon: 'warning',
                 title: '¡Precaución!',
-                text: `La Compañia contiene ${res?.length || ''} valores asociados.\n\.`,
+                text: `La Compañía contiene ${res?.length || ''} valores asociados.\n\.`,
                 showDenyButton: true,
                 showCancelButton: false,
                 confirmButtonText: 'Continuar',
@@ -48,7 +48,7 @@ const InsuranceCompanies = () => {
                 swal_warning.fire({
                     icon: 'info',
                     title: '¡Última oportunidad!',
-                    text: '¿Está seguro que quiere inactivar la compañia?',
+                    text: '¿Está seguro que quiere inactivar la compañía?',
                     showDenyButton: true,
                     showCancelButton: false,
                     confirmButtonText: 'Continuar',
@@ -68,7 +68,7 @@ const InsuranceCompanies = () => {
             const result = await swal_warning.fire({
                 icon: 'warning',
                 title: '¿Está seguro?',
-                text: '¿Está seguro que quiere inactivar la compañia?',
+                text: '¿Está seguro que quiere inactivar la compañía?',
                 showDenyButton: true,
                 showCancelButton: false,
                 confirmButtonText: 'Continuar',
@@ -188,7 +188,7 @@ const InsuranceCompanies = () => {
             <div className="row justify-content-center">
                 <div className="col-md-12">
                     <Card
-                        title="Compañías Aseguradoras"
+                        title="Compañías aseguradoras"
                         extra={<Link to="/insurabilities/company/create/" name="Crear" iconText="+" />}
                     >
                         <div className="row justify-content-between">
