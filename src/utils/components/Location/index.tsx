@@ -307,7 +307,7 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
-                                                className="w-100 form-control"
+                                                className="form-control"
                                                 type="string"
                                                 name="lot"
                                                 autoComplete="off"
