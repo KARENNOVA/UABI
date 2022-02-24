@@ -61,7 +61,7 @@ export default function SignIn({ location, redirect }) {
                         <h5 className="sub-header-login text-center">
                             Sistema para la administración de bienes inmuebles
                         </h5>
-                        <div className='form-login'>
+                        <div className="form-login">
                             <div>
                                 <p
                                     style={{
@@ -71,7 +71,7 @@ export default function SignIn({ location, redirect }) {
                                         borderTop: '0.5px solid #D1D0D0',
                                     }}
                                 >
-                                    Ingrese sus datos para Iniciar sesión
+                                    Ingrese sus datos para Iniciar Sesión
                                 </p>
                             </div>
                             <LoginForm onSubmit={onLogin} alert={alert} />
@@ -88,9 +88,6 @@ export default function SignIn({ location, redirect }) {
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>

@@ -80,7 +80,7 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
             enableReinitialize
             innerRef={innerRef}
             initialValues={initialValues}
-            validationSchema={(view === 'general' || view === "user") && schema}
+            validationSchema={(view === 'general' || view === 'user') && schema}
             onSubmit={(values, { setSubmitting, resetForm }) => {
                 modalClose &&
                     modalClose(values, () => {
@@ -100,11 +100,11 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                 const has_communisses = communisses.length > 0;
                 const has_neighborhoods = neighborhoods.length > 0;
 
-
                 const comune = communisses.find((c: any) => c.id === values.commune);
                 const _neighborhood = neighborhoods.find((c: any) => c.id === values.neighborhood);
-                const cb = `${comune ? `${comune.code}`.padStart(2, '0') : ''}${_neighborhood ? `${_neighborhood.code}`.padStart(2, '0') : ''
-                    }`;
+                const cb = `${comune ? `${comune.code}`.padStart(2, '0') : ''}${
+                    _neighborhood ? `${_neighborhood.code}`.padStart(2, '0') : ''
+                }`;
 
                 if (values.country === 1 && values.country_name === '' && has_countries) {
                     const country: any = countries.find((c: any) => c.id === 1);
@@ -118,7 +118,6 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                     const city = cities.find((c: any) => c.id === 1);
                     setFieldValue('city_name', city?.name, false);
                 }
-
 
                 const number_validate = (limit?: number) => (e) => {
                     e.preventDefault();
@@ -308,13 +307,20 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
-                                                className="form-control"
-                                                type="number"
+                                                className="w-100 form-control"
+                                                type="string"
                                                 name="lot"
                                                 autoComplete="off"
                                                 min={0}
                                                 max={9999}
-                                                onChange={number_validate(4)}
+                                                onChange={(e) => {
+                                                    e.preventDefault();
+                                                    const { value } = e.target;
+                                                    const regex = /^[0-9]{0,4}$/;
+                                                    if (regex.test(value.toString())) {
+                                                        handleChange(e);
+                                                    }
+                                                }}
                                             />
 
                                             <ErrorMessage name="lot" />
@@ -344,18 +350,18 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                                 { id: 'DG', name: 'Diagonal' },
                                                 { id: 'TV', name: 'Transversal' },
                                             ]}
-                                        // extra_on_change={async (value) => {
-                                        //     if (value === 'CL') {
-                                        //         setFieldValue('first_orientation', 'Sur', false);
-                                        //         setFieldValue('second_orientation', 'Este', false);
-                                        //     } else if (value === 'CR') {
-                                        //         setFieldValue('first_orientation', 'Este', false);
-                                        //         setFieldValue('second_orientation', 'Sur', false);
-                                        //     } else {
-                                        //         setFieldValue('first_orientation', '', false);
-                                        //         setFieldValue('second_orientation', '', false);
-                                        //     }
-                                        // }}
+                                            // extra_on_change={async (value) => {
+                                            //     if (value === 'CL') {
+                                            //         setFieldValue('first_orientation', 'Sur', false);
+                                            //         setFieldValue('second_orientation', 'Este', false);
+                                            //     } else if (value === 'CR') {
+                                            //         setFieldValue('first_orientation', 'Este', false);
+                                            //         setFieldValue('second_orientation', 'Sur', false);
+                                            //     } else {
+                                            //         setFieldValue('first_orientation', '', false);
+                                            //         setFieldValue('second_orientation', '', false);
+                                            //     }
+                                            // }}
                                         />
                                         <ErrorMessage name="type" />
                                     </div>
