@@ -92,13 +92,13 @@ const get_docucments_whit_service = async (docs) => {
                 ...doc,
                 label:
                     doc.type === 3
-                        ? 'Documento de Matrícula'
+                        ? 'Documento de matrícula'
                         : doc.type === 4
-                        ? 'Documento de Título'
+                        ? 'Documento de título'
                         : doc.type === 6
-                        ? 'Documento Avalúo'
+                        ? 'Documento avalúo'
                         : doc.type === 7
-                        ? 'Documento de Prediación'
+                        ? 'Documento de prediación'
                         : 'Anexo',
             }));
         }

@@ -13,7 +13,7 @@ const SupportDocumentsForm: FC<AcquisitionsFromProps> = ({ type, disabled, formi
     disabled = disabled || type === 'view' || false;
     return (
         <Card
-            title="Documentos Soporte"
+            title="Documentos soporte"
             extra={
                 <LinkButton
                     name="Agregar nuevo"
@@ -66,6 +66,7 @@ const SupportDocumentsForm: FC<AcquisitionsFromProps> = ({ type, disabled, formi
                                             formik.setFieldValue('supports_documents', supports_documents_list, false);
                                         }
                                     }}
+
                                 />
 
                                 <ErrorMessage name="supports_documents" />

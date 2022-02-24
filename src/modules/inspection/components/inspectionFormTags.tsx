@@ -137,7 +137,7 @@ const useInit = (
         physical_inspection: {
             observations: '',
             public_services: [
-                { name: 'Energia', subscriber: 0, accountant: 0, status: 0 },
+                { name: 'Energía', subscriber: 0, accountant: 0, status: 0 },
                 { name: 'Gas', subscriber: 0, accountant: 0, status: 0 },
                 { name: 'Agua', subscriber: 0, accountant: 0, status: 0 },
                 { name: 'Teléfono', subscriber: 0, accountant: 0, status: 0 },

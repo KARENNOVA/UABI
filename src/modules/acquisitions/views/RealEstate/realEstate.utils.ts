@@ -17,7 +17,7 @@ const doc_required_message = (supports_documents) => {
             missing_docs.length > 1 ? 'son' : 'es'
         } obligatorio${missing_docs.length > 1 ? 's' : ''}`;
         swal_warning.fire({
-            title: 'Documentos Requeridos',
+            title: 'Documentos requeridos',
             text: _text,
         });
         return true;

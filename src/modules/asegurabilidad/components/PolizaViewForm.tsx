@@ -38,34 +38,34 @@ export const PolizaViewForm: FC<IpolizaFormPros> = ({ policy_id }) => {
                     <div className="detailForm" style={{ width: '100%' }}>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Tipo de Póliza</label>
+                                <label htmlFor="">Tipo de póliza</label>
                                 <div className="my-3">{poliza?.policy_type || "-"}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Fecha de Inicio</label>
+                                <label htmlFor="">Fecha de inicio</label>
                                 <div className="my-3">{newDateStart === "Fecha inválida" ? "-" : newDateStart}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Fecha de Finalización</label>
+                                <label htmlFor="">Fecha de finalización</label>
                                 <div className="my-3">{newDateEnd === "Fecha inválida" ? "-" : newDateEnd}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Corredor de Seguros</label>
+                                <label htmlFor="">Corredor de seguros</label>
                                 <div className="my-3">{poliza?.insurance_broker?.name || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Valor de Póliza</label>
+                                <label htmlFor="">Valor de póliza</label>
                                 <div className="my-3">{poliza?.insurance_value || "-"}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Tipo de Aseguramiento</label>
+                                <label htmlFor="">Tipo de aseguramiento</label>
                                 <div className="my-3">{poliza?.type_assurance || "-"}</div>
                             </div>
 
                             <div className="col-12 col-lg-6 col-md-6">
-                                <label htmlFor="">Compañías Aseguradoras</label>
+                                <label htmlFor="">Compañías aseguradoras</label>
                                 <div className="my-3">{companies || "-"}</div>
                             </div>
                         </div>

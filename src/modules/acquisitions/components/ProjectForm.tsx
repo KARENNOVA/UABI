@@ -41,7 +41,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
         dependency: '',
         subdependency: '',
         cost_center_id: "",
-        budget_value: '',
+        budget_value: "",
         contracts: [],
         management_center: "",
         cost_center: "",
@@ -49,14 +49,14 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
     };
 
     const schema = Yup.object().shape({
-        name: Yup.string().required('Campo obligatorio').max(200, 'El nombre debe tener maximo 200 caracteres'),
+        name: Yup.string().required('Campo obligatorio').max(100, 'El nombre debe tener maximo 200 caracteres'),
         description: Yup.string()
             .required('Campo obligatorio')
             .max(1000, 'La Descripción debe tener maximo 1000 caracteres'),
         dependency: Yup.string().required('Campo obligatorio'),
-        budget_value: Yup.number().required('obligatorio')
+        budget_value: Yup.number()
             .min(0, 'El minimo es 0')
-            .max(9999999999, 'El maximo 10 es caracteres'),
+            .max(99999999999999999999, 'El maximo 20 es caracteres'),
 
     });
 
@@ -153,13 +153,21 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                         name="name"
                                         autoComplete="off"
                                         disabled={disabled}
-                                        maxLength={20}
+                                        maxLength={100}
+                                        onChange={(e) => {
+                                            e.preventDefault();
+                                            const { value } = e.target;
+                                            const regex = new RegExp(/^[A-Za-z0-9\s\\Ñ\\ñ\\áéíóúüÁÉÍÓÚÜ,.;:()¿?¡!"]*$/g);
+                                            if (regex.test(value.toString())) {
+                                                handleChange(e);
+                                            }
+                                        }}
                                     />
                                     <ErrorMessage name="name" />
                                 </div>
                                 <div className={`col-12 col-md-6 col-lg-${project ? 3 : 4}`}>
                                     <label htmlFor="dependency_id" className="form-label">
-                                        Dependencia o Secretaría
+                                        Dependencia o secretaría
                                     </label>
                                     <Field
                                         component={Select}
@@ -193,7 +201,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className={`col-12 col-md-6 col-lg-${project ? 3 : 4}`}>
                                     <label htmlFor="subdependency_id" className="form-label">
-                                        Subsecretaría o Subdirección
+                                        Subsecretaría o subdirección
                                     </label>
                                     <Field
                                         component={Select}
@@ -210,7 +218,6 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                                     (d) => d.dependency === values.dependency
                                                 );
                                                 const subdependency = dependency.subs.find((d) => d.subdependency === value);
-                                                console.log(subdependency)
                                                 setFieldValue('cost_center', subdependency.cost_center);
                                                 setFieldValue('cost_center_id', subdependency.id);
                                             }
@@ -224,7 +231,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
 
                                 <div className="form-group col-md-6 col-12 col-lg-4">
                                     <label htmlFor="management_center_id" className="form-label">
-                                        Centro Gestor
+                                        Centro gestor
                                     </label>
                                     <Field
                                         disabled
@@ -237,7 +244,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className="form-group col-md-6 col-12 col-lg-4">
                                     <label htmlFor="cost_center_id" className="form-label">
-                                        Centro de Costos
+                                        Centro de costos
                                     </label>
                                     <Field
                                         disabled
@@ -250,7 +257,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                 </div>
                                 <div className="col-12 col-md-6 col-lg-4">
                                     <label htmlFor="budget_value" className="form-label">
-                                        Valor Presupuestal
+                                        Valor presupuestal
                                     </label>
                                     <div className="input-group">
                                         <div className="input-group-prepend">
@@ -264,9 +271,16 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                             className="form-control border-start-0 text-end"
                                             min={0}
                                             max={9999999999}
-                                        // onChange={number_validate(10)}
-
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(`^[+]?\\d{0,20}$`);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
+                                        <ErrorMessage name="budget_value" />
                                     </div>
                                 </div>
                                 <div className="col-12">
@@ -365,7 +379,7 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                     <div className="row" key={i}>
                                         <div className="col-12 col-lg-3">
                                             <label htmlFor="contract_number_id" className="form-label">
-                                                Número de Contrato
+                                                Número de contrato
                                             </label>
                                             <Field
                                                 type="number"

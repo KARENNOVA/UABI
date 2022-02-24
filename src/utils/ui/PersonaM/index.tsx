@@ -435,6 +435,14 @@ export const PersonalInformationForm = ({
                                             autoComplete="off"
                                             disabled={disabled}
                                             min={0}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = new RegExp(`^[+]?\\d{0,3}$`);
+                                                if (regex.test(value.toString())) {
+                                                    handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage name="phoneNumber_ext" />
                                     </div>
@@ -481,7 +489,7 @@ export const PersonalInformationForm = ({
                             <div className="row">
                                 <div className="col">
                                     <label htmlFor="location_id" className="form-label">
-                                        Direccion
+                                        Dirección
                                     </label>
                                     <div className="input-group">
                                         <Field

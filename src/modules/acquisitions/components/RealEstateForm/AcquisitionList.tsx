@@ -12,12 +12,12 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
     // console.log(acquisitions)
     const acquisition_columns = [
         {
-            title: 'Tipo de Adquisición',
+            title: 'Tipo de adquisición',
             align: 'center' as 'center',
             dataIndex: 'acquisition_type',
         },
         {
-            title: 'No. Acto administrativo',
+            title: 'No. acto administrativo',
             align: 'center' as 'center',
             dataIndex: 'act_number',
         },
@@ -29,7 +29,7 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
         ...(type === 'view'
             ? [
                   {
-                      title: 'Tipo de Título',
+                      title: 'Tipo de título',
                       align: 'center' as 'center',
                       dataIndex: 'title_type',
                   },
@@ -44,17 +44,17 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
                       dataIndex: 'seller',
                   },
                   {
-                      title: 'Porcentaje Adquirido',
+                      title: 'Porcentaje adquirido',
                       align: 'center' as 'center',
                       dataIndex: 'acquired_percentage',
                   },
                   {
-                      title: 'Área Total',
+                      title: 'Área total',
                       align: 'center' as 'center',
                       dataIndex: 'area',
                   },
                   {
-                      title: 'Tipo de Entidad',
+                      title: 'Tipo de entidad',
                       align: 'center' as 'center',
                       dataIndex: 'entity_type',
                   },

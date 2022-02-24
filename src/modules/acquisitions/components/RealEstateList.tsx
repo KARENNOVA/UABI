@@ -149,7 +149,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
         ...(withProject
             ? [
                   {
-                      title: 'Proyecto Asociado',
+                      title: 'Proyecto asociado',
                       dataIndex: 'project',
                       align: 'left' as 'left',
                       render: (p) => `${p?.id} - ${p?.name}` || '',
@@ -157,7 +157,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
               ]
             : []),
         {
-            title: 'Fecha Creación',
+            title: 'Fecha creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
             responsive: ['md'],

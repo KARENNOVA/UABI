@@ -133,7 +133,7 @@ export const TableContract: FC<ContractProps> = ({ user, contrats }) => {
             render: (date) => formatDate(parseInt(date))
         },
         {
-            title: 'estado',
+            title: 'Estado',
             dataIndex: 'status',
             align: 'center' as 'center',
             render: (s) => {

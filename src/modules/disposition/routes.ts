@@ -154,7 +154,7 @@ const get_routes = (): IRoute[] => {
             path: '/disposition/contract/:id/',
             template_props: {
                 breadcrumbs: [
-                    { name: 'Lista de Contratos', to: '/dispositions/contract/list' },
+                    { name: 'Lista de contratos', to: '/dispositions/contract/list' },
                     { name: 'Contrato' },
                 ],
             },
@@ -167,7 +167,7 @@ const get_routes = (): IRoute[] => {
             path: '/disposition/contract/edit/:id/',
             template_props: {
                 breadcrumbs: [
-                    { name: 'Lista de Contratos', to: '/dispositions/contract/list' },
+                    { name: 'Lista de contratos', to: '/dispositions/contract/list' },
                     { name: 'Contrato' },
                 ],
             },
@@ -179,7 +179,7 @@ const get_routes = (): IRoute[] => {
             can_access: true,
             path: '/dispositions/contract/list',
             template_props: {
-                breadcrumbs: [{ name: 'lista de Contratos' }],
+                breadcrumbs: [{ name: 'lista de contratos' }],
             },
             component: ListContracts,
         },
@@ -233,7 +233,7 @@ const get_routes = (): IRoute[] => {
             can_access: true,
             path: '/document/use-public/',
             template_props: {
-                breadcrumbs: [{ name: 'Estudio Previo para Uso Público' }],
+                breadcrumbs: [{ name: 'Estudio previo para uso público' }],
             },
             component: PublicUseDoc,
         },

@@ -70,11 +70,11 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         materials: [],
         supports_documents: [
             {
-                label: 'Documento de Matrícula',
+                label: 'Documento de matrícula',
                 type: 3,
             },
             {
-                label: 'Documento de Título',
+                label: 'Documento de título',
                 type: 4,
             },
         ],
@@ -150,11 +150,11 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
     if (initial_values.supports_documents.length === 0) {
         initial_values.supports_documents = [
             {
-                label: 'Documento de Matrícula',
+                label: 'Documento de matrícula',
                 type: 3,
             },
             {
-                label: 'Documento de Título',
+                label: 'Documento de título',
                 type: 4,
             },
         ];
@@ -341,8 +341,8 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         const doc_create = supports_documents.filter((d) => d.label === text).filter((d) => d.id);
         if (doc.length === 0 && doc_create.length === 0) {
             swal_warning.fire({
-                title: 'Documentos Requeridos',
-                text: `el Archivo ${text} es Obligatorio`,
+                title: 'Documentos requeridos',
+                text: `El archivo ${text} es obligatorio`,
             });
             return true;
         } else {

@@ -193,7 +193,7 @@ const Projects = () => {
             responsive: ['md'],
         },
         {
-            title: 'Fecha Creación',
+            title: 'Fecha creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
             responsive: ['md'],

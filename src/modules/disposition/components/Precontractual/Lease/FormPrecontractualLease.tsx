@@ -281,6 +281,14 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                         name="prediation_number"
                         className="form-control"
                         disabled={false}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = /^[0-9]{0,10}$/;
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="prediation_number" />
                 </div>
@@ -308,6 +316,14 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                         id="appraisal_number_id"
                         name="appraisal_number"
                         className="form-control"
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = /^[0-9]{0,10}$/;
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     // disabled
                     />
                     <ErrorMessage name="appraisal_number" />
@@ -361,6 +377,14 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                         disabled={false}
                         min={1}
                         max={12}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = /^[0-9]{0,3}$/;
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
                     <ErrorMessage name="contract_period" />
                 </div>
@@ -477,7 +501,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className={`col-${formik.values.business_type_select === 'otro' ? 6: 12}`}>
                     <label htmlFor="boundaries_id" className="form-label">
-                        Descripcion de linderos<span className="text-danger">*</span>
+                        Descripción de linderos<span className="text-danger">*</span>
                     </label>
                     <Field
                         as="textarea"

@@ -104,7 +104,10 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
         vigency_start: Yup.string().required('obligatorio'),
         vigency_end: Yup.string().required('obligatorio'),
         insurance_broker_id: Yup.string().required('obligatorio'),
-        insurance_value: Yup.string().required('obligatorio'),
+        insurance_value: Yup.number()
+        .required('Campo obligatorio')
+        .min(0, 'El minimo es 0')
+        .max(99999999999999999999, 'El maximo 20 es caracteres'),
         insurance_companies: Yup.array().of(
             Yup.object().shape({
                 id: Yup.string().required('obligatorio'),
@@ -222,7 +225,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             )}
                             <div className={`col-12 col-md-6 col-lg-${type === 'view' ? 3 : 6}`}>
                                 <label htmlFor="policy_type" className="form-label">
-                                    Tipo de Póliza
+                                    Tipo de póliza
                                 </label>
                                 <Field
                                     as="select"
@@ -241,7 +244,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                         Contables
                                     </option>
                                     <option key="De" value="De Crédito">
-                                        De Crédito
+                                        De crédito
                                     </option>
                                 </Field>
                                 <span className="text-danger text-left d-block w-100 mt-1" style={{ height: '22px' }}>
@@ -256,7 +259,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             )} */}
                             <div className="col-12 col-lg-6 col-md-6">
                                 <label htmlFor="policy_number_id" className="form-label mt-3 mt-lg-0">
-                                    Número de Póliza
+                                    Número de póliza
                                 </label>
                                 <Field
                                     type="number"
@@ -270,7 +273,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="vigency_start" className="form-label mt-3 mt-lg-0">
-                                    Fecha de Inicio
+                                    Fecha de inicio
                                 </label>
                                 <Field
                                     type="date"
@@ -285,7 +288,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
 
                             <div className="col-12 col-lg-3 col-md-6">
                                 <label htmlFor="vigency_end" className="form-label mt-3 mt-lg-0">
-                                    Fecha Final
+                                    Fecha final
                                 </label>
                                 <Field
                                     type="date"
@@ -301,7 +304,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             </div>
                             <div className={`col-12 col-md-6 col-lg-${type === 'view' ? 3 : 6}`}>
                                 <label htmlFor="insurance_broker_id_id" className="form-label">
-                                    Corredor de Seguros
+                                    Corredor de seguros
                                 </label>
                                 <Field
                                     component={Select}
@@ -327,7 +330,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             {type !== 'view' && (
                                 <div className="col-12 col-lg-6 col-md-6">
                                     <label htmlFor="form-select" className="form-label">
-                                        Adjuntar Póliza
+                                        Adjuntar póliza
                                     </label>
                                     <Field
                                         name="insurance_document"
@@ -348,7 +351,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                         <div className="row">
                             <div className="col-12 col-lg-6 col-md-6">
                                 <label htmlFor="rebuild_value" className="form-label">
-                                    Valor de la Póliza
+                                    Valor de la póliza
                                 </label>
                                 <div className="input-group">
                                     <div className="input-group-prepend">
@@ -360,8 +363,16 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                         type="number"
                                         className="form-control text-end"
                                         style={{ borderLeft: 'none' }}
-                                        maxLength={200}
+                                        maxLength={20}
                                         disabled={disabled}
+                                        onChange={(e) => {
+                                            e.preventDefault();
+                                            const { value } = e.target;
+                                            const regex = /^[0-9]{0,20}$/;
+                                            if (regex.test(value.toString())) {
+                                                handleChange(e);
+                                            }
+                                        }}
                                     />
                                     <span
                                         className="text-danger text-left d-block w-100 mt-1"
@@ -374,7 +385,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             {type !== 'view' && (
                                 <div className="form-group col-12 col-lg-6 col-md-6">
                                     <label htmlFor="zone_id" className="form-label">
-                                        Tipo de Aseguramiento
+                                        Tipo de aseguramiento
                                         <Tooltip title="Lorem impsu texto descriptivo">
                                             <i className="fa fa-info-circle text-muted ms-2" style={{ fontSize: 14 }} />
                                         </Tooltip>
@@ -451,7 +462,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                             {type === 'view' && (
                                 <div className={`form-inline col-12 col-md-6 col-lg-6`}>
                                     <label htmlFor="companies" className="form-label">
-                                        Compañías Aseguradoras
+                                        Compañías aseguradoras
                                     </label>
                                     <Field
                                         type="text"
@@ -468,14 +479,14 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                         </div>
                         {type !== 'view' && (
                             <>
-                                {/* {console.log('compañias',values.insurance_companies)} */}
+
                                 {Array.isArray(values.insurance_companies) &&
                                     values.insurance_companies?.map((item, i) => {
                                         return (
                                             <div className="row form-group" key={i}>
                                                 <div className={`form-inline col-12 col-lg-6 col-md-6`}>
                                                     <label htmlFor={`id_${i}`} className="form-label">
-                                                        Compañía Aseguradora
+                                                        Compañía aseguradora
                                                     </label>
                                                     <Field
                                                         component={Select}
@@ -509,7 +520,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
 
                                                 <div className="col-11 col-lg-5 col-md-5 form-inline">
                                                     <label htmlFor={`percentage_insured_${i}`} className="form-label">
-                                                        Porcentaje de Aseguramiento
+                                                        Porcentaje de aseguramiento
                                                     </label>
                                                     <div className="input-group">
                                                         <Field
@@ -520,7 +531,14 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                                             min={0}
                                                             max={100}
                                                             type="number"
-                                                            onChange={number_validate()}
+                                                            onChange={(e) => {
+                                                                e.preventDefault();
+                                                                const { value } = e.target;
+                                                                const regex = /^[0-9]{0,3}$/;
+                                                                if (regex.test(value.toString())) {
+                                                                    handleChange(e);
+                                                                }
+                                                            }}
                                                         />
                                                         <div className="input-group-prepend">
                                                             <span className="input-group-text bg-white border-start-0">

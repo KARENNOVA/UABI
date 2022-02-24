@@ -45,7 +45,7 @@ const ViewPerson: FC<FormPros> = ({ dispositionType, title, person }) => {
 
                             }
                             <div className="col-3">
-                                <label htmlFor="">Direccion</label>
+                                <label htmlFor="">Dirección</label>
                                 <div className="my-3">{person?.location?.address}</div>
                             </div>
                             <div className={person?.document_type !== "NIT" ? `col-3` : "col-6"}>

@@ -77,7 +77,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/acquisitions/real-estates/create/',
-                              name: 'Registro de BI',
+                              name: 'Registro de bien inmueble',
                           },
                       ]
                     : []),
@@ -107,7 +107,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/insurabilities/company/',
-                              name: 'Compañías Aseguradoras',
+                              name: 'Compañías aseguradoras',
                           },
                       ]
                     : []),
@@ -152,7 +152,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
             ],
         },
         {
-            name: 'Gestión Documental',
+            name: 'Gestión documental',
             children: [
                 {
                     path: '/document-management/master_formats/',
@@ -185,7 +185,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
             children: [],
         },
         {
-            name: 'Informes y Logs',
+            name: 'Informes y logs',
             children: [],
         },
     ];
@@ -215,7 +215,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                         className="text-white"
                         style={{ fontWeight: 400, padding: '8px 0', width: '80%', margin: '0 auto' }}
                     >
-                        Sistema para la Administración de Bienes Inmuebles
+                        Sistema para la administración de bienes inmuebles
                     </div>
                 </div>
             )}

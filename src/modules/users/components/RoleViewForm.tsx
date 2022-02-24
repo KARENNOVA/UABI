@@ -19,7 +19,7 @@ const RoleViewForm: FC<IUserFormPros> = ({ role }) => {
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información del Rol
+                    Información del rol
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -50,7 +50,7 @@ const RoleViewForm: FC<IUserFormPros> = ({ role }) => {
                             )}
                             {!has_permits && (
                                 <div className="row">
-                                    <div className="col-12">Sin Permisos</div>
+                                    <div className="col-12">Sin permisos</div>
                                 </div>
                             )}
                         </div>

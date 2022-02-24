@@ -44,7 +44,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
         act_value: Yup.number()
             .required('Campo obligatorio')
             .min(0, 'El minimo es 0')
-            .max(9999999999, 'El maximo 10 es caracteres'),
+            .max(999999999999999, 'El maximo 15 es caracteres'),
         recognition_value: Yup.number()
             .min(0, 'El minimo es 0')
             .max(9999999999, 'El maximo 10 es caracteres'),
@@ -90,7 +90,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                         <div className="row">
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="acquisition_type_id" className="form-label">
-                                    Tipo de Adquisición <span className="text-danger">*</span>
+                                    Tipo de adquisición <span className="text-danger">*</span>
                                 </label>
                                 <Field
                                     as="select"
@@ -99,7 +99,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                                     id="acquisition_type_id"
                                 >
                                     <option value="" disabled hidden>
-                                        -- Seleccione Tipo de Adquisición --
+                                        -- Seleccione Tipo de adquisición --
                                     </option>
                                     <option value="Compraventa">Compraventa</option>
                                     <option value="Donación">Donación</option>
@@ -107,16 +107,16 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                                     <option value="Permuta">Permuta</option>
                                     <option value="Cesión a título gratuito">Cesión a título gratuito</option>
                                     <option value="Dación en pago">Dación en pago</option>
-                                    <option value="Obigaciones Urbanísticas">Obigaciones Urbanísticas</option>
+                                    <option value="Obigaciones Urbanísticas">Obigaciones urbanísticas</option>
                                 </Field>
                                 <ErrorMessage name="acquisition_type" />
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="title_type_id" className="form-label">
-                                    Tipo de Título <span className="text-danger">*</span>
+                                    Tipo de título <span className="text-danger">*</span>
                                 </label>
                                 <Field as="select" className="form-select" name="title_type" id="title_type_id">
-                                    <option value="">-- Seleccione Tipo de Título --</option>
+                                    <option value="">-- Seleccione Tipo de título --</option>
                                     <option value="Escritura">Escritura</option>
                                     <option value="Certificado tradición y libertad">
                                         Certificado tradición y libertad
@@ -130,7 +130,15 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                                 <label htmlFor="act_number_id" className="form-label">
                                     N° acto administrativo <span className="text-danger">*</span>
                                 </label>
-                                <Field type="text" className="form-control" id="act_number_id" name="act_number" />
+                                <Field type="text" className="form-control" id="act_number_id" name="act_number"
+                                    onChange={(e) => {
+                                        e.preventDefault();
+                                        const { value } = e.target;
+                                        const regex = /^[0-9]{0,10}$/;
+                                        if (regex.test(value.toString())) {
+                                            handleChange(e);
+                                        }
+                                    }} />
                                 <ErrorMessage name="act_number" />
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -145,7 +153,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                         <div className="row">
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="entity_type_id" className="form-label">
-                                    Tipo de Entidad <span className="text-danger">*</span>
+                                    Tipo de entidad <span className="text-danger">*</span>
                                 </label>
                                 <Field as="select" className="form-select" id="entity_type_id" name="entity_type">
                                     <option value="">-- Seleccione Tipo de Entidad --</option>
@@ -176,7 +184,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="acquired_percentage_id" className="form-label">
-                                    Porcentaje Adquirido <span className="text-danger">*</span>
+                                    Porcentaje adquirido <span className="text-danger">*</span>
                                 </label>
                                 <div className="input-group">
                                     <Field
@@ -228,13 +236,13 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                                     name="act_value"
                                     // min={0}
                                     // max={9999999999}
-                                    onChange={number_validate(10)}
+                                    onChange={number_validate(15)}
                                 />
                                 <ErrorMessage name="act_value" />
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="acquisition_value_id" className="form-label">
-                                    Valor de Reconocimiento
+                                    Valor de reconocimiento
                                 </label>
                                 <Field
                                     type="number"
@@ -247,7 +255,7 @@ const AcquisitionsFrom: FC<AcquisitionsFromProps> = ({ disabled, acquisition, on
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
                                 <label htmlFor="vigency_start" className="form-label mt-3 mt-lg-0">
-                                    Fecha de Adquisición <span className="text-danger">*</span>
+                                    Fecha de adquisición <span className="text-danger">*</span>
                                 </label>
                                 <Field
                                     type="date"

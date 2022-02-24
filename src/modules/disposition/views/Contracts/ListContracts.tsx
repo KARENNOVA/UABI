@@ -35,8 +35,8 @@ export const ListContracts = () => {
                                             { key: 'sap_id', name: 'Activo fijo' },
                                             { key: 'CBML', name: 'CBML' },
                                             { key: 'address', name: 'Dirección' },
-                                            { key: 'date', name: 'Fecha Inicia' /*type: 'date'*/ },
-                                            { key: 'date', name: 'Fecha Terminación', /*type: 'date'*/ },
+                                            { key: 'date', name: 'Fecha inicial' /*type: 'date'*/ },
+                                            { key: 'date', name: 'Fecha terminación', /*type: 'date'*/ },
                                             { key: 'sap_id', name: 'Número del contrato' },
                                         ]}
                                         onSubmit={filter}

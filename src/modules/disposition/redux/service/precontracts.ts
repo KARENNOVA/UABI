@@ -41,7 +41,7 @@ const create_public = async (data: any) => {
             URI,
             data
         );
-        await swal_success.fire('Estudio Previo de uso Público Creado', res.data.message, 'success');
+        await swal_success.fire('Estudio previo de uso público creado', res.data.message, 'success');
         return res.data;
 
     } catch (e) {

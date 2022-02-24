@@ -26,7 +26,7 @@ const ComodatoDocContract = () => {
         destination_realestate: "destinacion",
         lockable_base: 10,
         prediation_date: "2021-12-30",
-        boundaries: "descripcion de linderos",
+        boundaries: "descripción de linderos",
 
         //info comodato
         action_field: "campo",

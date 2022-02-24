@@ -12,7 +12,7 @@ const ProjectDetail: FC<IUserFormPros> = ({ project }) => {
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información Del Proyecto
+                    Información del proyecto
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -26,25 +26,25 @@ const ProjectDetail: FC<IUserFormPros> = ({ project }) => {
                                 <div className="my-3">{project?.name || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Dependencia o Secretaría</label>
+                                <label htmlFor="">Dependencia o secretaría</label>
                                 <div className="my-3">{project?.dependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Subsecretaría o Subdirección</label>
+                                <label htmlFor="">Subsecretaría o subdirección</label>
                                 <div className="my-3">{project?.subdependency || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Centro Gestor</label>
+                                <label htmlFor="">Centro gestor</label>
                                 <div className="my-3">{project?.management_center || '-'}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Centro de Costos</label>
+                                <label htmlFor="">Centro de costos</label>
                                 <div className="my-3">{project?.cost_center || '-'}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Valor Presupuestal</label>
+                                <label htmlFor="">Valor presupuestal</label>
                                 <div className="my-3">{project?.budget_value || '-'}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">

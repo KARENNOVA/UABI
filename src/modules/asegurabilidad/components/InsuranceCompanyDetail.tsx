@@ -14,7 +14,7 @@ const InsuranceCompanyDetail: FC<InsuranceCompanyDetailProps> = ({ company, loca
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información De La Compañia
+                    Información De La Compañía
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -24,7 +24,7 @@ const InsuranceCompanyDetail: FC<InsuranceCompanyDetailProps> = ({ company, loca
                                 <div className="my-3">{company?.id}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Nombre de la compañia</label>
+                                <label htmlFor="">Nombre de la compañía</label>
                                 <div className="my-3">{company?.name || '-'}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">

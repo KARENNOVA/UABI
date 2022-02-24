@@ -135,7 +135,7 @@ const ProjectEnglobarForm: FC<RealEstateFormProps> = ({
                                                 acquisitions={formik.values.acquisitions}
                                             />
                                             <Card
-                                                title="Documentos Soporte"
+                                                title="Documentos soporte"
                                                 actions={
                                                     [
                                                         // <div className="d-flex flex-row-reverse px-3 py-1">

@@ -92,7 +92,7 @@ export const TableDiszposition: FC<DispositionListProps> = ({ filters, user /*, 
             render: (data) => data?.cbmls?.uabi,
         },
         {
-            title: 'Activo Fijo',
+            title: 'Activo fijo',
             dataIndex: 'active_code',
             align: 'left' as 'left',
         },

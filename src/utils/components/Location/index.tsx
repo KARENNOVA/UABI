@@ -281,12 +281,13 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
-                                                className="w-100 form-control"
+                                                className="form-control"
                                                 type="text"
                                                 name="block"
                                                 autoComplete="off"
                                                 min={0}
-                                                max={9999}
+                                                max={999}
+                                                // onChange={number_validate(3)}
                                                 onChange={(e) => {
                                                     e.preventDefault();
                                                     const { value } = e.target;
@@ -306,12 +307,12 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                                             </label>
                                             <TooltipField text="Lorem impsu texto descriptivo" />
                                             <Field
-                                                className="w-100 form-control"
+                                                className="form-control"
                                                 type="string"
                                                 name="lot"
                                                 autoComplete="off"
                                                 min={0}
-                                                max={999}
+                                                max={9999}
                                                 onChange={(e) => {
                                                     e.preventDefault();
                                                     const { value } = e.target;

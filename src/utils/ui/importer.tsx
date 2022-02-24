@@ -66,7 +66,7 @@ const Importer: FC<any> = (props) => {
                                 <br />
                                 <span>
                                     Por favor descargue este formato como ejemplo, llene los datos y suba el archivo
-                                    aqui.
+                                    aquí.
                                 </span>
                             </Fragment>
                         }

@@ -92,7 +92,7 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
             prediation_date: precontractual?.prediation_date ? moment(new Date(Number(precontractual?.prediation_date))).format('YYYY-MM-DD') : "",
             registration_date: precontractual?.registration_date ? moment(new Date(Number(precontractual?.registration_date))).format('YYYY-MM-DD') : moment(new Date()).format('YYYY-MM-DD'),
             appraisal_date: precontractual?.appraisal_date ? moment(new Date(Number(precontractual?.appraisal_date))).format('YYYY-MM-DD') : "",
-            leader: {
+            leader: precontractual?.leader ? {
                 id: precontractual?.leader?.id || "",
                 documentType: precontractual?.leader?.document_type || "",
                 documentNumber: precontractual?.leader?.document_number || "",
@@ -106,8 +106,8 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
                 post: precontractual?.leader?.post || "",
                 location_id: precontractual?.leader?.location_id || "",
                 location: precontractual?.leader?.location?.address || "",
-            },
-            elaborated: {
+            } : "",
+            elaborated: precontractual?.elaborated ? {
                 id: precontractual?.elaborated?.id || "",
                 documentType: precontractual?.elaborated?.document_type || "",
                 documentNumber: precontractual?.elaborated?.document_number || "",
@@ -120,8 +120,8 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
                 gender: precontractual?.elaborated?.gender || "",
                 post: precontractual?.elaborated?.post || "",
                 location_id: precontractual?.elaborated?.location_id || "",
-            },
-            revised: {
+            } : "",
+            revised: precontractual?.revised ? {
                 id: precontractual?.revised?.id || "",
                 documentType: precontractual?.revised?.document_type || "",
                 documentNumber: precontractual?.revised?.document_number || "",
@@ -134,8 +134,8 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
                 gender: precontractual?.revised?.gender || "",
                 post: precontractual?.revised?.post || "",
                 location_id: precontractual?.revised?.location_id || "",
-            },
-            approved: {
+            } : "",
+            approved: precontractual?.approved ? {
                 id: precontractual?.approved?.id || "",
                 documentType: precontractual?.approved?.document_type || "",
                 documentNumber: precontractual?.approved?.document_number || "",
@@ -148,8 +148,8 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
                 gender: precontractual?.approved?.gender || "",
                 post: precontractual?.approved?.post || "",
                 location_id: precontractual?.approved?.location_id || "",
-            },
-            applicant: {
+            } : "",
+            applicant: precontractual?.applicant ? {
                 id: precontractual?.applicant?.id || "",
                 documentType: precontractual?.applicant?.document_type || "",
                 documentNumber: precontractual?.applicant?.document_number || "",
@@ -163,7 +163,7 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
                 post: precontractual?.applicant?.post || "",
                 location_id: precontractual?.applicant?.location_id || "",
                 location: precontractual?.applicant?.location?.address || "",
-            },
+            } : "",
             business_type: {
                 select:
                     precontractual?.business_type === 'Restaurante'
@@ -199,7 +199,14 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
     const schema = Yup.object().shape({
         //general
         public_service: Yup.string().required('obligatorio'),
-        administration_value: Yup.number().required('obligatorio'),
+        administration_value: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(9999999999, 'maximo 10 caracteres'),
+        vigilance_value: Yup.number()
+            .required('obligatorio')
+            .min(0, 'El minimo es 0')
+            .max(9999999999, 'maximo 10 caracteres'),
         lockable_base: Yup.number().required('obligatorio').min(10, 'El minimo es 10').max(100, 'El maximo es 100'),
         business_type: Yup.object({
             select: Yup.string().required('obligatorio'),
@@ -219,7 +226,11 @@ export const GeneralFormLease: FC<FormPros> = ({ onSubmit, innerRef, realEstate,
         appraisal_date: Yup.string().required('obligatorio'),
         environmental_risk: Yup.string().required('obligatorio'),
 
-        // applicant: Yup.object().required('obligatorio'),
+        applicant: Yup.object().required('obligatorio'),
+        leader: Yup.object().required('obligatorio'),
+        elaborated: Yup.object().required('obligatorio'),
+        revised: Yup.object().required('obligatorio'),
+        approved: Yup.object().required('obligatorio'),
 
     });
 

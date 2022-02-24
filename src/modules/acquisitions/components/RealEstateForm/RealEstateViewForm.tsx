@@ -21,7 +21,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información del Bien Inmueble
+                    Información del bien inmueble
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -35,21 +35,21 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="my-3">{tipology?.tipology || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Cuenta Contable</label>
+                                <label htmlFor="">Cuenta contable</label>
                                 <div className="my-3">{tipology?.accounting_account || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Dependencia o Secretaría</label>
+                                <label htmlFor="">Dependencia o secretaría</label>
                                 <div className="my-3">{realEstate?.dependency?.dependency || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Subsecretaría o Subdirección</label>
+                                <label htmlFor="">Subsecretaría o subdirección</label>
                                 <div className="my-3">{realEstate?.cost_center?.subdependency || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Centro Gestor</label>
+                                <label htmlFor="">Centro gestor</label>
                                 <div className="my-3">{realEstate?.dependency?.management_center || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -58,21 +58,21 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                             </div>
 
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Nombre del Bien Inmueble</label>
+                                <label htmlFor="">Nombre del bien inmueble</label>
                                 <div className="my-3">{realEstate?.name || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Número de Matrícula</label>
+                                <label htmlFor="">Número de matrícula</label>
                                 <div className="my-3">{realEstate?.registry_number || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Código Activo</label>
+                                <label htmlFor="">Código activo</label>
                                 <div className="my-3">{realEstate?.active_code || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Tipo de Uso</label>
+                                <label htmlFor="">Tipo de uso</label>
                                 <div className="my-3">{realEstate?.destination_type|| "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -82,7 +82,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Área Total</label>
+                                <label htmlFor="">Área total</label>
                                 <div className="my-3">{realEstate?.total_area || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -95,13 +95,13 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="my-3">{(Array.isArray(realEstate?.materials) && realEstate?.materials?.map(m => m)?.join(", ")) || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Porcentaje Total</label>
+                                <label htmlFor="">Porcentaje total</label>
                                 <div className="my-3">{realEstate?.total_percentage || "-"}</div>
                             </div>
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Zona del Bien Inmueble</label>
+                                <label htmlFor="">Zona del bien inmueble</label>
                                 <div className="my-3">{realEstate?.zone || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
@@ -109,11 +109,11 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 <div className="my-3">{(Array.isArray(realEstate?.active_type) && realEstate?.active_type?.map(active => active)?.join(", ")) || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Área Lote</label>
+                                <label htmlFor="">Área lote</label>
                                 <div className="my-3">{realEstate?.plot_area || "-"}</div>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Área Construcción</label>
+                                <label htmlFor="">Área construcción</label>
                                 <div className="my-3">{realEstate?.construction_area || "-"}</div>
                             </div>
                         </div>
@@ -153,7 +153,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 </div>
                             }
                             <div className="col-12 col-md-6 col-lg-3">
-                                <label htmlFor="">Fecha de Inspección</label>
+                                <label htmlFor="">Fecha de inspección</label>
                                 <div className="my-3">
                                     <div className="row">
                                         <div className="col">
@@ -177,7 +177,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                             <>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Importe Contabilidad</label>
+                                        <label htmlFor="">Importe contabilidad</label>
                                         <div className="my-3">{realEstate?.accounting_amount || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
@@ -195,16 +195,16 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 </div>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Valor Aprovechamiento</label>
+                                        <label htmlFor="">Valor aprovechamiento</label>
                                         <div className="my-3">{realEstate?.exploitation_value || "-"}</div>
                                     </div>
 
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Valor de Autorización</label>
+                                        <label htmlFor="">Valor de autorización</label>
                                         <div className="my-3">{realEstate?.authorization_value || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
-                                        <label htmlFor="">Valor del Canon</label>
+                                        <label htmlFor="">Valor del canon</label>
                                         <div className="my-3">{realEstate?.canyon_value || "-"}</div>
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
@@ -218,7 +218,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                         <div className="my-3">{realEstate?.useful_life_periods || "-"}</div>
                                     </div>
                                     <div className="col-12 col-lg-6 col-md-6">
-                                        <label htmlFor="">Tipo Disposición</label>
+                                        <label htmlFor="">Tipo disposición</label>
                                         <div className="my-3">{realEstate?.disposition_type || "-"}</div>
                                     </div>
                                 </div>

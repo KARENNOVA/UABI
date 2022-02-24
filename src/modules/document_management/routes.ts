@@ -15,7 +15,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     { name: 'Expediente Electrónico', to: '/document-management/electronic_file/list' },
-                    { name: 'Documentos Asociados' },
+                    { name: 'Documentos asociados' },
                 ],
             },
             component: Electronic_file,
@@ -27,7 +27,7 @@ const get_routes = (): IRoute[] => {
             path: '/document-management/master_formats/',
             template_props: {
                 breadcrumbs: [
-                    { name: 'Master de Formatos' },
+                    { name: 'Master de formatos' },
                 ],
             },
             component: Master_formats,

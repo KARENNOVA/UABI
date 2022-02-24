@@ -210,7 +210,7 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                             return (
                                 <Form>
                                     <TableInspectionPhysycal obs={formik.values.observations} />
-                                    <Card title="Servicios Publicos">
+                                    <Card title="Servicios Públicos">
                                         {formik.values.public_services.map((service, i) => (
                                             <div className="row" key={i}>
                                                 <div className="form-group col-6 col-lg-3 col-md-6">

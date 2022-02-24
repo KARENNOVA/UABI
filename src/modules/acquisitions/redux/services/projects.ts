@@ -95,7 +95,7 @@ export const createProject = async (
         if(error?.response ) {
             if (error.response?.status === 400) {
                 await swal_warning.fire({
-                    text: "El campo Nombre del proyecto ya se encuentra registrado"
+                    text: "El campo nombre del proyecto ya se encuentra registrado"
                 });
 
             }

@@ -146,7 +146,7 @@ const EnglobarForm: FC<GeneralDataFormProps> = ({
                 </div>
                 <div className="form-group col-3">
                     <label htmlFor="accounting_account_id" className="form-label">
-                        Cuenta Contable
+                        Cuenta contable
                     </label>
                     <Field
                         disabled
@@ -182,7 +182,7 @@ const EnglobarForm: FC<GeneralDataFormProps> = ({
                         <option value="" disabled hidden>
                             -- Seleccione Destinación --
                         </option>
-                        <option value="PÚBLICO">Uso Público</option>
+                        <option value="PÚBLICO">uso público</option>
                         <option value="FISCAL">Fiscal</option>
                         <option value="MIXTO">Mixto</option>
                     </Field>

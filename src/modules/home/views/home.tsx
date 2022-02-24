@@ -30,8 +30,8 @@ const Home = () => {
                                 name="Adquisición"
                                 links={[
                                     { name: 'Proyectos', to: '/acquisitions/projects/' },
-                                    { name: 'Bienes Inmuebles', to: '/acquisitions/real-estates/' },
-                                    { name: 'Registro de BI', to: '/acquisitions/real-estates/create/' },
+                                    { name: 'Bienes inmuebles', to: '/acquisitions/real-estates/' },
+                                    { name: 'Registro de bien inmueble', to: '/acquisitions/real-estates/create/' },
                                 ]}
                             />
                             <Card
@@ -46,14 +46,14 @@ const Home = () => {
                             <Card
                                 name="Disposición"
                                 links={[
-                                    { name: 'Gestionar Disposición', to: '/disposition/list/' },
-                                    { name: 'Gestionar Contratos', to: '/dispositions/contract/list' },
+                                    { name: 'Gestionar disposición', to: '/disposition/list/' },
+                                    { name: 'Gestionar contrato', to: '/dispositions/contract/list' },
                                 ]}
                             />
                             <Card name="Supervisión" links={[]} />
                             <Card name="Mantenimiento" links={[]} />
                             <Card name="Consultas" links={[]} />
-                            <Card name="Informes y Logs" links={[]} />
+                            <Card name="Informes y logs" links={[]} />
                         </div>
                     </div>
                 </section>

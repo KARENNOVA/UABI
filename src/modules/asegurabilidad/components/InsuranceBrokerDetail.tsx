@@ -14,7 +14,7 @@ const InsuranceBrokerDetail: FC<InsuranceBrokerDetailProps> = ({ broker, locatio
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información De La Compañia
+                    Información De La Compañía
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>
@@ -56,7 +56,7 @@ const InsuranceBrokerDetail: FC<InsuranceBrokerDetailProps> = ({ broker, locatio
                         </div>
                         <div className="row">
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Correo Electronico de contacto</label>
+                                <label htmlFor="">Correo Electrónico de contacto</label>
                                 <div className="my-3">{broker?.contact_information?.email || '-'}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">

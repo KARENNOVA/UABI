@@ -144,7 +144,7 @@ export const FormContract: FC<FormProps> = ({ formik, realEstate }) => {
                 </div>
                 <div className="col-6">
                     <label htmlFor="finish_date_id" className="form-label">
-                        Fecha de Terminación del contrato<span className="text-danger">*</span>
+                        Fecha de terminación del contrato<span className="text-danger">*</span>
                     </label>
                     <Field
                         type="date"

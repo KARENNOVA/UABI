@@ -217,7 +217,7 @@ const GeneralFormPublicUse: FC<FormPros> = ({ onSubmit, innerRef, realEstate, va
             {(formik) => {
                 return <Form>
                     <Card
-                        title="Estudio previo para Uso Público"
+                        title="Estudio previo para uso público"
                         extra={
                             <>
                                 <ModalNotificar />

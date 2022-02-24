@@ -81,7 +81,7 @@ const DetailPrecontractual = () => {
                                     operational_risk={precontractual?.operational_risk}
                                     regulatory_risk={precontractual?.regulatory_risk}
                                 />
-                                <ViewPerson title='Información del Lider a Cargo' person={precontractual?.leader} />
+                                <ViewPerson title='Información del Líder a Cargo' person={precontractual?.leader} />
                             </div>
                         </div>
                     </div>

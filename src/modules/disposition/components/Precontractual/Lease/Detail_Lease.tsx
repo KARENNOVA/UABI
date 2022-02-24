@@ -125,7 +125,7 @@ const DetailLease: FC<IPros> = ({ precontractual }) => {
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 movimiento">
-                                <label htmlFor="">Descripcion de linderos</label>
+                                <label htmlFor="">Descripción de linderos</label>
                                 <div className="my-3" style={{ height: '60px', overflowX: 'auto' }}>
                                     <div style={{ width: '1000px' }}>
                                         {precontractual?.boundaries}
