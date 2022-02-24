@@ -1,6 +1,5 @@
 import Card from '../components/Card';
 
-
 const Home = () => {
     return (
         <>
@@ -19,20 +18,19 @@ const Home = () => {
                 <section id="cards">
                     <div className="container">
                         <div className="row justify-content-center">
-                           <Card
+                            <Card
                                 name="Administrativo"
                                 links={[
                                     // { name: 'Asignación de Roles y Permisos',  to: '/acquisitions/projects/' },
-                                    { name: 'Roles',  to: '/roles/' },
-                                    { name: 'Usuarios',  to: '/users/' },
+                                    { name: 'Usuarios', to: '/users/' },
+                                    { name: 'Gestión y asignación de Roles', to: '/roles/' },
                                 ]}
-
                             />
-                           <Card
-                               name="Adquisición"
+                            <Card
+                                name="Adquisición"
                                 links={[
                                     { name: 'Proyectos', to: '/acquisitions/projects/' },
-                                    { name: 'Bienes inmuebles', to: '/acquisitions/real-estates/' },
+                                    { name: 'Bienes Inmuebles', to: '/acquisitions/real-estates/' },
                                     { name: 'Registro de BI', to: '/acquisitions/real-estates/create/' },
                                 ]}
                             />
@@ -44,7 +42,7 @@ const Home = () => {
                                     { name: 'Gestionar compañía aseguradora', to: '/insurabilities/broker/' },
                                 ]}
                             />
-                            <Card name="Inspección" links={[{ name: 'Gestionar inspección', to: '/inspection/' }]} />
+                            <Card name="Inspección" links={[{ name: 'Gestionar Inspección', to: '/inspection/' }]} />
                             <Card
                                 name="Disposición"
                                 links={[
@@ -65,4 +63,3 @@ const Home = () => {
 };
 
 export default Home;
-

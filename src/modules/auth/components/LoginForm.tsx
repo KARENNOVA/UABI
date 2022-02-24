@@ -24,12 +24,14 @@ const LoginForm: FC<IloginFormPros> = ({ onSubmit, disabled, alert }) => {
 
     const submit = (values, actions) => {
         actions.setSubmitting(true);
-        onSubmit(values, actions).then(() => {
-            actions.setSubmitting(false);
-            actions.resetForm();
-        }).catch(() => {
-            actions.setSubmitting(false);
-        });
+        onSubmit(values, actions)
+            .then(() => {
+                actions.setSubmitting(false);
+                actions.resetForm();
+            })
+            .catch(() => {
+                actions.setSubmitting(false);
+            });
     };
 
     const schema = Yup.object().shape({
@@ -44,7 +46,7 @@ const LoginForm: FC<IloginFormPros> = ({ onSubmit, disabled, alert }) => {
                     <Form>
                         <div className="container-inputs-login usuario-item-login">
                             <label htmlFor="user_id" className="form-label">
-                                Numero de identificación
+                                Número de Identificación
                             </label>
                             <Field
                                 type="text"
@@ -58,7 +60,7 @@ const LoginForm: FC<IloginFormPros> = ({ onSubmit, disabled, alert }) => {
                         </div>
                         <div className="container-inputs-login">
                             <label htmlFor="password_id" className="form-label">
-                                Digite su contraseña
+                                Digite su Contraseña
                             </label>
                             <div className="input-group mb-3">
                                 <Field
