@@ -21,7 +21,7 @@ const DetailLease: FC<IPros> = ({ precontractual }) => {
                                 <div className="my-3">{precontractual?.active_code ?? ""}</div>
                             </div>
                             <div className="col-3">
-                                <label htmlFor="">Fecha de Registro estudio previo</label>
+                                <label htmlFor="">Fecha de registro estudio previo</label>
                                 <div className="my-3">-</div>
                             </div>
                             <div className="col-3">

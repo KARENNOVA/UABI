@@ -1,11 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useContext } from 'react'
 import { Collapse } from 'antd';
-import { Checkbox } from 'antd';
-import { Link } from '../../../utils/ui';
 import ModalElectronicFiel from './ModalElectronicFiel';
 import { LinkButton } from '../../../utils/ui/link';
 import { download_document } from '../../../utils/components/DocumentsModal/services';
-import {useState} from 'react';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 interface FormPros {
     documents?: any;
@@ -14,22 +12,18 @@ interface FormPros {
 }
 
 const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => {
-    const [newDoc, setNewDoc] = useState(false)
+
     const { Panel } = Collapse;
+    const context = useContext(TemplateContext);
     function callback(key) {
         console.log(key);
     }
 
 
-    function onChange(e) {
-        console.log(`checked = ${e.target.checked}`);
-    }
-
-
     return (
         <>
-            <Collapse onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff' }} >
-                <Panel header="Adquisición" key="1" style={{ fontWeight: "bold" }} extra={
+            <Collapse key="collapse_1" onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff' }} >
+                <Panel header="Adquisición" key="panel_1" style={{ fontWeight: "bold" }} extra={
                     <ModalElectronicFiel
                         type={"5"}
                         real_estate_id={real_estate_id}
@@ -39,13 +33,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                         documents?.realEstates?.map(doc => {
                             return (
                                 <>
-                                    <div className="row" style={{ borderRadius: '7px' }}>
+                                    <div key={`adquisicion_${doc.id}`} className="row" style={{ borderRadius: '7px' }}>
                                         <div className="col-10">
-                                            <span style={{ paddingLeft: '50px', fontWeight: "normal" }}>{doc.name}</span>
+                                            <span style={{ paddingLeft: `${context.device === "sm" ? '0px' : context.device === "md" ? "30px" : '50px' }`, fontWeight: "normal" }}>{doc.name}</span>
                                         </div>
                                         <div
                                             className=" col-2 justify-content-end"
-                                            style={{ paddingLeft: "50px" }}
+                                            style={{ paddingLeft: `${context.device === "sm" ? '' : context.device === "md" ?  "30px" :  '50px' }` }}
                                         >
                                             {/* <Link
 
@@ -72,13 +66,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                             );
                         }))
                         :
-                        <span style={{ fontWeight: "normal", paddingLeft: '30px' }}>No se han subido documentos en el módulo de Adquisición</span>
+                        <span style={{ fontWeight: "normal", paddingLeft: `${context.device === "sm" ? '0px' : '30px'}` }}>No se han subido documentos en el módulo de Adquisición</span>
                     }
                 </Panel>
             </Collapse>
 
-            <Collapse onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
-                <Panel header="Administración de Inventario" key="1" style={{ fontWeight: "bold" }} extra={
+            <Collapse key="collapse_2" onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
+                <Panel header={`${context.device === "sm" ? "Admin de inventario" : "Administración de inventario" }`} key="panel_2" style={{ fontWeight: "bold" }} extra={
                     <ModalElectronicFiel
                         type={"6"}
                         real_estate_id={real_estate_id}
@@ -88,13 +82,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                         documents?.inventoryRecord?.map(doc => {
                             return (
                                 <>
-                                    <div className="row" style={{ borderRadius: '7px' }}>
+                                    <div key={`inventario_${doc.id}`} className="row" style={{ borderRadius: '7px' }}>
                                         <div className="col-10">
-                                            <span style={{ paddingLeft: '50px', fontWeight: "normal" }}>{doc.name}</span>
+                                            <span style={{ paddingLeft: `${context.device === "sm" ? '0px' : context.device === "md" ? "30px" : '50px' }`, fontWeight: "normal" }}>{doc.name}</span>
                                         </div>
                                         <div
                                             className=" col-2 justify-content-end"
-                                            style={{ paddingLeft: "50px" }}
+                                            style={{ paddingLeft: `${context.device === "sm" ? '' : context.device === "md" ?  "30px" :  '50px' }` }}
                                         >
                                             {/* <Link
 
@@ -121,13 +115,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                             );
                         }))
                         :
-                        <span style={{ fontWeight: "normal", paddingLeft: '30px' }}>No se han subido documentos en el módulo de Administración de Inventario</span>
+                        <span style={{ fontWeight: "normal", paddingLeft: `${context.device === "sm" ? '0px' : '30px'}` }}>No se han subido documentos en el módulo de Administración de Inventario</span>
                     }
                 </Panel>
             </Collapse>
 
-            <Collapse onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }} >
-                <Panel header="Asegurabilidad" key="1" style={{ fontWeight: "bold" }} extra={
+            <Collapse key="collapse_3" onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }} >
+                <Panel header="Asegurabilidad" key="panel_3" style={{ fontWeight: "bold" }} extra={
                     <ModalElectronicFiel
                         type={"11"}
                         real_estate_id={real_estate_id}
@@ -137,15 +131,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                         documents?.policies?.map(doc => {
                             return (
                                 <>
-                                    <div className="row" style={{ borderRadius: '7px' }}>
+                                    <div key={`asegurabilidad_${doc.id}`} className="row" style={{ borderRadius: '7px' }}>
                                         <div className="col-10">
-                                            <Checkbox style={{ paddingLeft: '30px' }} onChange={onChange}>
-                                                <span style={{ fontWeight: "normal" }}>{doc.name}</span>
-                                            </Checkbox>
+                                                <span style={{ paddingLeft: `${context.device === "sm" ? '0px' : context.device === "md" ? "30px" : '50px' }`, fontWeight: "normal" }}>{doc.name}</span>
                                         </div>
                                         <div
                                             className=" col-2 justify-content-end"
-                                            style={{ paddingLeft: "50px" }}
+                                            style={{ paddingLeft: `${context.device === "sm" ? '' : context.device === "md" ?  "30px" :  '50px' }` }}
                                         >
                                             {/* <Link
 
@@ -172,13 +164,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                             );
                         }))
                         :
-                        <span style={{ fontWeight: "normal", paddingLeft: '30px' }}>No se han subido documentos en el módulo de Asegurabilidad</span>
+                        <span style={{ fontWeight: "normal", paddingLeft: `${context.device === "sm" ? '0px' : '30px'}` }}>No se han subido documentos en el módulo de Asegurabilidad</span>
                     }
                 </Panel>
             </Collapse>
 
-            <Collapse onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
-                <Panel header="Inspección" key="1" style={{ fontWeight: "bold" }} extra={
+            <Collapse key="collapse_4" onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
+                <Panel header="Inspección" key="panel_4" style={{ fontWeight: "bold" }} extra={
                     <ModalElectronicFiel
                         type={"8"}
                         real_estate_id={real_estate_id}
@@ -188,15 +180,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                         documents?.inspections?.map(doc => {
                             return (
                                 <>
-                                    <div className="row" style={{ borderRadius: '7px' }}>
+                                    <div key={`inspección_${doc.id}`} className="row" style={{ borderRadius: '7px' }}>
                                         <div className="col-10">
-                                            <Checkbox style={{ paddingLeft: '30px' }} onChange={onChange}>
-                                                <span style={{ fontWeight: "normal" }}>{doc.name}</span>
-                                            </Checkbox>
+                                                <span style={{ paddingLeft: `${context.device === "sm" ? '0px' : context.device === "md" ? "30px" : '50px' }`, fontWeight: "normal" }}>{doc.name}</span>
                                         </div>
                                         <div
                                             className=" col-2 justify-content-end"
-                                            style={{ paddingLeft: "50px" }}
+                                            style={{ paddingLeft: `${context.device === "sm" ? '' : context.device === "md" ?  "30px" :  '50px' }` }}
                                         >
                                             {/* <Link
 
@@ -223,13 +213,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                             );
                         }))
                         :
-                        <span style={{ fontWeight: "normal", paddingLeft: '30px' }}>No se han subido documentos en el módulo de Inspección</span>
+                        <span style={{ fontWeight: "normal", paddingLeft: `${context.device === "sm" ? '0px' : '30px'}` }}>No se han subido documentos en el módulo de Inspección</span>
                     }
                 </Panel>
             </Collapse>
 
-            <Collapse onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
-                <Panel header="Disposición" key="1" style={{ fontWeight: "bold" }} extra={
+            <Collapse key="collapse_5" onChange={callback} style={{ borderRadius: '7px', backgroundColor: '#fff', marginTop: '5px' }}>
+                <Panel header="Disposición" key="panel_5" style={{ fontWeight: "bold" }} extra={
                     <ModalElectronicFiel
                         type={"10"}
                         real_estate_id={real_estate_id}
@@ -239,13 +229,13 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                         documents?.dispositions?.map(doc => {
                             return (
                                 <>
-                                    <div className="row" style={{ borderRadius: '7px' }}>
+                                    <div key={`disposicion_${doc.id}`} className="row" style={{ borderRadius: '7px' }}>
                                         <div className="col-10">
-                                            <span style={{ paddingLeft: '50px', fontWeight: "normal" }}>{doc.name}</span>
+                                            <span style={{ paddingLeft: `${context.device === "sm" ? '0px' : context.device === "md" ? "30px" : '50px' }`, fontWeight: "normal" }}>{doc.name}</span>
                                         </div>
                                         <div
                                             className=" col-2 justify-content-end"
-                                            style={{ paddingLeft: "50px" }}
+                                            style={{ paddingLeft: `${context.device === "sm" ? '' : context.device === "md" ?  "30px" :  '50px' }` }}
                                         >
                                             {/* <Link
 
@@ -272,7 +262,7 @@ const CollapseElectronicFiel: FC<FormPros> = ({ documents, real_estate_id }) => 
                             );
                         }))
                         :
-                        <span style={{ fontWeight: "normal", paddingLeft: '30px' }}>No se han subido documentos en el módulo de Disposición</span>
+                        <span style={{ fontWeight: "normal", paddingLeft: `${context.device === "sm" ? '0px' : '30px'}` }}>No se han subido documentos en el módulo de Disposición</span>
                     }
                 </Panel>
             </Collapse>

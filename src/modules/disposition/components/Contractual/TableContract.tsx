@@ -127,7 +127,7 @@ export const TableContract: FC<ContractProps> = ({ user, contrats }) => {
             render: (date) => formatDate(parseInt(date))
         },
         {
-            title: 'Fecha Terminación',
+            title: 'Fecha terminación',
             dataIndex: 'finish_date',
             align: 'left' as 'left',
             render: (date) => formatDate(parseInt(date))

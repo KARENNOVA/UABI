@@ -139,6 +139,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
     });
 
     const submit = (values, actions) => {
+        console.log(values)
         const newDate = moment(values.vigency_start).format('YYYY/MM/DD');
         const newDate2 = moment(values.vigency_end).format('YYYY/MM/DD');
         const finalValues = {
@@ -450,7 +451,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
                                                         false
                                                     );
                                                 }}
-                                                name="Agregar Compañía"
+                                                name="Agregar compañía"
                                                 icon={<i className="fa fa-plus-circle" aria-hidden="true" />}
                                             />
                                         </div>

@@ -37,7 +37,7 @@ const ProjectModal: FC<LocationModalProps> = ({ /*onSave,*/ disabled, openArea, 
                     } else {
                         swal_warning.fire({
                             title: 'No se puede realizar esta acción',
-                            text: `el proyecto no tiene bienes Inmuebles relacionados`,
+                            text: `El proyecto no tiene bienes inmuebles relacionados`,
                         });
                     }
                 }}

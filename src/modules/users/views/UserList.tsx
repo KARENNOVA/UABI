@@ -20,7 +20,7 @@ const UserList: FC<UserListProps> = ({ users, change_page, total, user, loading 
         const result = await swal_warning.fire({
             icon: 'warning',
             title: '¿Está seguro?',
-            text: `¿Está seguro que quiere ${status === "Inactivo" ? "Activar" : "Inactivar"} este Usuario?`,
+            text: `¿Está seguro que quiere ${status === "Inactivo" ? "activar" : "inactivar"} este usuario?`,
             showDenyButton: true,
             showCancelButton: false,
             confirmButtonText: 'Continuar',
@@ -104,7 +104,6 @@ const UserList: FC<UserListProps> = ({ users, change_page, total, user, loading 
             title: 'Nombre',
             dataIndex: 'names',
             align: 'left' as 'left',
-            responsive: ['md'],
             render: (_, user) => {
                 return `${(user && Object.values(user?.names).join(' ')) || ''} ${(user && Object.values(user?.surnames).join(' ')) || ''
                     }`;
@@ -126,7 +125,7 @@ const UserList: FC<UserListProps> = ({ users, change_page, total, user, loading 
         {
             title: 'C.C',
             dataIndex: 'id_number',
-            // responsive: ['md'],
+            responsive: ['md'],
             align: 'center' as 'center',
         },
         {

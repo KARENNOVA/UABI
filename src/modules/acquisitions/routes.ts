@@ -91,7 +91,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     {
-                        name: 'Bienes Inmuebles',
+                        name: 'Bienes inmuebles',
                         to: '/acquisitions/real-estates/',
                     },
                     { name: 'Crear bien inmueble' },
@@ -123,7 +123,7 @@ const get_routes = (): IRoute[] => {
             template_props: {
                 breadcrumbs: [
                     {
-                        name: 'Bienes Inmuebles',
+                        name: 'Bienes inmuebles',
                         to: '/acquisitions/real-estates/',
                     },
                     { name: 'Ver bien inmueble' },
@@ -137,7 +137,7 @@ const get_routes = (): IRoute[] => {
             can_access: guards.listRealEstate,
             path: '/acquisitions/real-estates/',
             template_props: {
-                breadcrumbs: [{ name: 'Bienes Inmuebles' }],
+                breadcrumbs: [{ name: 'Bienes inmuebles' }],
             },
             component: RealEstate,
         },

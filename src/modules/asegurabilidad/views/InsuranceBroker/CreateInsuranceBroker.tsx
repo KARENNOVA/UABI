@@ -32,7 +32,7 @@ const CreateInsuranceBroker = () => {
                             <h5>Crear corredora de seguros</h5>
                         </div>
                         <div className="col-md-12">
-                            <Card title={<h5>{'Información de la empresa'}</h5>}>
+                            <Card title={<h5>{'Información del corredor de seguros'}</h5>}>
                                 <InsuranceBrokerForm
                                     innerRef={form}
                                     onSubmit={(values: Broker) => {

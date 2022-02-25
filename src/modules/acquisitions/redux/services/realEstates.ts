@@ -350,7 +350,7 @@ export const updateRealEstate = async (data: any, id: number) => {
                 }
             );
             swal_success.fire({
-                title: 'Bien Inmueble actualizado.',
+                title: 'Bien inmueble actualizado.',
                 text: res.data.message,
                 icon: 'success',
                 showConfirmButton: false,
@@ -429,7 +429,7 @@ const deleteRealEstate = async (id, action: Action) => {
         );
 
         swal_success.fire({
-            title: 'Bien Inmueble Inactivado',
+            title: 'Bien inmueble Inactivado',
             text: res.data.message,
             icon: 'success',
             showConfirmButton: false,
@@ -440,7 +440,7 @@ const deleteRealEstate = async (id, action: Action) => {
     } catch (error) {
         console.error(error);
         swal_warning.fire({
-            title: 'Error al inactivar Bien Inmueble',
+            title: 'Error al inactivar bien inmueble',
             text: error.message,
             icon: 'error',
             showConfirmButton: false,

@@ -17,7 +17,7 @@ export const FormRiskAnalysis: FC<FormProps> = ({formik}) => {
                 {/* <div className="col-2 text-center" style={{marginTop: 30, fontSize: '14px', fontWeight: 'bold'}}>Riesgo regulatorio</div> */}
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="regulatory_risk.degree_occurrence" className="form-label">
-                        Grado de Ocurrencia
+                        Grado de ocurrencia
                     </label>
                     <Field
                         as="select"
@@ -49,7 +49,7 @@ export const FormRiskAnalysis: FC<FormProps> = ({formik}) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="regulatory_risk.impact_degree" className="form-label">
-                        Grado de Impacto
+                        Grado de impacto
                     </label>
                     <Field
                         as="select"
@@ -135,7 +135,7 @@ export const FormRiskAnalysis: FC<FormProps> = ({formik}) => {
             <div className="row">
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="operational_risk.degree_occurrence" className="form-label">
-                        Grado de Ocurrencia
+                        Grado de ocurrencia
                     </label>
                     <Field
                         as="select"
@@ -167,7 +167,7 @@ export const FormRiskAnalysis: FC<FormProps> = ({formik}) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <label htmlFor="operational_risk.impact_degree" className="form-label">
-                        Grado de Impacto
+                        Grado de impacto
                     </label>
                     <Field
                         as="select"

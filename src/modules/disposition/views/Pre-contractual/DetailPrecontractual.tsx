@@ -76,7 +76,7 @@ const DetailPrecontractual = () => {
                                     />
                                 }
 
-                                <ViewPerson title='Información del Solicitante' person={precontractual?.applicant} />
+                                <ViewPerson title='Información del solicitante' person={precontractual?.applicant} />
                                 <ViewRiskAnalysis
                                     operational_risk={precontractual?.operational_risk}
                                     regulatory_risk={precontractual?.regulatory_risk}

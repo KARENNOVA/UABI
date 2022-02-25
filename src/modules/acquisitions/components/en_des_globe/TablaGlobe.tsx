@@ -193,29 +193,29 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
         //     dataIndex: 'id',
         // },
         {
-            title: 'Código Activo',
+            title: 'Código activo',
             dataIndex: 'key',
         },
         {
-            title: 'Bien Inmueble',
+            title: 'Bien inmueble',
             dataIndex: 'name',
             width: '20%',
             responsive: ['md'],
         },
         {
-            title: 'Área Total',
+            title: 'Área total',
             dataIndex: 'total_area',
             align: 'center'
         },
         {
-            title: 'Area a Utilizar',
+            title: 'Area a utilizar',
             dataIndex: 'use_area',
             editable: true,
             width: '20%',
             align: 'center'
         },
         {
-            title: 'Area Intacta',
+            title: 'Area intacta',
             dataIndex: 'intact_area',
             width: '20%',
             align: 'center',
@@ -264,7 +264,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
 
     return (
         <Form form={form} component={false}>
-            <div className="row">Seleccione los bienes Inmuebles que desea {action}</div>
+            <div className="row">Seleccione los bienes inmuebles que desea {action}</div>
             <Table
                 components={{
                     body: {
@@ -282,7 +282,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
             />
             <div className="col-6 my-3">
                 <label htmlFor="number_real_estates" className="form-label">
-                    Número de Bien Inmuebles
+                    Número de bien inmuebles
                 </label>
                 <input
                     type="number"
@@ -344,7 +344,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                             } else {
                                 swal_warning.fire({
                                     title: `No se puede desnglobar`,
-                                    text: `El número de Bienes Inmuebles a ${action} debe ser mayor a los seleccionados `,
+                                    text: `El número de Bienes inmuebles a ${action} debe ser mayor a los seleccionados `,
                                 });
                                 console.log('no valido');
                             }

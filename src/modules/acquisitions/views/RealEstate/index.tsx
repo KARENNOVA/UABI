@@ -28,7 +28,7 @@ const RealEstates = () => {
             <div className="row justify-content-center">
                 <div className="col-md-12">
                     <Card
-                        title="Bienes Inmuebles"
+                        title="Bienes inmuebles"
                         extra={
                             <>
                                 {guards.createRealEstate({ user: aux_user }) && (

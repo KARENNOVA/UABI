@@ -58,6 +58,8 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
         formik.setFieldValue('permits', permits, false);
     }, [targetKeys]);
 
+    console.log(mockData)
+
 
 
 
@@ -66,7 +68,8 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
         if (permitsAll?.length > 0) {
             allPermits = permitsAll?.map((per: any) => ({
                 key: per.id,
-                title: per.permit_name,
+                title: per.name,
+                children: per.description
             }));
         }
         setMockData(allPermits);
@@ -78,7 +81,8 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
         if (user_permits?.length > 0) {
             permitUser = user_permits?.map((per: any) => ({
                 key: per.id,
-                title: per.permit_name,
+                title: per.name,
+                children: per.description
             }));
         }
         const initialTargetKeys = permitUser.map((item) => item.key);
@@ -194,6 +198,7 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
                     selectedKeys={selectedKeys}
                     onChange={onChange}
                     onSelectChange={onSelectChange}
+                    className="tree-transfer"
                     render={(item) => item.title}
                     listStyle={{
                         width: 250,

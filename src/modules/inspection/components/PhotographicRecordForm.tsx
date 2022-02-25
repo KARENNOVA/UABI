@@ -32,7 +32,7 @@ const PhotographicRecordForm: FC<PhotographicRecordFormProps> = ({ records,  pho
                 {() => {
                     return (
                         <Form>
-                            <Card title="Fotografias Generales">
+                            <Card title="Fotografias generales">
                                 <div className="row">
                                     <div className="col-12 col-lg-6 col-md-6">
                                         <label htmlFor="form-select" className="form-label">

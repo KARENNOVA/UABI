@@ -42,7 +42,7 @@ export const DetailDisposition = () => {
                 <div className="flex-fill overflow-auto">
                     <div className="bg-white d-flex flex-column h-100">
                         <div className="d-flex flex-row mb-3 pt-3 ps-4 shadow-sm p-3 bg-white rounded">
-                            <h5 className="col-11">Crear nueva Disposición</h5>
+                            <h5 className="col-11">Crear nueva disposición</h5>
                             <Link
                                 to={`/disposition/edit/${id}/`}
                                 name=""

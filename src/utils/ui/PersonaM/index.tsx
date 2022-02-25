@@ -198,7 +198,7 @@ export const PersonalInformationForm = ({
                         <div className="row">
                             <div className="col-12 col-md-6 col-lg-6">
                                 <label htmlFor="id" className="form-label">
-                                    Tipo de Documento
+                                    Tipo de documento
                                 </label>
                                 <Field
                                     as="select"
@@ -219,11 +219,11 @@ export const PersonalInformationForm = ({
                                     }}
                                 >
                                     <option value="" hidden>
-                                        --Tipo de Documento--
+                                        --Tipo de documento--
                                     </option>
-                                    <option value="CC">Cédula de Ciudadanía</option>
+                                    <option value="CC">Cédula de ciudadanía</option>
                                     <option value="TI">Tarjeta de identidad</option>
-                                    <option value="CE">Cédula de Extranjería</option>
+                                    <option value="CE">Cédula de extranjería</option>
                                     {withNit && <option value="NIT">NIT</option>}
                                 </Field>
                                 <ErrorMessage name="documentType" />
@@ -280,7 +280,7 @@ export const PersonalInformationForm = ({
                                         <option value="F">Femenino</option>
                                         <option value="M">Masculino</option>
                                         <option value="I">Intersexual</option>
-                                        <option value="NA">No Deseo Responder</option>
+                                        <option value="NA">No deseo responder</option>
                                     </Field>
                                     <ErrorMessage name="gender" />
                                 </div>
@@ -309,14 +309,14 @@ export const PersonalInformationForm = ({
                                 <Fragment>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="first_name_id" className="form-label">
-                                            Primer Nombre
+                                            Primer nombre
                                         </label>
                                         <Field
                                             type="text"
                                             className="form-control"
                                             id="first_name_id"
                                             name="names.firstName"
-                                            placeholder="Primer Nombre"
+                                            placeholder="Primer nombre"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -333,14 +333,14 @@ export const PersonalInformationForm = ({
                                     </div>
                                     <div className="col-12 col-md-6 col-lg-3">
                                         <label htmlFor="second_name_id" className="form-label">
-                                            Segundo Nombre
+                                            Segundo nombre
                                         </label>
                                         <Field
                                             type="text"
                                             className="form-control"
                                             id="second_name_id"
                                             name="names.lastName"
-                                            placeholder="Segundo Nombre"
+                                            placeholder="Segundo nombre"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -364,7 +364,7 @@ export const PersonalInformationForm = ({
                                             className="form-control"
                                             id="surname_id"
                                             name="surnames.firstSurname"
-                                            placeholder="Primer Apellido"
+                                            placeholder="Primer apellido"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -388,7 +388,7 @@ export const PersonalInformationForm = ({
                                             className="form-control"
                                             id="second_surname_id"
                                             name="surnames.lastSurname"
-                                            placeholder="Segundo Apellido"
+                                            placeholder="Segundo apellido"
                                             autoComplete="off"
                                             disabled={disabled}
                                             maxLength={20}
@@ -450,7 +450,7 @@ export const PersonalInformationForm = ({
                             </div>
                             <div className="col-12 col-md-6 col-lg-6">
                                 <label htmlFor="username" className="form-label">
-                                    Correo Electrónico
+                                    Correo electrónico
                                 </label>
                                 <Field
                                     type="email"

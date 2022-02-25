@@ -146,7 +146,7 @@ const RoleForm: FC<IUserFormPros> = ({ rol, disabled, type, user_roles, user_per
                     <Form>
                         <div className="row">
                             {type !== 'assign' && (
-                                <div className="col-6">
+                                <div className="col-12 col-lg-6 col-md-6">
                                     <label htmlFor="name" className="form-label">
                                         Rol
                                     </label>

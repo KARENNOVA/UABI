@@ -196,7 +196,7 @@ export const TableAreas = () => {
                     <div className="row justify-content-center">
                         <div className="col-md-12">
                             <Card
-                                title="Bienes Inmuebles"
+                                title="Bienes inmuebles"
                                 extra={
                                     <>
                                         <div className="row text-center">
@@ -256,12 +256,12 @@ export const TableAreas = () => {
                         ) {
                             swal_warning.fire({
                                 title: 'Área a utilizar no válida',
-                                text: `revisa las áreas de los Bienes Inmuebles`,
+                                text: `revisa las áreas de los Bienes inmuebles`,
                             });
                         } else if (!completeRealEstates) {
                             swal_warning.fire({
                                 title: 'No se puede finalizar',
-                                text: 'se deben completar los datos de todos los bienes Inmuebles',
+                                text: 'se deben completar los datos de todos los bienes inmuebles',
                             });
                         } else {
                             const res: any = await CreateRealEstate(DataRealEstate, realEstatesEdit);

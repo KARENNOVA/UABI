@@ -14,7 +14,7 @@ const InsuranceCompanyDetail: FC<InsuranceCompanyDetailProps> = ({ company, loca
                     className="title"
                     style={{ borderBottom: '1px solid #e2e4e4', color: '#2F2D2D', fontSize: '14px' }}
                 >
-                    Información De La Compañía
+                    Información de la compañía
                 </div>
                 <div className="table_content" style={{ margin: 7 }}>
                     <div className="detailForm" style={{ width: '100%' }}>

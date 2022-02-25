@@ -43,7 +43,7 @@ const DetailProject = () => {
                                 <ContractDetail contracts={project?.contracts} />
                             }
                             <Card
-                                title="Bienes Inmuebles del Proyecto"
+                                title="Bienes inmuebles del proyecto"
                                 extra={
                                     <Link
                                         to={{

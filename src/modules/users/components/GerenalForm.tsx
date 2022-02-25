@@ -292,7 +292,7 @@ const GeneralForm: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, addres
                         <div className="row">
                             <div className="col-3">
                                 <label htmlFor="id" className="form-label">
-                                    Tipo de Documento <span className="text-danger">*</span>
+                                    Tipo de documento <span className="text-danger">*</span>
                                 </label>
                                 <Field
                                     as="select"
@@ -303,7 +303,7 @@ const GeneralForm: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, addres
                                     disabled={disabled}
                                 >
                                     <option value="" hidden>
-                                        --Tipo de Documento--
+                                        --Tipo de documento--
                                     </option>
                                     <option value={1}>Cedula de Ciudadania</option>
                                     <option value={2}>Tarjeta de identidad</option>

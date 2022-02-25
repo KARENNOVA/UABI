@@ -214,7 +214,7 @@ const RealEstateViewForm: FC<IpolizaFormPros> = ({ realEstate, tipology, invento
                                 </div>
                                 <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                     <div className="col-12 col-lg-6 col-md-6">
-                                        <label htmlFor="">Vida útil Períodos</label>
+                                        <label htmlFor="">Vida útil períodos</label>
                                         <div className="my-3">{realEstate?.useful_life_periods || "-"}</div>
                                     </div>
                                     <div className="col-12 col-lg-6 col-md-6">

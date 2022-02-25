@@ -118,7 +118,7 @@ const FormUserprueba: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, inn
                 return (
                     <Form>
                         <Card
-                            title="Información Usuario"
+                            title="Información usuario"
                         >
                             <Dataformuser
                                 // user={user}

@@ -1,6 +1,5 @@
-import { useEffect, useState /*, useState*/ } from 'react';
-import { IProjectAttributes /*, IProjectsResponse*/ } from '../../../../utils/interfaces';
-// import ItemProject from "../../components/ItemProject";
+import { useContext, useEffect, useState /*, useState*/ } from 'react';
+import { IProjectAttributes } from '../../../../utils/interfaces';
 import { useSelector, useDispatch } from 'react-redux';
 import { actions } from '../../redux';
 import { Link, Card, Table as UiTable } from '../../../../utils/ui';
@@ -8,13 +7,15 @@ import { formatDate, swal, swal_warning } from '../../../../utils';
 import Tag from 'antd/lib/tag';
 import FilterForm from './../../../../utils/ui/filter_form';
 import { guards } from '../../routes';
+import { TemplateContext } from '../../../../utils/components/template/template_context';
 
 const Projects = () => {
     const dispatch = useDispatch();
     const projects: IProjectAttributes[] = useSelector((states: any) => states.acquisitions.projects.value);
     const loading: boolean = useSelector((states: any) => states.acquisitions.projects.loading);
     const { total_results } = useSelector((store: any) => store.acquisitions.projects.pagination);
-    const [query, set_query] = useState<string>('');
+    const context = useContext(TemplateContext);
+    const [filters, set_filters] = useState<object>(null);
     const user = useSelector((store: any) => store.auth.user);
     const aux_user = {
         ...user,
@@ -23,14 +24,12 @@ const Projects = () => {
     };
 
     const filter = async (_filters, _) => {
+        set_filters(_filters);
         await dispatch(actions.getProjects({ page: 1, with: 'pagination', ..._filters }));
     };
-    // const filter = () => {
-    //     dispatch(actions.getProjects({ page: 1, q: query }));
-    // };
 
     const change_page = (page, pageSize) => {
-        dispatch(actions.getProjects({ page, pageSize, q: query }));
+        dispatch(actions.getProjects({ page, pageSize, ...filters }));
     };
 
     const deleteProject = (id, status) => async () => {
@@ -38,7 +37,7 @@ const Projects = () => {
         if (id !== '' && id !== undefined) {
             res = await dispatch(actions.getRealEstatesByProject(id));
         }
-        if (res?.total && res.total !== 0 && status === "Activo" ) {
+        if (res?.total && res.total !== 0 && status === "Activo") {
             const result = await swal_warning.fire({
                 icon: 'warning',
                 title: '¡Precaución!',
@@ -158,9 +157,9 @@ const Projects = () => {
                 return (
                     <div className="text-primary" onClick={deleteProject(id, row.status)}>
                         {row.status === "Activo" ?
-                            <i className="fa fa-toggle-on" aria-hidden="true"  style={{fontSize: "18px", color: '#1FAEEF'}} />
+                            <i className="fa fa-toggle-on" aria-hidden="true" style={{ fontSize: "18px", color: '#1FAEEF' }} />
                             :
-                            <i className="fa fa-toggle-off" aria-hidden="true" style={{fontSize: "18px", color: '#1FAEEF'}} />
+                            <i className="fa fa-toggle-off" aria-hidden="true" style={{ fontSize: "18px", color: '#1FAEEF' }} />
 
                         }
                         {/* <i className="fa fa-times-circle" aria-hidden="true" /> */}
@@ -193,17 +192,23 @@ const Projects = () => {
             responsive: ['md'],
         },
         {
+            title: 'Subsecretaría',
+            dataIndex: 'subdependency',
+            align: 'left' as 'left',
+            responsive: ['md'],
+        },
+        {
             title: 'Fecha creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-            responsive: ['md'],
+            responsive: ['lg'],
             render: (audit_trail) => formatDate(audit_trail?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-            responsive: ['md'],
+            responsive: ['lg'],
             render: (audit_trail) => audit_trail?.created_by,
         },
         {
@@ -235,7 +240,7 @@ const Projects = () => {
         // dispatch(actions.getProjects());
         dispatch(actions.clearProjects());
 
-    }, []);
+    }, [dispatch]);
 
     return (
 
@@ -258,10 +263,19 @@ const Projects = () => {
                                     <FilterForm
                                         filters={[
                                             { key: 'name', name: 'Nombre' },
-                                            { key: 'id', name: 'Código' },
-                                            { key: 'dependency', name: 'Dependencia' },
-                                            { key: 'subdependency', name: 'Subdependencia' },
-                                            { key: 'created_on', name: 'Fecha', type: 'date' },
+                                            ...(context.device !== "sm" ?
+                                                [
+                                                    { key: 'id', name: 'Código' },
+                                                    { key: 'dependency', name: 'Dependencia' },
+                                                    { key: 'subdependency', name: 'Subsecretaría' },
+                                                    ...(context.device !== "md" ?
+                                                        [
+                                                            { key: 'created_on', name: 'Fecha', type: 'date' },
+                                                        ] : []),
+
+
+                                                ] : []),
+
                                         ]}
                                         onSubmit={filter}
                                     />

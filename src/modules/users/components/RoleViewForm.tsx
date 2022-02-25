@@ -13,7 +13,7 @@ const RoleViewForm: FC<IUserFormPros> = ({ role }) => {
     // console.log(valores)
 
     return (
-        <div className="col-3-12">
+        <div className="col-12">
             <div className="content_box_table">
                 <div
                     className="title"

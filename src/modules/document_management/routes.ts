@@ -14,7 +14,7 @@ const get_routes = (): IRoute[] => {
             path: '/document-management/electronic_file/view/:id/',
             template_props: {
                 breadcrumbs: [
-                    { name: 'Expediente Electrónico', to: '/document-management/electronic_file/list' },
+                    { name: 'Expediente electrónico', to: '/document-management/electronic_file/list' },
                     { name: 'Documentos asociados' },
                 ],
             },
@@ -39,7 +39,7 @@ const get_routes = (): IRoute[] => {
             path: '/document-management/electronic_file/list',
             template_props: {
                 breadcrumbs: [
-                    { name: 'Expediente Electrónico' },
+                    { name: 'Expediente electrónico' },
                 ],
             },
             component: Electronic_file_list,

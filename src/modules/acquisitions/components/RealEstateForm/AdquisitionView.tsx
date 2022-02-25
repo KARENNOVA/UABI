@@ -20,7 +20,7 @@ const AcquisitionsView: FC<AcquisitionsFromProps> = ({ type, disabled, acquisiti
                 <>{!inventory ?
                     <AcquisitionModal
                         type="create"
-                        btn_label="Agregar Adquisición"
+                        btn_label="Agregar adquisición"
                         active_type={formik.values.active_type}
                         onChange={async (aux_values) => {
                             const values = { ...aux_values, origin: aux_values.origin ? aux_values.origin : '' };
