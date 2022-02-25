@@ -28,7 +28,7 @@ const EnglobarForm: FC<GeneralDataFormProps> = ({
     // }
     return (
         <Card
-            title="Información del bien Inmueble"
+            title="Información del bien inmueble"
             actions={[
                 // <div className="d-flex flex-row-reverse px-3 py-1">
                 //     <button type="button" className="btn btn-primary">

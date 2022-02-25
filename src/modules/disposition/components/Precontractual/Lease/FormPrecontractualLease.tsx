@@ -51,7 +51,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
             <div className="row">
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="registration_date_id" className="form-label">
-                        Fecha de Registro estudio previo
+                        Fecha de registro estudio previo
                     </label>
                     <Field
                         type="date"
@@ -107,7 +107,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                         disabled={false}
                     >
                         <option key="public_service" value="" hidden>
-                            --Seleccione Servicio público--
+                            --Seleccione servicio público--
                         </option>
                         <option key="Aforo" value="Aforo">Aforo</option>
                         <option key="Recobro" value="Recobro">Recobro</option>
@@ -143,7 +143,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 {formik.values.public_service === 'Recobro' && (
                     <div className="col-12 col-lg-3 col-md-3">
                         <label htmlFor="recovery_value_id" className="form-label">
-                            Valor Recobro
+                            Valor recobro
                         </label>
                         <TooltipField text="el valor se calcula cada mes de acuerdo al valor de factura por EPM y distribución correspondiente" />
                         <div className="input-group">
@@ -167,7 +167,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 {formik.values.public_service === 'Contador individualizado' && (
                     <div className="col-12 col-lg-3 col-md-3">
                         <label htmlFor="counter_value_id" className="form-label">
-                            Valor Contador Individualizado
+                            Valor contador individualizado
                         </label>
                         <TooltipField text="valor facturado directamente por EPM" />
                         <div className="input-group">
@@ -190,7 +190,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 )}
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="administration_value_id" className="form-label">
-                        Valor Administración<span className="text-danger">*</span>
+                        Valor administración<span className="text-danger">*</span>
                     </label>
                     <div className="input-group">
                         <div className="input-group-prepend">
@@ -210,7 +210,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="vigilance_value_id" className="form-label">
-                        Valor Vigilancia
+                        Valor vigilancia
                     </label>
                     <div className="input-group">
                         <div className="input-group-prepend">
@@ -231,7 +231,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="subtotal_id" className="form-label">
-                        Valor Subtotal
+                        Valor subtotal
                     </label>
                     <div className="input-group">
                         <div className="input-group-prepend">
@@ -252,7 +252,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="total_id" className="form-label">
-                        Valor Total
+                        Valor total
                     </label>
                     <div className="input-group">
                         <div className="input-group-prepend">
@@ -273,7 +273,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
 
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="prediation_number_id" className="form-label">
-                        Número Prediación<span className="text-danger">*</span>
+                        Número prediación<span className="text-danger">*</span>
                     </label>
                     <Field
                         type="text"
@@ -294,7 +294,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className="col-12 col-lg-3 col-md-3">
                     <label htmlFor="prediation_date_id" className="form-label">
-                        Fecha de Prediación<span className="text-danger">*</span>
+                        Fecha de prediación<span className="text-danger">*</span>
                     </label>
                     <Field
                         type="date"
@@ -400,7 +400,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                         disabled={false}
                     >
                         <option key="public_service" value="" hidden>
-                            --Seleccione Servicio público--
+                            --Seleccione mecanismo de cobertura--
                         </option>
                         <option key="cumplimiento" value="cumplimiento">
                             cumplimiento
@@ -451,7 +451,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 }
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="environmental_risk_id" className="form-label">
-                        Riesgos Ambientales<span className="text-danger">*</span>
+                        Riesgos ambientales<span className="text-danger">*</span>
                     </label>
                     <Field
                         type="text"
@@ -484,7 +484,7 @@ const FormPrecontractualLease: FC<FormProps> = ({ formik }) => {
                 </div>
                 <div className={`col-12 col-lg-${(formik.values.public_service === 'Aforo' || formik.values.public_service === 'Recobro' || formik.values.public_service === 'Contador individualizado') ? 12 : 6} col-md-${(formik.values.public_service === 'Aforo' || formik.values.public_service === 'Recobro' || formik.values.public_service === 'Contador individualizado') ? 12 : 6}`}>
                     <label htmlFor="destination_realEstate_id" className="form-label">
-                        Destinación de bien Inmueble<span className="text-danger">*</span>
+                        Destinación de bien inmueble<span className="text-danger">*</span>
                     </label>
                     <Field
                         as="textarea"

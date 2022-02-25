@@ -46,11 +46,13 @@ const Master_formatsList = () => {
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['md'],
             align: 'center' as 'center',
         },
         {
             title: 'Módulo',
             dataIndex: 'module',
+            responsive: ['md'],
             align: 'left' as 'left',
         },
         {

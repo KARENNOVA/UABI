@@ -17,34 +17,39 @@ const ElectronicFielList = () => {
 
     useEffect(() => {
         dispatch(actions.clearRealEstates());
-    }, []);
+    }, [dispatch]);
 
     const table_columns = [
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['md'],
             align: 'center' as 'center',
         },
         {
             title: 'Proyecto',
             dataIndex: 'project',
             align: 'left' as 'left',
+            responsive: ['lg'],
             render: (project) => project?.name
         },
         {
             title: 'Bien Inmueble',
             dataIndex: 'name',
+            responsive: ['md'],
             align: 'left' as 'left',
         },
         {
             title: 'Activo fijo',
             dataIndex: 'sap_id',
             align: 'center' as 'center',
+            responsive: ['lg'],
         },
         {
             title: 'Dirección',
             dataIndex: 'address',
             align: 'left' as 'left',
+            responsive: ['lg'],
             render: (address) => address?.address
 
         },

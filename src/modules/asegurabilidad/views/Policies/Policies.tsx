@@ -87,12 +87,12 @@ const Policies = () => {
             render: (date) => date.map((d) => d.nit).join(' - '),
         },
         {
-            title: 'Número Póliza',
+            title: 'Número póliza',
             dataIndex: 'policy_number',
             align: 'center' as 'center',
         },
         {
-            title: 'Bienes Inmuebles',
+            title: 'Bienes inmuebles',
             dataIndex: 'real_estates',
             responsive: ['md'],
             align: 'center' as 'center',
@@ -103,7 +103,7 @@ const Policies = () => {
             align: 'center' as 'center',
         },
         {
-            title: 'Fecha de Inicio',
+            title: 'Fecha de inicio',
             dataIndex: 'vigency_start',
             align: 'center' as 'center',
             responsive: ['md'],

@@ -38,7 +38,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
         const result = await swal_warning.fire({
             icon: 'warning',
             title: '¿Está seguro?',
-            text: `¿Está seguro que quiere ${status === 'Inactivo' ? 'Activar' : 'Inactivar'} el Bien Inmueble?`,
+            text: `¿Está seguro que quiere ${status === 'Inactivo' ? 'Activar' : 'Inactivar'} el bien inmueble?`,
             showDenyButton: true,
             showCancelButton: false,
             confirmButtonText: 'Continuar',

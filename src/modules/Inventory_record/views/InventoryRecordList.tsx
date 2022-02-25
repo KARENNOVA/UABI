@@ -36,7 +36,7 @@ const InventoryRecordList = () => {
                     <div className="row justify-content-center">
                         <div className="col-md-12">
                             <Card
-                                title="Administrar Bienes Inmuebles"
+                                title="Administrar bienes inmuebles"
                                 extra={
                                     <>
                                         {guards.createRealEstate({ user: aux_user }) && (

@@ -42,7 +42,7 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
             responsive: ['md'],
         },
         {
-            title: 'Bien Inmueble',
+            title: 'Bien inmueble',
             dataIndex: 'name',
         },
         {
@@ -55,7 +55,7 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
             responsive: ['md'],
         },
         {
-            title: 'Fecha de ultima Inspección',
+            title: 'Fecha de última Inspección',
             dataIndex: '',
             responsive: ['md'],
         },
@@ -125,7 +125,7 @@ const ModalInspection: FC<InspectionModalProps> = ({ /*onSave,*/ disabled, proje
                         // </button>,
                     ]
                 }
-                title={`Bienes Inmuebles del proyecto: ${project?.name}`}
+                title={`Bienes inmuebles del proyecto: ${project?.name}`}
                 centered
                 visible={is_visible}
                 width={700}

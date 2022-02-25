@@ -33,7 +33,7 @@ const getPaginator = (
             return (
                 <div>
                     <span className="total-results">
-                        Total de resultados :<span style={{ color: '#F28C02' }}>: {total}</span>
+                        Total de resultados <span style={{ color: '#F28C02' }}>: {total}</span>
                     </span>
                     <span className="results-text"> Registros por página </span>
                 </div>

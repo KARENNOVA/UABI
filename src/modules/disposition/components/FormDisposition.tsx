@@ -71,7 +71,7 @@ export const FormDisposition: FC<DispositionFormPros> = ({ dispositionType, real
                                 <div className="my-3">{realEstate?.address?.cbmls?.uabi}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Código Activo Sap</label>
+                                <label htmlFor="">Código activo</label>
                                 <div className="my-3">{realEstate?.active_code}</div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@ export const FormDisposition: FC<DispositionFormPros> = ({ dispositionType, real
                             <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                                 {showInspeccion && (
                                     <div className="col-12 col-lg-3 col-md-6">
-                                        <label htmlFor="">Última Fecha de Inspección</label>
+                                        <label htmlFor="">Última fecha de inspección</label>
                                         <div className="my-3">-</div>
                                     </div>
                                 )}
@@ -115,13 +115,13 @@ export const FormDisposition: FC<DispositionFormPros> = ({ dispositionType, real
                                 )}
                                 {showContract && (
                                     <div className="col-12 col-lg-3 col-md-6">
-                                        <label htmlFor="">Fecha Terminación Contrato</label>
+                                        <label htmlFor="">Fecha terminación contrato</label>
                                         <div className="my-3">{ contractual?.finish_date ? moment(new Date(Number(contractual?.finish_date))).format('YYYY-MM-DD') === "Fecha inválida" : "-" }</div>
                                     </div>
                                 )}
                                 {showCanon && (
                                     <div className="col-12 col-lg-3 col-md-6">
-                                        <label htmlFor="">Último Canon de Arrendamiento</label>
+                                        <label htmlFor="">Último canon de arrendamiento</label>
                                         <div className="my-3">$ {realEstate?.canyon_value === null ? 0 : realEstate?.canyon_value}</div>
                                     </div>
                                 )}
@@ -132,11 +132,11 @@ export const FormDisposition: FC<DispositionFormPros> = ({ dispositionType, real
                             {showAprovechamiento && (
                                 <>
                                     <div className="col-12 col-lg-3 col-md-6">
-                                        <label htmlFor="">Valor de Aprovechamiento</label>
+                                        <label htmlFor="">Valor de aprovechamiento</label>
                                         <div className="my-3">$ {realEstate?.exploitation_value === null ? 0 : realEstate?.exploitation_value}</div>
                                     </div>
                                     <div className="col-12 col-lg-3 col-md-6">
-                                        <label htmlFor="">Valor Autorización</label>
+                                        <label htmlFor="">Valor autorización</label>
                                         <div className="my-3">$ {realEstate?.authorization_value === null ? 0 : realEstate?.authorization_value}</div>
                                     </div>
                                 </>

@@ -1,10 +1,11 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useContext, useState } from 'react'
 import Modal from 'antd/lib/modal/Modal';
 import { LinkButton } from '../../../utils/ui/link';
 import { Tag } from 'antd';
 import { create_document } from '../../../utils/components/DocumentsModal/services';
 import { getFiles } from '../redux/service';
 import { useDispatch } from 'react-redux';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 interface LocationModalProps {
     onSave?: (values) => Promise<any>;
@@ -18,21 +19,20 @@ interface LocationModalProps {
 const ModalElectronicFiel: FC<LocationModalProps> = ({ /*onSave,*/ disabled, real_estate_id, type, }) => {
 
     const input: HTMLInputElement = document.getElementById("subir_archivo") as HTMLInputElement;
-    console.log(input?.files)
 
     const [is_visible, set_is_visible] = useState<boolean>(false);
     const [docName, setDocName] = useState(null)
     const open = () => !disabled && set_is_visible(true);
     const close = () => set_is_visible(false);
     const dispatch = useDispatch();
+    const context = useContext(TemplateContext);
     const documento = (e) => {
-        console.log(e.target.files);
         setDocName(e.target?.files[0] ?? null)
     }
     return (
         <>
             <LinkButton
-                name="Subir documento"
+                name={`${context.device === "sm" ? "" : "Subir documento"}`}
                 icon={<i className="fa fa-upload" aria-hidden="true" />}
                 onClick={() => open()}
             >
@@ -56,9 +56,9 @@ const ModalElectronicFiel: FC<LocationModalProps> = ({ /*onSave,*/ disabled, rea
                     </button>,
                     <button
                         type="submit"
-                        style={{ marginLeft: '30px', marginRight: '140px' }}
+                        style={ context.device !== "sm" ? { marginLeft: '-120px' }: {}}
                         key="2"
-                        className="btn btn-primary"
+                        className={`btn btn-primary ${context.device === "sm" && "my-3"}`}
                         onClick={() => {
                             const doc = {
                                 type: type,

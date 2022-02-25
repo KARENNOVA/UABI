@@ -24,7 +24,7 @@ const AcquisitionModal: FC<AcquisitionModalProps> = ({
 }) => {
     const [is_visible, set_is_visible] = useState<boolean>(false);
     const form_ref = useRef<any>();
-    const title = modal_name ? modal_name : 'Agregar Adquisición';
+    const title = modal_name ? modal_name : 'Agregar adquisición';
     const close = () => {
         set_is_visible(false);
         // form_ref.current?.resetForm();

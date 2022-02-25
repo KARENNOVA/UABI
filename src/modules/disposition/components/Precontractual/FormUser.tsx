@@ -16,7 +16,7 @@ export const FormUser: FC<FormProps> = ({ formik, comodato, lease }) => {
             <div className="row">
                 <div className={`col-12 col-lg-6 col-md-6`}>
                     <label htmlFor="applicant" className="form-label">
-                        Información Del Solicitante<span className="text-danger">*</span>
+                        Información del solicitante<span className="text-danger">*</span>
                     </label>
                     <Field component={PersonaM} id="applicant_id" name="applicant" withNit={true} disposition={true} />
                     {/* <Field
@@ -29,7 +29,7 @@ export const FormUser: FC<FormProps> = ({ formik, comodato, lease }) => {
                 {/* {(formik.values.applicant.document_type === "NIT" || formik.values.applicant.documentNumber === "NIT") && */}
                     <div className="col-12 col-lg-6 col-md-6">
                         <label htmlFor="representative" className="form-label">
-                            Información Representante<span className="text-danger">*</span>
+                            Información del representante<span className="text-danger">*</span>
                         </label>
                         <Field
                             component={PersonaM}

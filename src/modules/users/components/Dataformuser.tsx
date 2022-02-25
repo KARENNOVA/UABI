@@ -1,10 +1,11 @@
 
-import React, { FC, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import Select from '../../../utils/ui/select';
 import LocationModal from '../../../utils/components/Location/LocationModal';
 import { Field } from 'formik';
 import { useSelector } from 'react-redux';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 interface IUserFormPros {
     // user?: IUserAttributes;
@@ -19,6 +20,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
     const [subs, set_subs] = useState<any[]>([]);
     const roles = useSelector((store: any) => store.auth.user.roles);
     const is_admin = !!roles.find((r) => r.name === 'Administrador');
+    const context = useContext(TemplateContext);
 
     return (
         <>
@@ -106,7 +108,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         </div>
                         <div className="col-12 col-lg-6 col-md-6">
                             <label htmlFor="subdependency_id" className="form-label">
-                                Subsecretaría o subdirección <span className="text-danger">*</span>
+                                Subsecretaría o subdirección<span className="text-danger">*</span>
                             </label>
                             <Field
                                 component={Select}

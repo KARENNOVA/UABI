@@ -22,7 +22,7 @@ const EstateAreas = () => {
                                                     checked
                                                 />
                                                 <label className="form-check-label" htmlFor="flexRadioDefault4">
-                                                    Bien Inmueble Existente
+                                                    Bien inmueble existente
                                                 </label>
                                             </div>
                                             <div className="form-check">
@@ -33,7 +33,7 @@ const EstateAreas = () => {
                                                     id="flexRadioDefault5"
                                                 />
                                                 <label className="form-check-label" htmlFor="flexRadioDefault5">
-                                                    Bien Inmueble Nuevo
+                                                    Bien inmueble nuevo
                                                 </label>
                                             </div>
                                         </div>

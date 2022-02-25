@@ -69,7 +69,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/acquisitions/real-estates/',
-                              name: 'Bienes Inmuebles',
+                              name: 'Bienes inmuebles',
                           },
                       ]
                     : []),
@@ -99,7 +99,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/insurabilities/policy/',
-                              name: 'Pólizas de Seguro',
+                              name: 'Pólizas de seguro',
                           },
                       ]
                     : []),
@@ -115,7 +115,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                     ? [
                           {
                               path: '/insurabilities/broker/',
-                              name: 'Corredores de Seguros',
+                              name: 'Corredores de seguros',
                           },
                       ]
                     : []),
@@ -160,7 +160,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
                 },
                 {
                     path: '/document-management/electronic_file/list',
-                    name: 'Expediente Electrónico',
+                    name: 'Expediente electrónico',
                 },
                 {
                     path: '/document-management/massive_charge/',

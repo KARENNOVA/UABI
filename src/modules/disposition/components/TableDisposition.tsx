@@ -70,7 +70,7 @@ export const TableDiszposition: FC<DispositionListProps> = ({ filters, user /*, 
             render: (data) => data?.name,
         },
         {
-            title: 'Matrícula BI',
+            title: 'Matrícula',
             dataIndex: 'registry_number',
             align: 'left' as 'left',
         },

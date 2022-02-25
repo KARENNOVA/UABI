@@ -147,7 +147,7 @@ const InsuranceCompanies = () => {
             align: 'left' as 'left',
         },
         {
-            title: 'Nit',
+            title: 'NIT',
             dataIndex: 'nit',
             align: 'left' as 'left',
         },

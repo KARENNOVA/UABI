@@ -57,7 +57,7 @@ const CreateUpgrade: FC<CreateUpgradeProps> = ({ owner, innerRef, onSubmit }) =>
                 <div className="col-md-12">
                     <Card
                         title={
-                            <span className="text-capitalize">
+                            <span className="">
                                 Actualizar datos del tenedor u ocupante del bien inmueble
                             </span>
                         }

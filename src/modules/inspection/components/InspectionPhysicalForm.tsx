@@ -122,7 +122,7 @@ const InspectionPhysicalForm: FC<InspectionPhysicalFormProps> = ({ formik }) => 
             <div className="row">
                 <div className="col">
                     <label htmlFor="observations_id" className="form-label">
-                        Observeciones
+                        Observaciones
                     </label>
                     <Field
                         as="textarea"

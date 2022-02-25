@@ -229,7 +229,7 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                                                 </div>
                                                 <div className="form-group col-6 col-lg-3 col-md-6">
                                                     <label htmlFor="enclosure_prev_id" className="form-label">
-                                                        N° de Suscriptor
+                                                        N° de suscriptor
                                                     </label>
                                                     <Field
                                                         type="text"
@@ -251,7 +251,7 @@ const CreateInspectionPhysical: FC<CreateInspectionPhysicalProps> = ({
                                                 </div>
                                                 <div className="form-group col-6 col-lg-3 col-md-6">
                                                     <label htmlFor="enclosure_prev_id" className="form-label">
-                                                        N° de Contador
+                                                        N° de contador
                                                     </label>
 
                                                     <Field

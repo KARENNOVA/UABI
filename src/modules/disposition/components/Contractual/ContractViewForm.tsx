@@ -37,7 +37,7 @@ const ContractViewForm : FC<FormPros> = ({ values_contract }) => {
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-3">
-                                <label htmlFor="">Fecha de Inicio</label>
+                                <label htmlFor="">Fecha de inicio</label>
                                 <div className="my-3">{values_contract?.subscription_date}</div>
                             </div>
                             <div className="col-3">

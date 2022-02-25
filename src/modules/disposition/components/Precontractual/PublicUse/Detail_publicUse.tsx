@@ -17,7 +17,7 @@ const DetailPublicUse: FC<IPros> = ({ precontractual }) => {
 
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-3">
-                                <label htmlFor="">Fecha de Registro estudio previo</label>
+                                <label htmlFor="">Fecha de registro estudio previo</label>
                                 <div className="my-3">{precontractual?.registration_date}</div>
                             </div>
                             <div className="col-3">

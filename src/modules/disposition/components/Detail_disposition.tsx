@@ -26,7 +26,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                 <div className="my-3" >{realEstate?.id}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Nombre del Inmuebles</label>
+                                <label htmlFor="">Nombre del inmueble</label>
                                 <div className="my-3" >{realEstate?.name}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
@@ -40,14 +40,14 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                         </div>
                         <div className="row my-3" style={{ borderBottom: '1px solid #e2e4e4' }}>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Fecha de la ultima inspección</label>
+                                <label htmlFor="">Fecha de la última inspección</label>
                                 <div className="row">
                                     <div className="col-4 my-3" style={{ width: 'auto', padding: '1em' }}>
-                                        fecha
+                                        Fecha
                                     </div>
                                     <div className="col my-3">
                                         <button type="button" className="btn btn-outline-primary  btn-sm">
-                                            ver Inspección
+                                            ver inspección
                                         </button>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                 <div className="my-3">{realEstate?.address?.address}</div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Etapa Precontractual</label>
+                                <label htmlFor="">Etapa precontractual</label>
                                 <div className=" my-3">
                                     {precontractual ?
                                         <button type="button" className="btn btn-outline-primary  btn-sm"
@@ -103,7 +103,7 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
 
                                             }
                                         >
-                                            ver estudio Previo
+                                            ver estudio previo
                                         </button>
                                         :
                                         <div className="my-3">No se ha registrado un estudio previo</div>
@@ -111,14 +111,14 @@ const ViewDetailDisposition: FC<DispositionFormPros> = ({ realEstate, precontrac
                                 </div>
                             </div>
                             <div className="col-12 col-lg-3 col-md-6">
-                                <label htmlFor="">Contrato Vigente</label>
+                                <label htmlFor="">Contrato vigente</label>
                                 <div className=" my-3">
                                     {contractual ?
                                         <button type="button" className="btn btn-outline-primary  btn-sm">
-                                            ver Contrato
+                                            Ver contrato
                                         </button>
                                         :
-                                        <div className="my-3">Sin contrato Vigente</div>
+                                        <div className="my-3">Sin contrato vigente</div>
                                     }
                                 </div>
                             </div>

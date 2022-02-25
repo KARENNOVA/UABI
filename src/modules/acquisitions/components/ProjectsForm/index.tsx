@@ -206,7 +206,7 @@ const ProjectEnglobarForm: FC<RealEstateFormProps> = ({
                                                     </div>
                                                 </div>
                                             </Card>
-                                            <Card title="Bienes Inmuebles del Proyecto">
+                                            <Card title="Bienes inmuebles del proyecto">
                                                 <RealEstateList project_id={project_id} init={false} filters={{key: "default"}} />
                                             </Card>
                                         </div>

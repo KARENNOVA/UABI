@@ -140,7 +140,7 @@ const BasicInformation: FC<BasicInformationProps> = ({
                                 <div className="row">
                                     <div className="col">
                                         <label htmlFor="contractual_id" className="form-label">
-                                            Diferencias entre el Sistema y la Realidad
+                                            Diferencias entre el sistema y la realidad
                                         </label>
                                         <Field
                                             as="textarea"

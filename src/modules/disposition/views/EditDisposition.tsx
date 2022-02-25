@@ -57,7 +57,7 @@ export const EditDisposition = () => {
                 <div className="container-fluid">
                     <div className="row justify-content-center">
                         <div className="col-md-12">
-                            <Card title="Tipo Disposición" extra={
+                            <Card title="Tipo disposición" extra={
                                 <ModalNotificar
                                 action={`/disposition/edit/${realEstate?.id}/`}/> }>
                                 <FormTypeDisposition
@@ -80,7 +80,7 @@ export const EditDisposition = () => {
                                 dispositionType={dispositionType}
                                 contractual={contractual?.length > 0 ? contractual[0] : null}
                             />
-                            <Card title="Histórico de Contratos del Bien Inmueble">
+                            <Card title="Histórico de contratos del bien inmueble">
                                 <TableContract
                                     contrats={contracts}
                                 />

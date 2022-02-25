@@ -162,27 +162,27 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
             initial_values.supports_documents = [
                 ...initial_values.supports_documents,
                 {
-                    label: 'Documento Avalúo',
+                    label: 'Documento avalúo',
                     type: 6,
                 },
                 {
-                    label: 'Documento de Prediación',
+                    label: 'Documento de prediación',
                     type: 7,
                 },
             ];
         }
     } else if (initial_values.supports_documents.length >= 2 && inventory) {
-        const doc_avaluo = initial_values.supports_documents.filter((d) => d.label === 'Documento Avalúo');
-        const doc_prediacion = initial_values.supports_documents.filter((d) => d.label === 'Documento de Prediación');
+        const doc_avaluo = initial_values.supports_documents.filter((d) => d.label === 'Documento avalúo');
+        const doc_prediacion = initial_values.supports_documents.filter((d) => d.label === 'Documento de prediación');
         if (doc_avaluo.length === 0 && doc_prediacion.length === 0) {
             initial_values.supports_documents = [
                 ...initial_values.supports_documents,
                 {
-                    label: 'Documento Avalúo',
+                    label: 'Documento avalúo',
                     type: 6,
                 },
                 {
-                    label: 'Documento de Prediación',
+                    label: 'Documento de prediación',
                     type: 7,
                 },
             ];
@@ -190,7 +190,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
             initial_values.supports_documents = [
                 ...initial_values.supports_documents,
                 {
-                    label: 'Documento Avalúo',
+                    label: 'Documento avalúo',
                     type: 6,
                 },
             ];
@@ -198,7 +198,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
             initial_values.supports_documents = [
                 ...initial_values.supports_documents,
                 {
-                    label: 'Documento de Prediación',
+                    label: 'Documento de prediación',
                     type: 7,
                 },
             ];
@@ -302,7 +302,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         values.materials = values.materials.join(', ');
         form.setSubmitting(true);
         if (realEstate?.patrimonial_value !== values?.patrimonial_value && inventory) {
-            if (validateDocuments(values?.supports_documents, 'Documento Avalúo')) {
+            if (validateDocuments(values?.supports_documents, 'Documento avalúo')) {
                 form.setSubmitting(false);
                 return;
             }
@@ -313,7 +313,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                 realEstate?.construction_area !== values?.construction_area) &&
             inventory
         ) {
-            if (validateDocuments(values?.supports_documents, 'Documento de Prediación')) {
+            if (validateDocuments(values?.supports_documents, 'Documento de prediación')) {
                 form.setSubmitting(false);
                 return;
             }
@@ -407,7 +407,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                             {type === 'view' && (
                                 <>
                                     <div className="d-flex flex-row mb-3 pt-3 ps-4 shadow-sm p-3 bg-white rounded">
-                                        <h5 className="col-11">Bien Inmueble: {realEstate?.name}</h5>
+                                        <h5 className="col-11">Bien inmueble: {realEstate?.name}</h5>
                                         <Link
                                             to={
                                                 inventory === true

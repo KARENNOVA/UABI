@@ -17,7 +17,7 @@ export const FormPrecontractualPublicUse: FC<FormProps> = ({ formik }) => {
             <div className="row">
                 <div className="col-12 col-lg-6 col-md-6">
                     <label htmlFor="registration_date_id" className="form-label mt-3 mt-lg-0">
-                        Fecha de Registro estudio previo
+                        Fecha de registro estudio previo
                     </label>
                     <Field
                         type="date"

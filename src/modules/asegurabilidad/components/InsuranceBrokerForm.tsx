@@ -223,7 +223,7 @@ const InsuranceBrokerForm: FC<InsuranceBrokerFormPros> = ({ insurance_broker, on
                             </div>
                             <div className="form-group col-12 col-lg-6 col-md-6">
                                 <label htmlFor="contact_email_id" className="form-label">
-                                    Correo Electrónico de contacto
+                                    Correo electrónico de contacto
                                 </label>
                                 <Field
                                     type="email"
