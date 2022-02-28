@@ -429,7 +429,7 @@ const deleteRealEstate = async (id, action: Action) => {
         );
 
         swal_success.fire({
-            title: 'Bien inmueble Inactivado',
+            title: `Bien inmueble ${action === "inactivate" ? "inactivado" : "activado"}`,
             text: res.data.message,
             icon: 'success',
             showConfirmButton: false,
@@ -440,7 +440,7 @@ const deleteRealEstate = async (id, action: Action) => {
     } catch (error) {
         console.error(error);
         swal_warning.fire({
-            title: 'Error al inactivar bien inmueble',
+            title: `Error al ${action} bien inmueble`,
             text: error.message,
             icon: 'error',
             showConfirmButton: false,

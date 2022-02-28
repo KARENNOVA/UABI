@@ -2,7 +2,7 @@ import { FC, MutableRefObject, useEffect } from 'react';
 import { Field, Formik, Form, FormikProps, FormikValues } from 'formik';
 import ErrorMessage from '../../../utils/ui/error_messge';
 import { useState } from 'react';
-import { Transfer } from 'antd';
+import { Popover, Transfer } from 'antd';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { actions } from '../redux';
@@ -56,13 +56,17 @@ const RoleForm: FC<IUserFormPros> = ({ rol, disabled, type, user_roles, user_per
         if (permitsAll?.length > 0) {
             allPermits = permitsAll?.map((per: any) => ({
                 key: per.id,
-                title: per.permit_name,
+                title: <Popover content={<span>{per.description}</span>} title={per.name}>
+                    <span>{per.name}</span>
+                </Popover>,
             }));
         }
         if (user_permits?.length > 0) {
             permitUser = user_permits?.map((per: any) => ({
                 key: per.id,
-                title: per.permit_name,
+                title: <Popover content={<span>{per.description}</span>} title={per.name}>
+                    <span>{per.name}</span>
+                </Popover>,
             }));
         }
         const initialTargetKeys = permitUser.map((item) => item.key);

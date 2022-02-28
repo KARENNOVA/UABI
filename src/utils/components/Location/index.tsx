@@ -542,7 +542,7 @@ const Location: FC<LocationProps> = ({ modalClose, view, zone, innerRef }) => {
                         <hr style={{ margin: 0 }} />
                         <div className="d-flex justify-content-end mt-2">
                             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                                Consultar
+                                Continuar
                                 {isSubmitting && (
                                     <i
                                         className="fa fa-spinner fa-spin"

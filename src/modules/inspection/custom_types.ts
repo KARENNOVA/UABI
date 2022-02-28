@@ -20,6 +20,7 @@ export interface NewInspection {
     phone_number: number;
     phone_number_ext: number;
     email: string;
+    documentNumber?: string;
   }
 
   export interface IPhysicalinspection {

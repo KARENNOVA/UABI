@@ -66,9 +66,15 @@ export const get_list_inspections = async () => {
 };
 
 export const create_inspection = async (id, data: NewInspection) => {
+    console.log(data);
 
     const body = {
         ...data,
+        occupant: {
+            ...data.occupant,
+            document_number: data.occupant.documentNumber
+
+        },
         ocupant: data.occupant,
         ocupation: data.occupation,
         photografic_register: {

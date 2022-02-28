@@ -442,7 +442,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                                 <div className="container-fluid">
                                     <div className="row justify-content-center">
                                         <div className="col-md-12">
-                                            {type === 'create' && <h4 className="ms-4 mb-3">Crear bien inmueble</h4>}
+                                            {type === 'create' && <h4 className="ms-4 mb-3">Crear Bien Inmueble</h4>}
                                             {type === 'edit' && (
                                                 <h4 className="ms-4 mb-3">
                                                     Editar bien inmueble

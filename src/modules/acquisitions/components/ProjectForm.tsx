@@ -13,6 +13,7 @@ import { Empty } from 'antd';
 import { FormikProps } from 'formik';
 import { FormikValues } from 'formik';
 import { TemplateContext } from '../../../utils/components/template/template_context';
+import Input from '../../../utils/ui/input_current';
 
 interface ProjectFormPros {
     project?: IProjectAttributes;
@@ -283,6 +284,28 @@ const ProjectForm: FC<ProjectFormPros> = ({ project, onSubmit, disabled, type, i
                                         <ErrorMessage name="budget_value" />
                                     </div>
                                 </div>
+                                {/* <div className="form-group col-md-6 col-12 col-lg-4">
+                                    <label htmlFor="numero_id" className="form-label">
+                                        Numero
+                                    </label>
+                                    <Field
+                                        component={Input}
+                                        // disabled
+                                        name="numero"
+                                        // type="number"
+                                        min={0}
+                                        max={99999999999999999999}
+                                        id="cost_center_id"
+                                        extra_on_change={(value) => {
+                                            const regex = /^[0-9]{0,3}$/;
+                                            regex.test(value.toString())
+
+                                        }}
+
+                                    />
+                                    <ErrorMessage name="numero" />
+                                </div> */}
+
                                 <div className="col-12">
                                     <label htmlFor="description_id" className="form-label">
                                         Descripción
