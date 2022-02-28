@@ -85,7 +85,7 @@ const Sider: FC<{ width: number }> = ({ width }) => {
         },
         {
             path: '/inventory-record-list',
-            name: 'Administración de inventario',
+            name: 'Administración de Inventario',
             ...(aux_user.roles.includes('UABI') || aux_user.roles.includes('Administrador')
                 ? []
                 : {

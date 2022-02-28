@@ -35,26 +35,39 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
         dispatch(actions.getRealEstatesByProject(Number(id), {}));
     }, []);
 
-    // let newrealEstates = [];
-    // console.log(realEstates)
+    let newrealEstates = [];
     // const codes = realEstates.map(realEstate => realEstate.sap_id.split(",")).map(codigo => codigo?.filter(cod => cod.charAt(cod.length - 1) !== 'J'))
-    //console.log('bienes',realEstates)
+    // console.log('bienes',realEstates)
     // newrealEstates = realEstates.reduce((valor_anterior, valor_actual) => {
-    //     const codigos = valor_actual.sap_id.split(',');
+    //     const codigos = valor_actual.active_code.split(',');
     //     const codes = codigos.filter((cod) => cod.charAt(cod.length - 1) !== 'J');
     //     for (let i = 0; i < codes.length; i++) {
     //         const obj = {
     //             ...valor_actual,
     //         };
-    //         obj.sap_id = codes[i];
+    //         obj.active_code = codes[i];
     //         valor_anterior.push(obj);
     //     }
     //     return valor_anterior;
     // }, []);
-    console.log()
+
+
+    newrealEstates = realEstates.reduce((valor_anterior, valor_actual) => {
+        // const codigos = valor_actual.active_code.split(',');
+        const codes = valor_actual.active_code.filter((cod) => cod.charAt(cod.length - 1) !== 'J');
+        for (let i = 0; i < codes.length; i++) {
+            const obj = {
+                ...valor_actual,
+            };
+            obj.active_code = codes[i];
+            valor_anterior.push(obj);
+        }
+        return valor_anterior;
+    }, []);
+    console.log(realEstates)
     useEffect(() => {
         // const dataTable = [];
-        const dataTable = realEstates.map((realEstate) => {
+        const dataTable = newrealEstates.map((realEstate) => {
             // const object = {
             //     key: realEstate.active_code,
             //     name: realEstate.name,

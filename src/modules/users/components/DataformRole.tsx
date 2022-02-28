@@ -1,4 +1,4 @@
-import { Transfer } from 'antd';
+import { Popover, Transfer } from 'antd';
 import { Field } from 'formik';
 import React, { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -18,7 +18,7 @@ interface IUserFormPros {
     formik?: any;
 }
 
-const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_permits, rol, formik}) => {
+const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_permits, rol, formik }) => {
     // console.log(user_permits)
     const permitsAll: IPermitAttributes[] = useSelector((store: any) => store.users.permits.value);
 
@@ -54,13 +54,9 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
             const isInTargetKeys = targetKeys.includes(permit.key);
             const isDisabled = permit.disabled;
             return isInTargetKeys && !isDisabled
-        } ).map(p => p.key)
+        }).map(p => p.key)
         formik.setFieldValue('permits', permits, false);
     }, [targetKeys]);
-
-    console.log(mockData)
-
-
 
 
     useEffect(() => {
@@ -68,8 +64,10 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
         if (permitsAll?.length > 0) {
             allPermits = permitsAll?.map((per: any) => ({
                 key: per.id,
-                title: per.name,
-                children: per.description
+                title:
+                    <Popover content={<span>{per.description}</span>} title={per.name}>
+                        <span>{per.name}</span>
+                    </Popover>,
             }));
         }
         setMockData(allPermits);
@@ -82,7 +80,6 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
             permitUser = user_permits?.map((per: any) => ({
                 key: per.id,
                 title: per.name,
-                children: per.description
             }));
         }
         const initialTargetKeys = permitUser.map((item) => item.key);
@@ -198,7 +195,6 @@ const DataformRole: FC<IUserFormPros> = ({ disabled, type_rol, user_roles, user_
                     selectedKeys={selectedKeys}
                     onChange={onChange}
                     onSelectChange={onSelectChange}
-                    className="tree-transfer"
                     render={(item) => item.title}
                     listStyle={{
                         width: 250,

@@ -871,14 +871,14 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                         Contrapartida
                                     </label>
                                     <Field
-                                        type="number"
+                                        type="text"
                                         className="form-control"
                                         id="counterpart_id"
                                         name="counterpart"
                                         onChange={(e) => {
                                             e.preventDefault();
                                             const { value } = e.target;
-                                            const regex = /^[0-9]{0,10}$/;
+                                            const regex = /^[0-9]{0,20}$/;
                                             if (regex.test(value.toString())) {
                                                 formik.handleChange(e);
                                             }
@@ -897,6 +897,14 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                         id="assignments_id"
                                         name="assignments"
                                         disabled={inventoryEdit}
+                                        onChange={(e) => {
+                                            e.preventDefault();
+                                            const { value } = e.target;
+                                            const regex = /^[0-9]{0,20}$/;
+                                            if (regex.test(value.toString())) {
+                                                formik.handleChange(e);
+                                            }
+                                        }}
                                     />
                                     <ErrorMessage />
                                 </div>
@@ -904,54 +912,78 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                             <div className="row">
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="exploitation_value_id" className="form-label">
-                                        Valor aprovechamiento
+                                        Valor Aprovechamiento
                                     </label>
                                     <div className="input-group w-100">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text bg-white border-end-0">$</span>
                                         </div>
                                         <Field
-                                            type="number"
+                                            type="text"
                                             className="form-control text-end"
                                             id="exploitation_value_id"
                                             name="exploitation_value"
                                             disabled={inventoryEdit}
                                             min={0}
                                             max={99999999999999999999}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = /^[0-9]{0,20}$/;
+                                                if (regex.test(value.toString())) {
+                                                    formik.handleChange(e);
+                                                }
+                                            }}
                                         />
                                         <ErrorMessage />
                                     </div>
                                 </div>
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="authorization_value_id" className="form-label">
-                                        Valor de autorización
+                                        Valor de Autorización
                                     </label>
                                     <div className="input-group w-100">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text bg-white border-end-0">$</span>
                                         </div>
                                         <Field
-                                            type="number"
+                                            type="text"
                                             className="form-control text-end"
                                             id="authorization_value_id"
                                             name="authorization_value"
                                             disabled={inventoryEdit}
                                             min={0}
                                             max={99999999999999999999}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = /^[0-9]{0,20}$/;
+                                                if (regex.test(value.toString())) {
+                                                    formik.handleChange(e);
+                                                }
+                                            }}
                                         />
                                     </div>
                                     <ErrorMessage />
                                 </div>
                                 <div className="col-12 col-lg-3">
                                     <label htmlFor="years_useful_life_id" className="form-label">
-                                        Vida útil años
+                                        Vida Útil años
                                     </label>
                                     <Field
                                         //disabled
                                         name="years_useful_life"
                                         id="years_useful_life_id"
-                                        type="number"
+                                        type="text"
                                         className="form-control"
+                                        onChange={(e) => {
+                                            e.preventDefault();
+                                            const { value } = e.target;
+                                            const regex = /^[0-9]{0,5}$/;
+                                            if (regex.test(value.toString())) {
+                                                formik.handleChange(e);
+                                            }
+                                        }}
                                     />
                                     <ErrorMessage name="years_useful_life" />
                                 </div>
@@ -963,8 +995,16 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                         //disabled
                                         name="useful_life_periods"
                                         id="useful_life_periods_id"
-                                        type="number"
+                                        type="text"
                                         className="form-control"
+                                        onChange={(e) => {
+                                            e.preventDefault();
+                                            const { value } = e.target;
+                                            const regex = /^[0-9]{0,5}$/;
+                                            if (regex.test(value.toString())) {
+                                                formik.handleChange(e);
+                                            }
+                                        }}
                                     />
                                     <ErrorMessage name="useful_life_periods" />
                                 </div>
@@ -1003,6 +1043,14 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                             disabled={inventoryEdit}
                                             min={0}
                                             max={99999999999999999999}
+                                            onChange={(e) => {
+                                                e.preventDefault();
+                                                const { value } = e.target;
+                                                const regex = /^[0-9]{0,20}$/;
+                                                if (regex.test(value.toString())) {
+                                                    formik.handleChange(e);
+                                                }
+                                            }}
                                         />
                                     </div>
                                     <ErrorMessage />
@@ -1065,9 +1113,6 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                                 </option>
                                                 <option key="availability_type13" value="Zona dura">
                                                     Zona dura
-                                                </option>
-                                                <option key="availability_type14" value="Plaza">
-                                                    Plaza
                                                 </option>
                                             </>
                                         )}

@@ -146,6 +146,7 @@ const PolizaForm: FC<InsurabilityFormPros> = ({
             ...values,
             vigency_start: new Date(newDate).getTime(),
             vigency_end: new Date(newDate2).getTime(),
+            insurance_broker_id: typeof values.insurance_broker_id === 'number' ? values.insurance_broker_id : values.insurance_broker?.id
         };
 
         let total = 0;

@@ -1,7 +1,6 @@
 import React, { FC, MutableRefObject } from 'react';
 import { Form, Formik, FormikProps, FormikValues } from 'formik';
 import { Card } from '../../../utils/ui';
-import { IUserAttributes } from '../../../utils/interfaces/users';
 import * as Yup from 'yup';
 import Dataformuser from './Dataformuser';
 import DataformRole from './DataformRole';
@@ -74,12 +73,12 @@ const FormUserprueba: FC<IUserFormPros> = ({ type, disabled, onSubmit, user, inn
             email: Yup.string().email('email invalido').required('Campo obligatorio'),
             cellphone_number: Yup.number()
                 .required('Campo obligatorio')
-                .min(999999, 'El minimo es 7 caracteres')
-                .max(9999999999, 'El maximo 10 es caracteres'),
+                .min(9999, 'El minimo es 5 caracteres')
+                .max(99999999999999999999, 'El maximo 20 es caracteres'),
             phone_number: Yup.number()
                 .required('Campo obligatorio')
-                .min(999999, 'El minimo es 7 caracteres')
-                .max(9999999999, 'El maximo 10 es caracteres'),
+                .min(9999, 'El minimo es 5 caracteres')
+                .max(99999999999999999999, 'El maximo 20 es caracteres'),
             gender: Yup.string().required('Campo obligatorio'),
             dependency: Yup.string()
                 .when('entity_type', {

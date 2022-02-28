@@ -333,7 +333,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         Celular <span className="text-danger">*</span>
                     </label>
                     <Field
-                        type="number"
+                        type="text"
                         className="form-control"
                         id="cellphone_number"
                         name="detailsUser.cellphone_number"
@@ -341,8 +341,16 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                         autoComplete="off"
                         disabled={disabled}
                         maxLength={20}
+                        onChange={(e) => {
+                            e.preventDefault();
+                            const { value } = e.target;
+                            const regex = /^[0-9]{0,20}$/;
+                            if (regex.test(value.toString())) {
+                                formik.handleChange(e);
+                            }
+                        }}
                     />
-                    <ErrorMessage name="detailsUser.cellphone_number" />
+                    <ErrorMessage name="detailsUser.cellphone_number" withCount max={20} />
                 </div>
                 <div className="col-12 col-lg-3 col-md-6">
                     <div className="row">
@@ -351,7 +359,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                                 Teléfono <span className="text-danger">*</span>
                             </label>
                             <Field
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 id="phone_number"
                                 name="detailsUser.phone_number"
@@ -359,31 +367,39 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                                 autoComplete="off"
                                 disabled={disabled}
                                 maxLength={20}
+                                onChange={(e) => {
+                                    e.preventDefault();
+                                    const { value } = e.target;
+                                    const regex = /^[0-9]{0,20}$/;
+                                    if (regex.test(value.toString())) {
+                                        formik.handleChange(e);
+                                    }
+                                }}
                             />
-                            <ErrorMessage name="detailsUser.phone_number" />
+                            <ErrorMessage name="detailsUser.phone_number" withCount max={20} />
                         </div>
                         <div className="col-4">
                             <label htmlFor="phone_number_ext" className="form-label">
                                 Ext
                             </label>
                             <Field
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 id="phone_number_ext"
                                 name="detailsUser.phone_number_ext"
                                 autoComplete="off"
                                 disabled={disabled}
-                                maxLength={20}
+                                maxLength={3}
                                 onChange={(e) => {
                                     e.preventDefault();
                                     const { value } = e.target;
-                                    const regex = new RegExp(`^[+]?\\d{0,3}$`);
+                                    const regex = /^[0-9]{0,3}$/;
                                     if (regex.test(value.toString())) {
                                         formik.handleChange(e);
                                     }
                                 }}
                             />
-                            <ErrorMessage name="detailsUser.phone_number_ext" />
+                            <ErrorMessage name="detailsUser.phone_number_ext" withCount max={3} />
                         </div>
                     </div>
                 </div>

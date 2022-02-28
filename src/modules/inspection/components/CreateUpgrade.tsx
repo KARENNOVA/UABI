@@ -14,7 +14,7 @@ interface CreateUpgradeProps {
     onSubmit: (values) => void;
 }
 const CreateUpgrade: FC<CreateUpgradeProps> = ({ owner, innerRef, onSubmit }) => {
-    // console.log("PersonalInformationForm", owner)
+    console.log("PersonalInformationForm", owner)
     // const history = useHistory();
     const context = useContext(TemplateContext);
     return (
