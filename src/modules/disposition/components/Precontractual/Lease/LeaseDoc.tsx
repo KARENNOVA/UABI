@@ -79,7 +79,7 @@ const LeaseDoc = () => {
                                 representative: {
                                     id: values.representative.id
                                 },
-                                active_code: realEstate?.active_code,
+                                active_code: realEstate?.active_code[0],
                                 type_disposition: "Arrendamiento"
 
                             }

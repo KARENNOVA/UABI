@@ -124,7 +124,7 @@ const Dataformuser: FC<IUserFormPros> = ({ type, disabled, formik, dependencies 
                                         const dependency = dependencies.find(
                                             (d) => d.dependency === formik.values.dependency
                                         );
-                                        const subdependency = dependency.subs.find((d) => d.subdependency === value);
+                                        const subdependency = dependency?.subs?.find((d) => d.subdependency === value);
                                         formik.setFieldValue('cost_center_id', subdependency.id);
                                     }
                                 }}

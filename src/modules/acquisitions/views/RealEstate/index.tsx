@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from './../../redux';
 import { Link, Card } from '../../../../utils/ui';
 import RealEstateList from '../../components/RealEstateList';
 import FilterForm from '../../../../utils/ui/filter_form';
 import { guards } from '../../routes';
+import { TemplateContext } from '../../../../utils/components/template/template_context';
 
 const RealEstates = () => {
     const dispatch = useDispatch();
     const [filters, set_filters] = useState<object>(null);
-    const  user  = useSelector((store: any) => store.auth.user);
+    const user = useSelector((store: any) => store.auth.user);
+    const context = useContext(TemplateContext);
     const aux_user = {
         ...user,
         permits: user?.permits.map((a) => a.name) || [],
@@ -43,17 +45,23 @@ const RealEstates = () => {
                                     <FilterForm
                                         filters={[
                                             { key: 'registry_number', name: 'Matrícula' },
-                                            { key: 'project', name: 'Proyecto' },
-                                            { key: 'name', name: 'Nombre' },
-                                            { key: 'CBML', name: 'CBML' },
-                                            { key: 'sap_id', name: 'Activo fijo' },
+                                            ...(context.device !== "sm" ? [
+                                                { key: 'project', name: 'Proyecto' },
+                                                { key: 'name', name: 'Nombre' },
+                                                ...(context.device !== "md" ? [
+                                                    { key: 'CBML', name: 'CBML' },
+                                                    { key: 'sap_id', name: 'Activo fijo' },
+                                                ] : []),
+
+                                            ] : []),
+
                                         ]}
                                         onSubmit={filter}
                                     />
                                 </div>
                             </div>
                         </div>
-                        <RealEstateList withProject  user={aux_user} filters={filters} />
+                        <RealEstateList withProject user={aux_user} filters={filters} />
                     </Card>
                 </div>
             </div>

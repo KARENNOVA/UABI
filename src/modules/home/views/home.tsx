@@ -3,6 +3,7 @@ import Card from '../components/Card';
 const Home = () => {
     return (
         <>
+
             <section className="pt-5" id="texto-superior">
                 <div className="container">
                     <div className="row">
@@ -13,7 +14,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
             <div className="content-cards">
                 <section id="cards">
                     <div className="container">

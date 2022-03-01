@@ -133,11 +133,13 @@ const RealEstateList: FC<RealEstateListProps> = ({
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['lg'],
             align: 'center' as 'center',
         },
         {
             title: 'Nombre',
             dataIndex: 'name',
+            responsive: ['md'],
             align: 'left' as 'left',
         },
         {
@@ -151,6 +153,7 @@ const RealEstateList: FC<RealEstateListProps> = ({
                   {
                       title: 'Proyecto asociado',
                       dataIndex: 'project',
+                      responsive: ['md'],
                       align: 'left' as 'left',
                       render: (p) => `${p?.id} - ${p?.name}` || '',
                   },
@@ -160,14 +163,14 @@ const RealEstateList: FC<RealEstateListProps> = ({
             title: 'Fecha creación',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-            responsive: ['md'],
+            responsive: ['lg'],
             render: (dates) => formatDate(dates?.created_on),
         },
         {
             title: 'Creado por',
             dataIndex: 'audit_trail',
             align: 'left' as 'left',
-            responsive: ['md'],
+            responsive: ['lg'],
             render: (data) => data.created_by,
         },
         {

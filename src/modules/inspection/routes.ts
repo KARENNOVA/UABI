@@ -46,7 +46,7 @@ const get_routes = (): IRoute[] => {
         {
             exact: true,
             is_private: true,
-            can_access: guards.updateInspection, //guards.createInpection,
+            can_access: true, //guards.createInpection,
             path: '/inspection/:real_estate_id/create/',
             template_props: {
                 breadcrumbs: [

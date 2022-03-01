@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Card, Link } from '../../../utils/ui';
 import { getRealEstates } from '../../acquisitions/redux/actions/realEstates';
 import RealEstateList from '../../acquisitions/components/RealEstateList';
 import FilterForm from './../../../utils/ui/filter_form';
 import { guards } from '../../acquisitions/routes';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 const InventoryRecordList = () => {
     const dispatch = useDispatch();
     const [filters, set_filters] = useState<object>(null);
     const user = useSelector((store: any) => store.auth.user);
+    const context = useContext(TemplateContext);
     const aux_user = {
         ...user,
         permits: user?.permits.map((a) => a.name) || [],
@@ -46,15 +48,21 @@ const InventoryRecordList = () => {
                                 }
                             >
                                 <div className="row justify-content-between">
-                                    <div className="col-5 d-flex">
-                                        <div className="col-6 ">
+                                    <div className="col-12 col-lg-5 d-flex">
+                                        <div className="col-12 col-md-6 col-lg-6">
                                             <FilterForm
                                                 filters={[
-                                                    { key: 'CBML', name: 'CBML' },
                                                     { key: 'registry_number', name: 'Matrícula' },
-                                                    { key: 'project.name', name: 'Proyecto' },
-                                                    { key: 'address', name: 'Dirección' },
-                                                    { key: 'sap_id', name: 'Activo fijo' },
+                                                    ...(context.device !== "sm" ? [
+                                                        { key: 'project.name', name: 'Proyecto' },
+                                                        ...(context.device !== "md" ? [
+                                                            { key: 'address', name: 'Dirección' },
+                                                            { key: 'CBML', name: 'CBML' },
+                                                            { key: 'sap_id', name: 'Activo fijo' },
+                                                        ] : []),
+
+                                                    ] : []),
+
                                                 ]}
                                                 onSubmit={filter}
                                             />

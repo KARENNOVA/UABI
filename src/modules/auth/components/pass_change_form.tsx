@@ -2,6 +2,7 @@ import React, { FC, Fragment, useState } from 'react';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import { object, string, ref } from 'yup';
 import { PasswordResetBody } from '../custom_types';
+import { useSelector } from 'react-redux';
 interface OwnProps {
     change_password: (pass: PasswordResetBody) => Promise<any>;
     onOk?: (data?) => void;
@@ -24,6 +25,7 @@ interface OwnProps {
  * @param code
  */
 export const PassChangeForm: FC<OwnProps> = ({ change_password, onOk, children, SuccessButtons, code }) => {
+    const user = useSelector((store: any) => store.auth.user);
     const conditions = [
         'debe contener almenos 1 numero',
         'debe contener almenos 1 caracter especial',
@@ -63,15 +65,18 @@ export const PassChangeForm: FC<OwnProps> = ({ change_password, onOk, children, 
                         {!sent_success && (
                             <Fragment>
                                 <div className="text-left">
-                                    <div className="form-group  mt-4 text-left">
-                                        <label>Contraseña anterior</label>
-                                        <Field type="password" className="form-control" name="lastPassword" />
-                                        <ErrorMessage
-                                            name="lastPassword"
-                                            component="span"
-                                            className="text-danger text-left d-block w-100 mt-1"
-                                        />
-                                    </div>
+                                    {!user.isFirstLoggin &&
+                                        <div className="form-group  mt-4 text-left">
+                                            <label>Contraseña anterior</label>
+                                            <Field type="password" className="form-control" name="lastPassword" />
+                                            <ErrorMessage
+                                                name="lastPassword"
+                                                component="span"
+                                                className="text-danger text-left d-block w-100 mt-1"
+                                            />
+                                        </div>
+
+                                    }
                                     <div className="form-group mt-4 text-left">
                                         <label>Contraseña nueva</label>
                                         <Field type="password" className="form-control" name="password" />

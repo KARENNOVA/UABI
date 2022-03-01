@@ -24,7 +24,7 @@ export const TableAreas = () => {
     const [realEstatesEdit, setRealEstatesEdit] = useState([]);
     const { valueArea, numberRealEstates, data, action, realEstates, arrayRealEstates } = location.state;
     const arrayEditRealEsates = [];
-    console.log(data, realEstates)
+    // console.log("Tabla areasa", data, realEstates)
     useEffect(() => {
         if (data && realEstates) {
             data.map((bienInmueble) => {
@@ -44,7 +44,6 @@ export const TableAreas = () => {
             let result = editables.filter((item, index) => {
                 return editables.indexOf(item) === index;
             });
-            // console.log(result)
             const real_estates_edit = result.map((realEstate) => {
                 const editRealEstate = arrayEditRealEsates.filter((r) => r.active_code === realEstate?.active_code);
                 let areaCons = null;
@@ -61,10 +60,10 @@ export const TableAreas = () => {
                     });
                     const real = {
                         // ...realEstate,
-                        id: realEstate.id,
-                        active_code: realEstate.active_code,
+                        id: realEstate?.id,
+                        active_code: realEstate?.active_code,
                         construction_area: areaCons === null ? realEstate?.construction_area : areaCons,
-                        plot_area: arealote === null ? realEstate.plot_area : arealote,
+                        plot_area: arealote === null ? realEstate?.plot_area : arealote,
                     };
                     return {
                         ...real,
@@ -76,8 +75,6 @@ export const TableAreas = () => {
             });
 
 
-
-            console.log(real_estates_edit)
             setRealEstatesEdit(real_estates_edit);
         }
     }, []);
@@ -86,8 +83,8 @@ export const TableAreas = () => {
     for (let i = 0; i < Number(numberRealEstates); i++) {
         initial_values.push({
             value: `${i + 1} de ${numberRealEstates}`,
-            name: '',
             total_area: `${(Number(valueArea) / Number(numberRealEstates)).toFixed(2)}`,
+            name: '',
             id: '',
             sap_id: '',
             destination_type: '',
@@ -132,6 +129,7 @@ export const TableAreas = () => {
     }
 
     const [DataRealEstate, setDataRealEstate] = useState(initial_values);
+    console.log(DataRealEstate)
     useEffect(() => {
         if (arrayRealEstates) {
             setDataRealEstate(arrayRealEstates);
@@ -182,11 +180,11 @@ export const TableAreas = () => {
     const CreateRealEstate = async (DataRealEstate, realEstatesEdit) => {
         console.log(DataRealEstate)
         console.log(realEstatesEdit)
-        // const result = await dispatch(actions.createRealEstates(DataRealEstate, realEstatesEdit, action, "many"))
+        const result = await dispatch(actions.createRealEstates(DataRealEstate, realEstatesEdit, action, "many"))
         // console.log(result);
         // return result
-        //history.push(`/acquisitions/real-estates/`);
-        //return Promise.resolve();
+        // history.push(`/acquisitions/real-estates/`);
+        // return Promise.resolve();
 
     }
     return (

@@ -12,11 +12,12 @@ const nice_login = (dispatch) => (response) => {
     if (response?.data) {
         localStorage.removeItem('attemp');
         const { results } = response.data;
-        const { detailsUser, token, permits, roles } = results;
+        const { detailsUser, token, permits, roles, isFirstLoggin } = results;
         const user = {
             detailsUser,
             permits,
             roles,
+            isFirstLoggin
         };
         return dispatch(register_user(token, user));
     }

@@ -217,6 +217,7 @@ export const createRealEstates = async (
             delete dr.project_id;
         }
     });
+    // const data_father = fathers.filter(f => )
     // const data_fathers = fathers.map(f => {
     //     return {
     //         id: f.id,

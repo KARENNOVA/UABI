@@ -17,7 +17,8 @@ const AcquisitionsView: FC<AcquisitionsFromProps> = ({ type, disabled, acquisiti
         <Card
             title="Información de adquisición"
             extra={
-                <>{!inventory ?
+                <>{type !== "view" ?
+                    !inventory &&
                     <AcquisitionModal
                         type="create"
                         btn_label="Agregar adquisición"

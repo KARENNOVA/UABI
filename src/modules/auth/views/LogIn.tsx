@@ -6,17 +6,21 @@ import LoginForm from './../components/LoginForm';
 import actions from '../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from '../../../utils/ui/link';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { TemplateContext } from '../../../utils/components/template/template_context';
 
 export default function SignIn({ location, redirect }) {
     const can_access = useSelector((store: any) => store.auth.can_access);
+    // const user = useSelector((store: any) => store.auth.user);
     const dispatch = useDispatch();
     const history = useHistory();
+    const context = useContext(TemplateContext);
 
     // const [disabled, setDisabled] = useState(parseInt(localStorage.getItem('attemp')) >= 9);
     const [alert, set_alert] = useState(null);
 
     const onLogin = async (values) => {
+
         // if (values.remember) {
         //     const c = `user=${values.user}`;
         //     console.log(document.cookie, c);
@@ -24,9 +28,17 @@ export default function SignIn({ location, redirect }) {
         //     console.log(document.cookie);
         // }
         const promise: any = dispatch(actions.login(values.user, values.password));
+
         await promise
-            .then(() => {
+            .then((res) => {
                 history.push('/');
+                console.log(res.isFirstLoggin);
+                setTimeout(() => {
+                    if (res.isFirstLoggin) {
+                        context.toggle_pass_modal();
+                    }
+                }, 1000)
+
             })
             .catch((e) => {
                 const [message, intententos] = e;

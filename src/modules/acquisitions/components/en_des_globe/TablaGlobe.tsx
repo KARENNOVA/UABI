@@ -64,7 +64,8 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
         }
         return valor_anterior;
     }, []);
-    console.log(realEstates)
+    console.log('bis',newrealEstates);
+
     useEffect(() => {
         // const dataTable = [];
         const dataTable = newrealEstates.map((realEstate) => {
@@ -321,7 +322,7 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                                 if (areaSelect) {
                                     history.push({
                                         pathname: `/englobar/realEstates/`,
-                                        state: { numberRealEstates, valueArea, data, action, realEstates },
+                                        state: { numberRealEstates, valueArea, data, action,  realEstates: newrealEstates },
                                     });
                                 } else {
                                     swal_warning.fire({
@@ -348,10 +349,9 @@ export const TablaGlobe: FC<TableGlobeProps> = ({ action }) => {
                                         text: `El valor del área a ${action} no puede ser cero`,
                                     });
                                 } else {
-                                    console.log(action);
                                     history.push({
                                         pathname: `/englobar/realEstates/`,
-                                        state: { numberRealEstates, valueArea, data, action, realEstates },
+                                        state: { numberRealEstates, valueArea, data, action, realEstates: newrealEstates },
                                     });
                                 }
                             } else {

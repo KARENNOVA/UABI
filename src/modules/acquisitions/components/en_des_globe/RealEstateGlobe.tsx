@@ -36,6 +36,7 @@ const RealEstateGlobe: FC<RealEstateModalProps> = ({ disabled, arrayRealEstates,
         arrayRealEstates[index] = values;
         history.push({ pathname: `/englobar/realEstates/`, state: { arrayRealEstates, valueArea, data, action, realEstates } });
     };
+    // console.log(realEstateData)
 
     return <RealEstateForm type="create" onSubmit={createRealEstate} globe={true} realEstateData={realEstateData} dependencies={dependencies}  />;
 };

@@ -344,7 +344,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                     </div>
                 }
 
-                <div className={`form-group col-12 col-md-${type === "edit" ? 3 : 6} col-lg-${type === "edit" ? 3 : 6}`}>
+                <div className={`form-group col-12 col-md-6 col-lg-${type === "edit" ? 3 : 6}`}>
                     <label htmlFor="destination_type_id" className="form-label">
                         Tipo de uso <span className="text-danger">*</span>
                     </label>
@@ -612,7 +612,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                             </label>
                         </div>
                         {inventory && (
-                            <div className="col-12 col-lg-3">
+                            <div className="col align-self-end">
                                 <ModalDivideAreas total_area={formik.values.plot_area} formik={formik} type={'Lote'} />
                             </div>
                         )}
@@ -788,7 +788,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
             {type !== 'create' && (
                 <>
                     <div className="row">
-                        <div className={`form-group col-12 col-md-6 col-lg-6`}>
+                        <div className={`form-group col-12 col-lg-6`}>
                             <label htmlFor="audit_trail_created_by_id" className="form-label">
                                 Creado por
                             </label>
@@ -1177,7 +1177,7 @@ export const DataRealEstateForm: FC<DataRealEstateFormProps> = ({
                                 as="textarea"
                                 className="form-control"
                                 id="comentarios_id"
-                                name="comentarios"
+                                name="comments"
                                 placeholder="Comentarios y anotaciones"
                             />
                             <ErrorMessage />

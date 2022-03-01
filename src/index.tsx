@@ -98,6 +98,7 @@ export enum Permit {
     LIST_INSPECTION = 'listar_Inspecciones',
     DETAIL_INSPECTION = 'detalles_Inspeccion',
     UPDATE_INSPECTION = 'actualizar_Inspeccion',
+    CREATE_INSPECTION = 'actualizar_Inspeccion',
 
     LIST_ELECTRONIC_FILE = 'listar_Expediente_Electronico',
     UPLOAD_ELECTRONIC_FILE = 'adjuntar_Expediente_Electronico',

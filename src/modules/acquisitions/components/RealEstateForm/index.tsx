@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik';
-import React, { FC, useEffect } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import GeneralDataForm from './GeneralDataForm';
 import AdquisitionView from './AdquisitionView';
 import RealEstateList from '../RealEstateList';
@@ -13,6 +13,7 @@ import RealEstateViewForm from './RealEstateViewForm';
 import Map from '../../../../utils/components/template/map';
 import { PolizaViewForm } from '../../../asegurabilidad/components/PolizaViewForm';
 import { swal_warning } from '../../../../utils';
+import { TemplateContext } from '../../../../utils/components/template/template_context';
 
 interface RealEstateFormProps {
     onSubmit?: (values, form?, isFinish?: boolean) => Promise<any>;
@@ -39,6 +40,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
 }) => {
     const dispatch = useDispatch();
     const history = useHistory<any>();
+    const context = useContext(TemplateContext);
 
     const [tipologies, realEstate, projects] = useSelector((store: any) => [
         store.acquisitions.tipologies.value,
@@ -117,7 +119,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                         },
                     }
                     : {}),
-                projects_id: `${realEstateData?.project?.id}` || '0',
+                projects_id: realEstateData?.project?.id ? `${realEstateData?.project?.id}` : '0',
             }
             : {
                 ...realEstate,
@@ -140,7 +142,6 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                 dependency: realEstate?.dependency?.dependency || ''
             }),
     };
-
 
 
     if (!Array.isArray(initial_values.materials) && typeof initial_values.materials === 'string') {
@@ -356,7 +357,6 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
         <Formik enableReinitialize onSubmit={submit} initialValues={initial_values} validationSchema={schema}>
             {(formik) => {
                 const { name, registry_number, projects_id } = formik.values;
-
                 const update_project = (id) => {
                     if (/*Number.isInteger(id)*/ typeof Number(id) === "number") {
                         formik.setFieldValue('_project', {}, false);
@@ -407,7 +407,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                             {type === 'view' && (
                                 <>
                                     <div className="d-flex flex-row mb-3 pt-3 ps-4 shadow-sm p-3 bg-white rounded">
-                                        <h5 className="col-11">Bien inmueble: {realEstate?.name}</h5>
+                                        <h5 className={`col-10 col-md-${context.menu_collapsed ? 11 : 10 } col-lg-11`}>Bien inmueble: {realEstate?.name}</h5>
                                         <Link
                                             to={
                                                 inventory === true
@@ -543,7 +543,7 @@ const RealEstateForm: FC<RealEstateFormProps> = ({
                                 )}
 
 
-                                {type === 'create' && (
+                                {(type === 'create' &&  globe !== true) &&(
                                     <button
                                         type="button"
                                         className="btn btn-primary btn-sm"

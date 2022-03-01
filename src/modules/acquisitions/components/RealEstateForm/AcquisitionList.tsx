@@ -14,6 +14,7 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
         {
             title: 'Tipo de adquisición',
             align: 'center' as 'center',
+            responsive: ['md'],
             dataIndex: 'acquisition_type',
         },
         {
@@ -24,6 +25,7 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
         {
             title: 'Valor de adquisición',
             align: 'center' as 'center',
+            responsive: ['md'],
             dataIndex: 'act_value',
         },
         ...(type === 'view'
@@ -41,11 +43,13 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
                   {
                       title: 'Procedencia',
                       align: 'center' as 'center',
+                      responsive: ['md'],
                       dataIndex: 'seller',
                   },
                   {
                       title: 'Porcentaje adquirido',
                       align: 'center' as 'center',
+                      responsive: ['lg'],
                       dataIndex: 'acquired_percentage',
                   },
                   {
@@ -56,16 +60,19 @@ const AcquisitionList: FC<AcquisitionListProps> = ({ acquisitions, type, disable
                   {
                       title: 'Tipo de entidad',
                       align: 'center' as 'center',
+                      responsive: ['lg'],
                       dataIndex: 'entity_type',
                   },
                   {
                       title: 'No. Entidad',
                       align: 'center' as 'center',
+                      responsive: ['lg'],
                       dataIndex: 'entity_number',
                   },
                   {
                       title: 'Ciudad',
                       align: 'center' as 'center',
+                      responsive: ['md'],
                       dataIndex: 'city',
                   },
                 //   {

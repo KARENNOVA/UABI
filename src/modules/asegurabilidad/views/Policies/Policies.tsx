@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux';
 import { IPolicyAttributes } from '../../../../utils/interfaces';
 import { useSelector } from 'react-redux';
 import { actions } from '../../redux';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import moment from 'moment';
 
 import { Link, Card, Table as UiTable } from '../../../../utils/ui';
 import FilterForm from '../../../../utils/ui/filter_form';
 import { guards } from '../../routes';
+import { TemplateContext } from '../../../../utils/components/template/template_context';
 
 
 const Policies = () => {
@@ -16,6 +17,7 @@ const Policies = () => {
     const policies: IPolicyAttributes[] = useSelector((store: any) => store.insurability.policies.value);
     const loading: boolean = useSelector((store: any) => store.insurability.policies.loading);
     const { total_results } = useSelector((store: any) => store.insurability.policies.pagination);
+    const context = useContext(TemplateContext);
     const change_page = (page, pageSize) => {
         dispatch(actions.getPolicies({ page, pageSize, with: 'pagination' }));
     };
@@ -77,6 +79,7 @@ const Policies = () => {
         {
             title: 'ID',
             dataIndex: 'id',
+            responsive: ['md'],
             align: 'center' as 'center',
         },
         {
@@ -162,8 +165,10 @@ const Policies = () => {
                                     <FilterForm
                                         filters={[
                                             { key: 'policy_number', name: 'Número póliza' },
-                                            { key: 'policy_type', name: 'Tipo de póliza' },
-                                            { key: 'registry_number', name: 'Matrícula' },
+                                            ...(context.device !== "sm" ? [
+                                                { key: 'policy_type', name: 'Tipo de póliza' },
+                                                { key: 'registry_number', name: 'Matrícula' },
+                                            ] : []),
                                         ]}
                                         onSubmit={filter}
                                     />
